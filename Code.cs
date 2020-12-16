@@ -69,7 +69,15 @@ internal class Class24 : Class1
 	{
 		get
 		{
-			return this.byte_0.spower(0x8BDF6);
+			if (Class24.ThisBiosType == 1)
+			{
+				return this.byte_0.spower(Class24.A6);
+			}
+			else
+            {
+				return this.byte_0.spower(Class24.B6);
+			}
+
 		}
 	}
 
@@ -77,20 +85,374 @@ internal class Class24 : Class1
 	{
 		get
 		{
-			return this.byte_0.spower(0x8BDFA);
+			if (Class24.ThisBiosType == 1)
+			{
+				return this.byte_0.spower(Class24.A7);
+			}
+			else
+            {
+				return this.byte_0.spower(Class24.B7);
+			}
+		}
+	}
+	public string GetMinimumPL
+	{
+		get
+		{
+			if (Class24.ThisBiosType == 1)
+			{
+				return this.byte_0.spower(Class24.A5);
+			}
+			else
+			{
+				return this.byte_0.spower(Class24.B5);
+			}
+		}
+	}
+
+	public string GetDefault8pinPL
+	{
+		get
+		{
+			if (Class24.ThisBiosType == 1)
+			{
+				return this.byte_0.spower(Class24.A17);
+			}
+			else
+			{
+				return this.byte_0.spower(Class24.B17);
+			}
+		}
+	}
+
+	public string GetMax8pinPL
+	{
+		get
+		{
+			if (Class24.ThisBiosType == 1)
+			{
+				return this.byte_0.spower(Class24.A18);
+			}
+			else
+			{
+				return this.byte_0.spower(Class24.B18);
+			}
+		}
+	}
+
+	public string GetDefaultSRCPL
+	{
+		get
+		{
+			if (Class24.ThisBiosType == 1)
+			{
+				return this.byte_0.spower(Class24.A9);
+			}
+			else
+			{
+				return this.byte_0.spower(Class24.B9);
+			}
+		}
+	}
+
+	public string GetDefaultSRC2PL
+	{
+		get
+		{
+			if (Class24.ThisBiosType == 1)
+			{
+				return this.byte_0.spower(Class24.A9_1);
+			}
+			else
+			{
+				return this.byte_0.spower(Class24.B9_1);
+			}
+		}
+	}
+
+	public string GetDefaultSRC3PL
+	{
+		get
+		{
+			if (Class24.ThisBiosType == 1)
+			{
+				return this.byte_0.spower(Class24.A9_2);
+			}
+			else
+			{
+				return this.byte_0.spower(Class24.B9_2);
+			}
+		}
+	}
+
+	public string GetMaxSRCPL
+	{
+		get
+		{
+			if (Class24.ThisBiosType == 1)
+			{
+				return this.byte_0.spower(Class24.A10);
+			}
+			else
+			{
+				return this.byte_0.spower(Class24.B10);
+			}
+		}
+	}
+
+	public string GetMaxSRC2PL
+	{
+		get
+		{
+			if (Class24.ThisBiosType == 1)
+			{
+				return this.byte_0.spower(Class24.A10_1);
+			}
+			else
+			{
+				return this.byte_0.spower(Class24.B10_1);
+			}
 		}
 	}
 
 
-	public void SetDefaultPL(int newlimit)
+	public string GetMaxSRC3PL
 	{
-			this.byte_0.setpower(0x8BDF6, newlimit);
+		get
+		{
+			if (Class24.ThisBiosType == 1)
+			{
+				return this.byte_0.spower(Class24.A10_2);
+			}
+			else
+			{
+				return this.byte_0.spower(Class24.B10_2);
+			}
+		}
 	}
 
-	public void SetMaxPL(int newlimit)
+	public string GetDefaultChipPL
 	{
-			this.byte_0.setpower(0x8BDFA, newlimit);
+		get
+		{
+			if (Class24.ThisBiosType == 1)
+			{
+				return this.byte_0.spower(Class24.A11);
+			}
+			else
+			{
+				return this.byte_0.spower(Class24.B11);
+			}
+		}
 	}
+
+	public string GetMaxChipPL
+	{
+		get
+		{
+			if (Class24.ThisBiosType == 1)
+			{
+				return this.byte_0.spower(Class24.A12);
+			}
+			else
+			{
+				return this.byte_0.spower(Class24.B12);
+			}
+		}
+	}
+
+	public string GetDefaultSlotPL
+	{
+		get
+		{
+			if (Class24.ThisBiosType == 1)
+			{
+				return this.byte_0.spower(Class24.A15);
+			}
+			else
+			{
+				return this.byte_0.spower(Class24.B15);
+			}
+		}
+	}
+
+	public string GetMaxSlotPL
+	{
+		get
+		{
+			if (Class24.ThisBiosType == 1)
+			{
+				return this.byte_0.spower(Class24.A16);
+			}
+			else
+			{
+				return this.byte_0.spower(Class24.B16);
+			}
+		}
+	}
+
+	public string GetDefaultVRAMPL
+	{
+		get
+		{
+			if (Class24.ThisBiosType == 1)
+			{
+				return this.byte_0.spower(Class24.A13);
+			}
+			else
+			{
+				return this.byte_0.spower(Class24.B13);
+			}
+		}
+	}
+
+	public string GetMaxVRAMPL
+	{
+		get
+		{
+			if (Class24.ThisBiosType == 1)
+			{
+				return this.byte_0.spower(Class24.A14);
+			}
+			else
+			{
+				return this.byte_0.spower(Class24.B14);
+			}
+		}
+	}
+
+	public string GetUnknownPL
+	{
+		get
+		{
+			if (Class24.ThisBiosType == 1)
+			{
+				return this.byte_0.spower(Class24.A8);
+			}
+			else
+			{
+				return this.byte_0.spower(Class24.B8);
+			}
+		}
+	}
+
+	public string GetDefAUX1PL
+	{
+		get
+		{
+			if (Class24.ThisBiosType == 1)
+			{
+				return this.byte_0.spower(Class24.A19);
+			}
+			else
+			{
+				return this.byte_0.spower(Class24.B19);
+			}
+		}
+	}
+	public string GetDefAUX2PL
+	{
+		get
+		{
+			if (Class24.ThisBiosType == 1)
+			{
+				return this.byte_0.spower(Class24.A20);
+			}
+			else
+			{
+				return this.byte_0.spower(Class24.B20);
+			}
+		}
+	}
+	public string GetDefAUX3PL
+	{
+		get
+		{
+			if (Class24.ThisBiosType == 1)
+			{
+				return this.byte_0.spower(Class24.A21);
+			}
+			else
+			{
+				return this.byte_0.spower(Class24.B21);
+			}
+		}
+	}
+	public string GetDefAUX4PL
+	{
+		get
+		{
+			if (Class24.ThisBiosType == 1)
+			{
+				return this.byte_0.spower(Class24.A22);
+			}
+			else
+			{
+				return this.byte_0.spower(Class24.B22);
+			}
+		}
+	}
+
+	public string GetMaxAUX1PL
+	{
+		get
+		{
+			if (Class24.ThisBiosType == 1)
+			{
+				return this.byte_0.spower(Class24.A23);
+			}
+			else
+			{
+				return this.byte_0.spower(Class24.B23);
+			}
+		}
+	}
+
+	public string GetMaxAUX2PL
+	{
+		get
+		{
+			if (Class24.ThisBiosType == 1)
+			{
+				return this.byte_0.spower(Class24.A24);
+			}
+			else
+			{
+				return this.byte_0.spower(Class24.B24);
+			}
+		}
+	}
+
+	public string GetMaxAUX3PL
+	{
+		get
+		{
+			if (Class24.ThisBiosType == 1)
+			{
+				return this.byte_0.spower(Class24.A25);
+			}
+			else
+			{
+				return this.byte_0.spower(Class24.B25);
+			}
+		}
+	}
+
+	public string GetMaxAUX4PL
+	{
+		get
+		{
+			if (Class24.ThisBiosType == 1)
+			{
+				return this.byte_0.spower(Class24.A26);
+			}
+			else
+			{
+				return this.byte_0.spower(Class24.B26);
+			}
+		}
+	}
+
 
 	public string Hash
 	{
@@ -123,7 +485,12 @@ internal class Class24 : Class1
 			string biostype = this.byte_0.smethod_1(0, 4);
 			if (biostype == "NVGI")
 			{
-				return true;
+				if (this.byte_0.Length == 999424)
+				{
+					return true;
+				}
+				else
+					return false;
 			}
 			else
 			{
@@ -140,6 +507,9 @@ internal class Class24 : Class1
 		}
 	}
 
+
+	public static byte ThisBiosType = 1;
+	//Constants
 	private const int int_1 = 24;
 	private const int int_2 = 84;
 	private const int int_3 = 56;
@@ -150,6 +520,70 @@ internal class Class24 : Class1
 	private const int int_8 = 14;
 	private const int int_9 = 290;
 	private const int int_10 = 35;
+	public int A1 = 0x18FFF;
+	public int A2 = 0x9200;
+
+	//Bios Type 1
+
+	public static int A3 = 0x8E1FF;
+	public static int A4 = 0x19000;
+	public static int A5 = 0x8BDF2;
+	public static int A6 = 0x8BDF6;
+	public static int A7 = 0x8BDFA;
+	public static int A8 = 0X8BE00;
+	public static int A9 = 0x8BF02;
+	public static int A9_1 = 0x8BF45;
+	public static int A9_2 = 0x8C051;
+	public static int A10 = 0x8BF06;
+	public static int A10_1 = 0x8BF49;
+	public static int A10_2 = 0x8C055;
+	public static int A11 = 0x8C0D7;
+	public static int A12 = 0x8C0DB;
+	public static int A13 = 0x8C1A0;
+	public static int A14 = 0x8C1A4;
+	public static int A15 = 0x8C1E3;
+	public static int A16 = 0x8C1E7;
+	public static int A17 = 0x8C226;
+	public static int A18 = 0x8C22A;
+	public static int A19 = 0x8C837;
+	public static int A20 = 0x8C866;
+	public static int A21 = 0x8C899;
+	public static int A22 = 0x8C8CC;
+	public static int A23 = 0x8C837;
+	public static int A24 = 0x8C86A;
+	public static int A25 = 0x8C89D;
+	public static int A26 = 0x8C8D0;
+
+	//Bios Type 2
+	public static int B3 = 0x8F3FF;
+	public static int B4 = Class24.A4;
+	public static int B5 = 0x8CF04;
+	public static int B6 = 0x8CF08;
+	public static int B7 = 0X8CF0C;
+	public static int B8 = 0x8CF12;
+	public static int B9 = 0;
+	public static int B9_1 = 0;
+	public static int B9_2 = 0;
+	public static int B10 = 0;
+	public static int B10_1 = 0;
+	public static int B10_2 = 0;
+	public static int B11 = 0;
+	public static int B12 = 0;
+	public static int B13 = 0;
+	public static int B14 = 0;
+	public static int B15 = 0;
+	public static int B16 = 0;
+	public static int B17 = 0;
+	public static int B18 = 0;
+	public static int B19 = 0;
+	public static int B20 = 0;
+	public static int B21 = 0;
+	public static int B22 = 0;
+	public static int B23 = 0;
+	public static int B24 = 0;
+	public static int B25 = 0;
+	public static int B26 = 0;
+
 	private static byte[] byte_1 = new byte[]
 	{
 		80,
@@ -284,7 +718,7 @@ internal static class Class29
 	internal static string spower(this byte[] byte_0, int int_0)
 	{
 		byte[] wattage = { byte_0[int_0], byte_0[int_0 + 1], byte_0[int_0 + 2], byte_0[int_0 + 3] };
-		int decWat = BitConverter.ToInt32(wattage, 0) / 1000;
+		int decWat = BitConverter.ToInt32(wattage, 0);
 		string @string = decWat.ToString();
 		return @string;
 	}
@@ -293,7 +727,7 @@ internal static class Class29
 
 	internal static void setpower(this byte[] byte_0, int int_0,int NewPL)
 	{
-		byte[] NewWattage = BitConverter.GetBytes(NewPL * 1000);
+		byte[] NewWattage = BitConverter.GetBytes(NewPL);
 		byte_0[int_0] = NewWattage[0];
 		byte_0[int_0 + 1] = NewWattage[1];
 		byte_0[int_0 + 2] = NewWattage[2];
@@ -373,11 +807,25 @@ internal class Class25 : Class1
 	{
 		get
 		{
-			return this.byte_0[0x8E1FF];
+			if (Class24.ThisBiosType == 1)
+			{
+				return this.byte_0[Class24.A3];
+			}
+			else
+            {
+				return this.byte_0[Class24.B3];
+			}
 		}
 		set
 		{
-			this.byte_0[0x8E1FF] = value;
+			if (Class24.ThisBiosType == 1)
+			{
+				this.byte_0[Class24.A3] = value;
+			}
+			else
+            {
+				this.byte_0[Class24.B3] = value;
+			}
 		}
 	}
 
@@ -387,8 +835,14 @@ internal class Class25 : Class1
 		ulong num = 0UL;
 		if (ImageChecksum2)
 		{
-			int datastart = 0x19000;
-			int dataend = 0x8E1FF;
+
+			int datastart = Class24.A4;
+			int dataend = Class24.A3;
+			if (Class24.ThisBiosType == 2)
+			{
+				datastart = Class24.B4;
+				dataend = Class24.B3;
+			}
 			for (int i = datastart; i < dataend; i++)
 			{
 				num += (ulong)this.byte_0[i];
@@ -438,7 +892,11 @@ internal class Class30
 	private List<Class25> method_0()
 	{
 		List<Class25> list = new List<Class25>();
-		int num = this.byte_1.smethod_0(this.byte_0, 0, false, null);
+        int num = this.byte_1.smethod_0(this.byte_0, 0, false, null);
+		if (num != 0x9200)
+        {
+			num = 0x9200;
+		}
 		if (num > -1)
 		{
 			Class24 @class;

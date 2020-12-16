@@ -1,9 +1,10 @@
+C:\Users\bmg\source\repos\ABE\bin\Release\ABE.exe.config
+C:\Users\bmg\source\repos\ABE\bin\Release\ABE.exe
+C:\Users\bmg\source\repos\ABE\bin\Release\ABE.pdb
+C:\Users\bmg\source\repos\ABE\obj\Release\ABE.csprojAssemblyReference.cache
 C:\Users\bmg\source\repos\ABE\obj\Release\ABE.Form1.resources
 C:\Users\bmg\source\repos\ABE\obj\Release\ABE.Properties.Resources.resources
 C:\Users\bmg\source\repos\ABE\obj\Release\ABE.csproj.GenerateResource.cache
 C:\Users\bmg\source\repos\ABE\obj\Release\ABE.csproj.CoreCompileInputs.cache
-C:\Users\bmg\source\repos\ABE\bin\Release\ABE.exe.config
-C:\Users\bmg\source\repos\ABE\bin\Release\ABE.exe
-C:\Users\bmg\source\repos\ABE\bin\Release\ABE.pdb
 C:\Users\bmg\source\repos\ABE\obj\Release\ABE.exe
 C:\Users\bmg\source\repos\ABE\obj\Release\ABE.pdb

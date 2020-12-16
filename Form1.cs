@@ -1,24 +1,74 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 //Firmware-Checksum 0x18FFF
 //Firmware-Start 0x9200
 
-//Settings-Checksum 0x8E1FF
-//Settings-Start 19000
 
-//Board PowerLimits
-//Default PL 0x8BDF6
-//Max PL 0x8BDFA
+//Type 1 Bios
+//Settings-Checksum 0x8E1FF
+//Settings-Start 0x19000
+
+//PowerLimits
+//Board Minimum PL 0x8BDF2
+//Board Default PL 0x8BDF6
+//Board Max PL 0x8BDFA
+//Unknown 0X8BE00 (350W=3335) (400W=3588) Single Table
+
+//Unknown 0x8C837 (400000)   Part Low
+//		  0x8C866
+//		  0x8C899
+//        0x8C8CC
+
+//Unknown 0x8C837 (500000)   Part High
+//		  0x8C86A
+//		  0x8C89D
+//		  0x8C8D0
+
+
+//SRC Def 0x8BF02 (150000) Plug1
+//        0x8BF45 (150000) Plug2 
+//        0x8C051 (150000) Plug3 
+
+//SRC Max 0x8BF06 (175000) Plug1 
+//        0x8BF49 (175000) Plug2 
+//		  0x8C055 (175000) Plug3 
+
+//ChipPower Def 0x8C0D7 (350w=226800)(400W=243000) Part1
+//ChipPower Max 0x8C0DB (350w=226800)(400w=319920) Part2
+
+//VRAM 0x8C1A0 (93750) Part1
+//VRAM 0x8C1A4 (350w=100000)(400w=107800) Part2
+
+//PCI-E Slot Def 0x8C1E3
+//PCI-E Slot Max 0x8C1E7
+
+//8pinPlug Def 0x8C226 (350w=121500)(400w=145800) Part1
+//8pinPlug Max 0x8C22A (350w=121500)(400W=162000) Part2
+
+//Type 2 Bios 
+//Settings-Checksum 0x8F3FF (0x1200 offset)
+//Settings-Start 0x19000
+
+//PowerLimits
+//Board Minimum PL 0x8CF04 (0x1112 offset)
+//Board Default PL 0x8CF08
+//Board Max PL  0X8CF0C
+//Unknown 0x8CF12
+//SRC Def 
+//SRC Max 
+//ChipPower Def 
+//ChipPower Max 
+//VRAM Def  
+//VRAM Max  
+//PCI-E Slot Def 
+//PCI-E Slot Max 
+//8pinPlug Def 
+//8pinPlug Max 
 
 namespace ABE
 {
@@ -67,6 +117,49 @@ namespace ABE
 			}
 		}
 
+		private bool CheckMD5()
+        {
+			switch (this.RomHeader.Hash)
+            {
+                case "cf8b37fe940a85050b212e87798b339e":
+					Class24.ThisBiosType = 2;
+                    KingPinWarning();
+                    return true;
+                case "4760b62bdbb01260de56597c3d85ac4a":
+					Class24.ThisBiosType = 2;
+					KingPinWarning();
+					return true;
+				case "e4511fe6d20827b85058186f97b42c55":
+					Class24.ThisBiosType = 2;
+					KingPinWarning();
+					return true;
+				case "8017929d9a182440c581a6ed107bbdce":
+					Class24.ThisBiosType = 2;
+					KingPinWarning();
+					return true;
+				case "889c2f6b5a436cb3ed56c4e18899eeb9":
+					Class24.ThisBiosType = 2;
+					KingPinWarning();
+					return true;
+				case "ae2c678973f9c4daa053a53205126905":
+					Class24.ThisBiosType = 2;
+					KingPinWarning();
+					return true;
+				case "68ec3d602eb615bb417b20abf07719d6":
+					Class24.ThisBiosType = 2;
+					KingPinWarning();
+					return true;
+				default:
+					Class24.ThisBiosType = 1;
+					return true;
+            }
+        }
+
+		private void KingPinWarning()
+        {
+			MessageBox.Show("This is a Type2 Bios and has less support then Type1 (Reference).");
+		}
+
 		private void UpdateDisplay()
 		{
 			if (this.RomHeader == null)
@@ -92,6 +185,32 @@ namespace ABE
 			lblHash.Text = this.RomHeader.Hash;
 			lblDefaultPL.Text = this.RomHeader.GetDefaultPL;
 			lblMaxPL.Text = this.RomHeader.GetMaxPL;
+			lblMinimumPL.Text = this.RomHeader.GetMinimumPL;
+			lblDefault8pinPL.Text = this.RomHeader.GetDefault8pinPL;
+			lblMax8pinPL.Text = this.RomHeader.GetMax8pinPL;
+			lblDefaultSRCPL.Text = this.RomHeader.GetDefaultSRCPL;
+			lblDefaultSRC2PL.Text = this.RomHeader.GetDefaultSRC2PL;
+			lblDefaultSRC3PL.Text = this.RomHeader.GetDefaultSRC3PL;
+			lblMaxSRCPL.Text = this.RomHeader.GetMaxSRCPL;
+			lblMaxSRC2PL.Text = this.RomHeader.GetMaxSRC2PL;
+			lblMaxSRC3PL.Text = this.RomHeader.GetMaxSRC3PL;
+			lblDefaultChipPL.Text = this.RomHeader.GetDefaultChipPL;
+			lblMaxChipPL.Text = this.RomHeader.GetMaxChipPL;
+			lblDefaultSlotPL.Text = this.RomHeader.GetDefaultSlotPL;
+			lblMaxSlotPL.Text = this.RomHeader.GetMaxSlotPL;
+			lblDefaultVRAMPL.Text = this.RomHeader.GetDefaultVRAMPL;
+			lblMaxVRAMPL.Text = this.RomHeader.GetMaxVRAMPL;
+			lblUnknownPL.Text = this.RomHeader.GetUnknownPL;
+
+			lblDefAUX1PL.Text = this.RomHeader.GetDefAUX1PL;
+			lblDefAUX2PL.Text = this.RomHeader.GetDefAUX2PL;
+			lblDefAUX3PL.Text = this.RomHeader.GetDefAUX3PL;
+			lblDefAUX4PL.Text = this.RomHeader.GetDefAUX4PL;
+			lblMaxAUX1PL.Text = this.RomHeader.GetMaxAUX1PL;
+			lblMaxAUX2PL.Text = this.RomHeader.GetMaxAUX2PL;
+			lblMaxAUX3PL.Text = this.RomHeader.GetMaxAUX3PL;
+			lblMaxAUX4PL.Text = this.RomHeader.GetMaxAUX4PL;
+
 		}
 
 
@@ -170,9 +289,62 @@ namespace ABE
 			this.lblDate.Text = "";
 			this.lblFilename.Text = "";
 			this.lblChkSum.Text = "";
+
+			this.lblMinimumPL.Text = "";
+			this.lblDefaultPL.Text = "";
+			this.lblMaxPL.Text = "";
+			this.lblDefault8pinPL.Text = "";
+			this.lblMax8pinPL.Text = "";
+			this.lblDefaultSRCPL.Text = "";
+			this.lblMaxSRCPL.Text = "";
+			this.lblDefaultChipPL.Text = "";
+			this.lblMaxChipPL.Text = "";
+			this.lblDefaultSlotPL.Text = "";
+			this.lblMaxSlotPL.Text = "";
+			this.lblDefaultVRAMPL.Text = "";
+			this.lblMaxVRAMPL.Text = "";
+			this.lblUnknownPL.Text = "";
+			this.lblDefAUX1PL.Text = "";
+			this.lblDefAUX2PL.Text = "";
+			this.lblDefAUX3PL.Text = "";
+			this.lblDefAUX4PL.Text = "";
+			this.lblMaxAUX1PL.Text = "";
+			this.lblMaxAUX2PL.Text = "";
+			this.lblMaxAUX3PL.Text = "";
+			this.lblMaxAUX4PL.Text = "";
+			this.lblDefaultSRC2PL.Text = "";
+			this.lblDefaultSRC3PL.Text = "";
+			this.lblMaxSRC2PL.Text = "";
+			this.lblMaxSRC3PL.Text = "";
+
 			this.lblDefaultPL.Enabled = false;
 			this.lblMaxPL.Enabled = false;
 			this.Btn_Save.Enabled = false;
+			this.lblMinimumPL.Enabled = false;
+			this.lblDefault8pinPL.Enabled = false;
+			this.lblMax8pinPL.Enabled = false;
+			this.lblDefaultSRCPL.Enabled = false;
+			this.lblMaxSRCPL.Enabled = false;
+			this.lblDefaultChipPL.Enabled = false;
+			this.lblMaxChipPL.Enabled = false;
+			this.lblDefaultSlotPL.Enabled = false;
+			this.lblMaxSlotPL.Enabled = false;
+			this.lblDefaultVRAMPL.Enabled = false;
+			this.lblMaxVRAMPL.Enabled = false;
+			this.lblUnknownPL.Enabled = false;
+			this.lblDefAUX1PL.Enabled = false;
+			this.lblDefAUX2PL.Enabled = false;
+			this.lblDefAUX3PL.Enabled = false;
+			this.lblDefAUX4PL.Enabled = false;
+			this.lblMaxAUX1PL.Enabled = false;
+			this.lblMaxAUX2PL.Enabled = false;
+			this.lblMaxAUX3PL.Enabled = false;
+			this.lblMaxAUX4PL.Enabled = false;
+			this.lblDefaultSRC2PL.Enabled = false;
+			this.lblDefaultSRC3PL.Enabled = false;
+			this.lblMaxSRC2PL.Enabled = false;
+			this.lblMaxSRC3PL.Enabled = false;
+
 			this.lblChkSum.BackColor = SystemColors.Control;
 		}
 
@@ -199,13 +371,13 @@ namespace ABE
 
 		private void method_3(string string_0)
 		{
-			try
-			{
+			//try
+			//{
 				this.method_2();
 				this.class30_0 = new Class30(string_0);
 				Class25 @class = this.class30_0.list_0[0];
 				this.RomHeader = @class.class24_0;
-				if (RomHeader.Boolean_0)
+				if (RomHeader.Boolean_0 && CheckMD5())
 				{
 
 					this.FileName = new FileInfo(string_0).Name;
@@ -216,14 +388,38 @@ namespace ABE
 					this.lblDefaultPL.Enabled = true;
 					this.lblMaxPL.Enabled = true;
 					this.Btn_Save.Enabled = true;
+					this.lblMinimumPL.Enabled = true;
+					this.lblDefault8pinPL.Enabled = true;
+					this.lblMax8pinPL.Enabled = true;
+					this.lblDefaultSRCPL.Enabled = true;
+					this.lblMaxSRCPL.Enabled = true;
+					this.lblDefaultChipPL.Enabled = true;
+					this.lblMaxChipPL.Enabled = true;
+					this.lblDefaultSlotPL.Enabled = true;
+					this.lblMaxSlotPL.Enabled = true;
+					this.lblDefaultVRAMPL.Enabled = true;
+					this.lblMaxVRAMPL.Enabled = true;
+					this.lblUnknownPL.Enabled = true;
+					this.lblDefAUX1PL.Enabled = true;
+					this.lblDefAUX2PL.Enabled = true;
+					this.lblDefAUX3PL.Enabled = true;
+					this.lblDefAUX4PL.Enabled = true;
+					this.lblMaxAUX1PL.Enabled = true;
+					this.lblMaxAUX2PL.Enabled = true;
+					this.lblMaxAUX3PL.Enabled = true;
+					this.lblMaxAUX4PL.Enabled = true;
+					this.lblDefaultSRC2PL.Enabled = true;
+					this.lblDefaultSRC3PL.Enabled = true;
+					this.lblMaxSRC2PL.Enabled = true;
+					this.lblMaxSRC3PL.Enabled = true;
 				return;
 				}
 				this.ResetDisplay(true);
-			}
-			catch
-			{
-				this.ResetDisplay(true);
-			}
+			//}
+			//catch
+			//{
+			//	this.ResetDisplay(true);
+			//}
 		}
 
         private void Form1_Load(object sender, EventArgs e)
@@ -246,19 +442,301 @@ namespace ABE
 			}
         }
 
+		private bool notnull()
+        {
+			if (lblMinimumPL.Text.Length != 0 &&
+				lblDefaultPL.Text.Length != 0 && 
+				lblMaxPL.Text.Length != 0 && 
+				lblDefault8pinPL.Text.Length != 0 &&
+				lblMax8pinPL.Text.Length != 0 &&
+				lblDefaultSRCPL.Text.Length != 0 &&
+				lblMaxSRCPL.Text.Length != 0 &&
+				lblDefaultChipPL.Text.Length != 0 &&
+				lblMaxChipPL.Text.Length != 0 &&
+				lblDefaultSlotPL.Text.Length != 0 &&
+				lblMaxSlotPL.Text.Length != 0 &&
+				lblDefaultVRAMPL.Text.Length != 0 &&
+				lblMaxVRAMPL.Text.Length != 0 &&
+				lblUnknownPL.Text.Length != 0)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+        }
 
-		private void EditBiosBoardPowerLimit(bool max)
+
+		private void EditBiosBoardPowerLimit(byte max)
 		{ 
-			if (lblDefaultPL.Text.Length != 0 && lblMaxPL.Text.Length !=0)
+			if (notnull())
             {
 				Class25 @class = this.class30_0.list_0[0];
-				if (!max)
-				{
-					Class29.setpower(class30_0.byte_1, 0x8BDF6, int.Parse(lblDefaultPL.Text));
-				}
-				else
-				{
-					Class29.setpower(class30_0.byte_1, 0x8BDFA, int.Parse(lblMaxPL.Text));
+				switch(max)
+                {
+					case 0:
+						if (Class24.ThisBiosType == 1)
+						{
+							Class29.setpower(class30_0.byte_1, Class24.A5, int.Parse(lblMinimumPL.Text));
+						}
+						else
+                        {
+							Class29.setpower(class30_0.byte_1, Class24.B5, int.Parse(lblMinimumPL.Text));
+						}
+						break;
+					case 1:
+						if (Class24.ThisBiosType == 1)
+						{
+							Class29.setpower(class30_0.byte_1, Class24.A6, int.Parse(lblDefaultPL.Text));
+						}
+						else
+						{
+							Class29.setpower(class30_0.byte_1, Class24.B6, int.Parse(lblDefaultPL.Text));
+						}
+						break;
+					case 2:
+						if (Class24.ThisBiosType == 1)
+						{
+							Class29.setpower(class30_0.byte_1, Class24.A7, int.Parse(lblMaxPL.Text));
+						}
+						else
+						{
+							Class29.setpower(class30_0.byte_1, Class24.B7, int.Parse(lblMaxPL.Text));
+						}
+						break;
+					case 3:
+						if (Class24.ThisBiosType == 1)
+						{
+							Class29.setpower(class30_0.byte_1, Class24.A17, int.Parse(lblDefault8pinPL.Text));
+						}
+						else
+						{
+							Class29.setpower(class30_0.byte_1, Class24.B17, int.Parse(lblDefault8pinPL.Text));
+						}
+						break;
+					case 4:
+						if (Class24.ThisBiosType == 1)
+						{
+							Class29.setpower(class30_0.byte_1, Class24.A18, int.Parse(lblMax8pinPL.Text));
+						}
+						else
+						{
+							Class29.setpower(class30_0.byte_1, Class24.B18, int.Parse(lblMax8pinPL.Text));
+						}
+						break;
+					case 5:
+						if (Class24.ThisBiosType == 1)
+						{
+							Class29.setpower(class30_0.byte_1, Class24.A9, int.Parse(lblDefaultSRCPL.Text));
+						}
+						else
+						{
+							Class29.setpower(class30_0.byte_1, Class24.A9, int.Parse(lblDefaultSRCPL.Text));
+						}
+						break;
+					case 6:
+						if (Class24.ThisBiosType == 1)
+						{
+							Class29.setpower(class30_0.byte_1, Class24.A10, int.Parse(lblMaxSRCPL.Text));
+						}
+						else
+						{
+							Class29.setpower(class30_0.byte_1, Class24.B10, int.Parse(lblMaxSRCPL.Text));
+						}
+						break;
+					case 7:
+						if (Class24.ThisBiosType == 1)
+						{
+							Class29.setpower(class30_0.byte_1, Class24.A11, int.Parse(lblDefaultChipPL.Text));
+						}
+						else
+						{
+							Class29.setpower(class30_0.byte_1, Class24.B11, int.Parse(lblDefaultChipPL.Text));
+						}
+						break;
+					case 8:
+						if (Class24.ThisBiosType == 1)
+						{
+							Class29.setpower(class30_0.byte_1, Class24.A12, int.Parse(lblMaxChipPL.Text));
+						}
+						else
+						{
+							Class29.setpower(class30_0.byte_1, Class24.B12, int.Parse(lblMaxChipPL.Text));
+						}
+						break;
+					case 9:
+						if (Class24.ThisBiosType == 1)
+						{
+							Class29.setpower(class30_0.byte_1, Class24.A15, int.Parse(lblDefaultSlotPL.Text));
+						}
+						else
+						{
+							Class29.setpower(class30_0.byte_1, Class24.B15, int.Parse(lblDefaultSlotPL.Text));
+						}
+						break;
+					case 10:
+						if (Class24.ThisBiosType == 1)
+						{
+							Class29.setpower(class30_0.byte_1, Class24.A16, int.Parse(lblMaxSlotPL.Text));
+						}
+						else
+						{
+							Class29.setpower(class30_0.byte_1, Class24.B16, int.Parse(lblMaxSlotPL.Text));
+						}
+						break;
+					case 11:
+						if (Class24.ThisBiosType == 1)
+						{
+							Class29.setpower(class30_0.byte_1, Class24.A13, int.Parse(lblDefaultVRAMPL.Text));
+						}
+						else
+						{
+							Class29.setpower(class30_0.byte_1, Class24.B13, int.Parse(lblDefaultVRAMPL.Text));
+						}
+						break;
+					case 12:
+						if (Class24.ThisBiosType == 1)
+						{
+							Class29.setpower(class30_0.byte_1, Class24.A14, int.Parse(lblMaxVRAMPL.Text));
+						}
+						else
+						{
+							Class29.setpower(class30_0.byte_1, Class24.B14, int.Parse(lblMaxVRAMPL.Text));
+						}
+						break;
+					case 13:
+						if (Class24.ThisBiosType == 1)
+						{
+							Class29.setpower(class30_0.byte_1, Class24.A8, int.Parse(lblUnknownPL.Text));
+						}
+						else
+						{
+							Class29.setpower(class30_0.byte_1, Class24.B8, int.Parse(lblUnknownPL.Text));
+						}
+						break;
+					case 14:
+						if (Class24.ThisBiosType == 1)
+						{
+							Class29.setpower(class30_0.byte_1, Class24.A9_1, int.Parse(lblDefaultSRC2PL.Text));
+						}
+						else
+						{
+							Class29.setpower(class30_0.byte_1, Class24.B9_1, int.Parse(lblDefaultSRC2PL.Text));
+						}
+						break;
+					case 15:
+						if (Class24.ThisBiosType == 1)
+						{
+							Class29.setpower(class30_0.byte_1, Class24.A9_2, int.Parse(lblDefaultSRC3PL.Text));
+						}
+						else
+						{
+							Class29.setpower(class30_0.byte_1, Class24.B9_2, int.Parse(lblDefaultSRC3PL.Text));
+						}
+						break;
+					case 16:
+						if (Class24.ThisBiosType == 1)
+						{
+							Class29.setpower(class30_0.byte_1, Class24.A10_1, int.Parse(lblMaxSRC2PL.Text));
+						}
+						else
+						{
+							Class29.setpower(class30_0.byte_1, Class24.B10_1, int.Parse(lblMaxSRC2PL.Text));
+						}
+						break;
+					case 17:
+						if (Class24.ThisBiosType == 1)
+						{
+							Class29.setpower(class30_0.byte_1, Class24.A10_2, int.Parse(lblMaxSRC3PL.Text));
+						}
+						else
+						{
+							Class29.setpower(class30_0.byte_1, Class24.B10_2, int.Parse(lblMaxSRC3PL.Text));
+						}
+						break;
+					case 18:
+						if (Class24.ThisBiosType == 1)
+						{
+							Class29.setpower(class30_0.byte_1, Class24.A19, int.Parse(lblDefAUX1PL.Text));
+						}
+						else
+						{
+							Class29.setpower(class30_0.byte_1, Class24.B19, int.Parse(lblDefAUX1PL.Text));
+						}
+						break;
+					case 19:
+						if (Class24.ThisBiosType == 1)
+						{
+							Class29.setpower(class30_0.byte_1, Class24.A20, int.Parse(lblDefAUX2PL.Text));
+						}
+						else
+						{
+							Class29.setpower(class30_0.byte_1, Class24.B20, int.Parse(lblDefAUX2PL.Text));
+						}
+						break;
+					case 20:
+						if (Class24.ThisBiosType == 1)
+						{
+							Class29.setpower(class30_0.byte_1, Class24.A21, int.Parse(lblDefAUX3PL.Text));
+						}
+						else
+						{
+							Class29.setpower(class30_0.byte_1, Class24.B21, int.Parse(lblDefAUX3PL.Text));
+						}
+						break;
+					case 21:
+						if (Class24.ThisBiosType == 1)
+						{
+							Class29.setpower(class30_0.byte_1, Class24.A22, int.Parse(lblDefAUX4PL.Text));
+						}
+						else
+						{
+							Class29.setpower(class30_0.byte_1, Class24.B22, int.Parse(lblDefAUX4PL.Text));
+						}
+						break;
+					case 22:
+						if (Class24.ThisBiosType == 1)
+						{
+							Class29.setpower(class30_0.byte_1, Class24.A23, int.Parse(lblMaxAUX1PL.Text));
+						}
+						else
+						{
+							Class29.setpower(class30_0.byte_1, Class24.B23, int.Parse(lblMaxAUX1PL.Text));
+						}
+						break;
+					case 23:
+						if (Class24.ThisBiosType == 1)
+						{
+							Class29.setpower(class30_0.byte_1, Class24.A24, int.Parse(lblMaxAUX2PL.Text));
+						}
+						else
+						{
+							Class29.setpower(class30_0.byte_1, Class24.B24, int.Parse(lblMaxAUX2PL.Text));
+						}
+						break;
+					case 24:
+						if (Class24.ThisBiosType == 1)
+						{
+							Class29.setpower(class30_0.byte_1, Class24.A25, int.Parse(lblMaxAUX3PL.Text));
+						}
+						else
+						{
+							Class29.setpower(class30_0.byte_1, Class24.B25, int.Parse(lblMaxAUX3PL.Text));
+						}
+						break;
+					case 25:
+						if (Class24.ThisBiosType == 1)
+						{
+							Class29.setpower(class30_0.byte_1, Class24.A26, int.Parse(lblMaxAUX4PL.Text));
+						}
+						else
+						{
+							Class29.setpower(class30_0.byte_1, Class24.B26, int.Parse(lblMaxAUX4PL.Text));
+						}
+						break;
+					default:
+						break;
 				}
 				this.GeneratedChecksum2 = @class.method_2(true);
 				this.lblChkSum.Text = string.Format("{0:X2} - [{1:X2}] / {2:X2} - [{3:X2}]", this.ImageChecksum, this.GeneratedChecksum, this.ImageChecksum2, this.GeneratedChecksum2);
@@ -314,14 +792,164 @@ namespace ABE
 			}
 		}
 
-        private void lblDefaultPL_Validated(object sender, EventArgs e)
+		private void lblMinimumPL_Validated(object sender, EventArgs e)
+		{
+			EditBiosBoardPowerLimit(0);
+		}
+
+		private void lblDefaultPL_Validated(object sender, EventArgs e)
         {
-			EditBiosBoardPowerLimit(false);
+			EditBiosBoardPowerLimit(1);
 		}
 
         private void lblMaxPL_Validated(object sender, EventArgs e)
         {
-			EditBiosBoardPowerLimit(true);
+			EditBiosBoardPowerLimit(2);
+		}
+
+        private void lblDefault8pinPL_Validated(object sender, EventArgs e)
+        {
+			EditBiosBoardPowerLimit(3);
+		}
+
+        private void lblMax8pinPL_Validated(object sender, EventArgs e)
+        {
+			EditBiosBoardPowerLimit(4);
+		}
+
+        private void lblDefaultSRCPL_Validated(object sender, EventArgs e)
+        {
+			EditBiosBoardPowerLimit(5);
+		}
+
+        private void lblMaxSRCPL_Validated(object sender, EventArgs e)
+        {
+			EditBiosBoardPowerLimit(6);
+		}
+
+        private void lblDefaultChipPL_Validated(object sender, EventArgs e)
+        {
+			EditBiosBoardPowerLimit(7);
+		}
+
+        private void lblMaxChipPL_Validated(object sender, EventArgs e)
+        {
+			EditBiosBoardPowerLimit(8);
+		}
+
+        private void lblDefaultSlotPL_Validated(object sender, EventArgs e)
+        {
+			EditBiosBoardPowerLimit(9);
+		}
+
+        private void lblMaxSlotPL_Validated(object sender, EventArgs e)
+        {
+			EditBiosBoardPowerLimit(10);
+		}
+
+        private void lblDefaultVRAMPL_Validated(object sender, EventArgs e)
+        {
+			EditBiosBoardPowerLimit(11);
+		}
+
+        private void lblMaxVRAMPL_Validated(object sender, EventArgs e)
+        {
+			EditBiosBoardPowerLimit(12);
+		}
+
+        private void lblUnknownPL_Validated(object sender, EventArgs e)
+        {
+			EditBiosBoardPowerLimit(13);
+		}
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+			string databasedump = 
+				lblSubVendor.Text + "," + 
+				lblDate.Text + "," + 
+				lblBIOS.Text + "," + 
+				lblHash.Text + "," + 
+				lblMinimumPL.Text + "," + 
+				lblDefaultPL.Text + "," + 
+				lblMaxPL.Text + "," + 
+				lblDefault8pinPL.Text + "," + 
+				lblMax8pinPL.Text + "," + 
+				lblDefaultSRCPL.Text + "," + 
+				lblMaxSRCPL.Text + "," + 
+				lblDefaultChipPL.Text + "," +
+				lblMaxChipPL.Text + "," +
+				lblDefaultSlotPL.Text + "," +
+				lblMaxSlotPL.Text + "," +
+				lblDefaultVRAMPL.Text + "," +
+				lblMaxVRAMPL.Text + "," +
+				lblUnknownPL.Text;
+			Clipboard.SetText(databasedump);
+
+		}
+
+        private void lFilename_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+			button1.Visible = true;
+		}
+
+        private void lblDefaultSRC2PL_Validated(object sender, EventArgs e)
+        {
+			EditBiosBoardPowerLimit(14);
+		}
+
+        private void lblDefaultSRC3PL_Validated(object sender, EventArgs e)
+        {
+			EditBiosBoardPowerLimit(15);
+		}
+
+        private void lblMaxSRC2PL_Validated(object sender, EventArgs e)
+        {
+			EditBiosBoardPowerLimit(16);
+		}
+
+        private void lblMaxSRC3PL_Validated(object sender, EventArgs e)
+        {
+			EditBiosBoardPowerLimit(17);
+		}
+
+        private void lblDefAUX1PL_Validated(object sender, EventArgs e)
+        {
+			EditBiosBoardPowerLimit(18);
+		}
+
+        private void lblDefAUX2PL_Validated(object sender, EventArgs e)
+        {
+			EditBiosBoardPowerLimit(19);
+		}
+
+        private void lblDefAUX3PL_Validated(object sender, EventArgs e)
+        {
+			EditBiosBoardPowerLimit(20);
+		}
+
+        private void lblDefAUX4PL_Validated(object sender, EventArgs e)
+        {
+			EditBiosBoardPowerLimit(21);
+		}
+
+        private void lblMaxAUX1PL_VisibleChanged(object sender, EventArgs e)
+        {
+			EditBiosBoardPowerLimit(22);
+		}
+
+        private void lblMaxAUX2PL_Validated(object sender, EventArgs e)
+        {
+			EditBiosBoardPowerLimit(23);
+		}
+
+        private void lblMaxAUX3PL_Validated(object sender, EventArgs e)
+        {
+			EditBiosBoardPowerLimit(24);
+		}
+
+        private void lblMaxAUX4PL_Validated(object sender, EventArgs e)
+        {
+			EditBiosBoardPowerLimit(25);
 		}
     }
 }
