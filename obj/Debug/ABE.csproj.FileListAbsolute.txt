@@ -1,7 +1,6 @@
 C:\Users\bmg\source\repos\ABE\bin\Debug\ABE.exe.config
 C:\Users\bmg\source\repos\ABE\bin\Debug\ABE.exe
 C:\Users\bmg\source\repos\ABE\bin\Debug\ABE.pdb
-C:\Users\bmg\source\repos\ABE\obj\Debug\ABE.csprojAssemblyReference.cache
 C:\Users\bmg\source\repos\ABE\obj\Debug\ABE.Form1.resources
 C:\Users\bmg\source\repos\ABE\obj\Debug\ABE.Properties.Resources.resources
 C:\Users\bmg\source\repos\ABE\obj\Debug\ABE.csproj.GenerateResource.cache

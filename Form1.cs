@@ -5,70 +5,7 @@ using System.IO;
 using System.Reflection;
 using System.Windows.Forms;
 
-//Firmware-Checksum 0x18FFF
-//Firmware-Start 0x9200
 
-
-//Type 1 Bios
-//Settings-Checksum 0x8E1FF
-//Settings-Start 0x19000
-
-//PowerLimits
-//Board Minimum PL 0x8BDF2
-//Board Default PL 0x8BDF6
-//Board Max PL 0x8BDFA
-//Unknown 0X8BE00 (350W=3335) (400W=3588) Single Table
-
-//Unknown 0x8C837 (400000)   Part Low
-//		  0x8C866
-//		  0x8C899
-//        0x8C8CC
-
-//Unknown 0x8C837 (500000)   Part High
-//		  0x8C86A
-//		  0x8C89D
-//		  0x8C8D0
-
-
-//SRC Def 0x8BF02 (150000) Plug1
-//        0x8BF45 (150000) Plug2 
-//        0x8C051 (150000) Plug3 
-
-//SRC Max 0x8BF06 (175000) Plug1 
-//        0x8BF49 (175000) Plug2 
-//		  0x8C055 (175000) Plug3 
-
-//ChipPower Def 0x8C0D7 (350w=226800)(400W=243000) Part1
-//ChipPower Max 0x8C0DB (350w=226800)(400w=319920) Part2
-
-//VRAM 0x8C1A0 (93750) Part1
-//VRAM 0x8C1A4 (350w=100000)(400w=107800) Part2
-
-//PCI-E Slot Def 0x8C1E3
-//PCI-E Slot Max 0x8C1E7
-
-//8pinPlug Def 0x8C226 (350w=121500)(400w=145800) Part1
-//8pinPlug Max 0x8C22A (350w=121500)(400W=162000) Part2
-
-//Type 2 Bios 
-//Settings-Checksum 0x8F3FF (0x1200 offset)
-//Settings-Start 0x19000
-
-//PowerLimits
-//Board Minimum PL 0x8CF04 (0x1112 offset)
-//Board Default PL 0x8CF08
-//Board Max PL  0X8CF0C
-//Unknown 0x8CF12
-//SRC Def 
-//SRC Max 
-//ChipPower Def 
-//ChipPower Max 
-//VRAM Def  
-//VRAM Max  
-//PCI-E Slot Def 
-//PCI-E Slot Max 
-//8pinPlug Def 
-//8pinPlug Max 
 
 namespace ABE
 {
@@ -79,9 +16,11 @@ namespace ABE
             InitializeComponent();
 			this.list_0 = this.method_1();
 		}
-
+		public static bool triedalready = false;
+		public static bool notsupported = false;
 		private Class24 _RomHeader;
 		private string _FileName;
+		private string _FileDir;
 		private byte _ImageChecksum;
 		private byte _ImageChecksum2;
 		private byte _GeneratedChecksum;
@@ -123,41 +62,108 @@ namespace ABE
             {
                 case "cf8b37fe940a85050b212e87798b339e":
 					Class24.ThisBiosType = 2;
-                    KingPinWarning();
+					Type2Warning();
                     return true;
                 case "4760b62bdbb01260de56597c3d85ac4a":
 					Class24.ThisBiosType = 2;
-					KingPinWarning();
+					Type2Warning();
 					return true;
 				case "e4511fe6d20827b85058186f97b42c55":
 					Class24.ThisBiosType = 2;
-					KingPinWarning();
+					Type2Warning();
 					return true;
 				case "8017929d9a182440c581a6ed107bbdce":
 					Class24.ThisBiosType = 2;
-					KingPinWarning();
+					Type2Warning();
 					return true;
 				case "889c2f6b5a436cb3ed56c4e18899eeb9":
 					Class24.ThisBiosType = 2;
-					KingPinWarning();
+					Type2Warning();
 					return true;
 				case "ae2c678973f9c4daa053a53205126905":
 					Class24.ThisBiosType = 2;
-					KingPinWarning();
+					Type2Warning();
 					return true;
 				case "68ec3d602eb615bb417b20abf07719d6":
 					Class24.ThisBiosType = 2;
-					KingPinWarning();
+					Type2Warning();
+					return true;
+				case "58566f6ba754c95b8838d4276a662f61":
+					Class24.ThisBiosType = 2;
+					Type2Warning();
+					return true;
+				case "2733eb04d8c0ec2a7d561b7306ad38e6":
+					Class24.ThisBiosType = 2;
+					Type2Warning();
+					return true;
+				//3080
+				case "2e8a6d0da567f87345a70c279b81f325":
+					Class24.ThisBiosType = 2;
+					Type2Warning();
+					return true;
+				case "3fb11fab95af362775dbf034cad119a2":
+					Class24.ThisBiosType = 2;
+					Type2Warning();
+					return true;
+				case "81a0f234218a494bc4d92b4d94b2b68f":
+					Class24.ThisBiosType = 2;
+					Type2Warning();
+					return true;
+				case "711bde3d69b017178eb8da387700b0a2":
+					Class24.ThisBiosType = 2;
+					Type2Warning();
+					return true;
+				case "c9078ea00d8cd5f2819994d0eddc5088":
+					Class24.ThisBiosType = 2;
+					Type2Warning();
+					return true;
+				case "a7badc1b16426818f4c0d49463cef098":
+					Class24.ThisBiosType = 2;
+					Type2Warning();
+					return true;
+				case "43aff3b5a7777abd6a94c1d31e868c36":
+					Class24.ThisBiosType = 2;
+					Type2Warning();
+					return true;
+				case "888cf1df22663c4e56025a6927558c56":
+					Class24.ThisBiosType = 2;
+					Type2Warning();
+					return true;
+				case "edcf0861f45d29fbae4695c27a06a1c1":
+					Class24.ThisBiosType = 2;
+					Type2Warning();
+					return true;
+				case "ea51d0d6dde4b41548f3ee6f7cfc816f":
+					Class24.ThisBiosType = 2;
+					Type2Warning();
+					return true;
+                case "f51900c425b32be1db67c7f7e67e89f3":
+                    Class24.ThisBiosType = 2;
+					Type2Warning();
+                    return true;
+				case "aa212fd0e4c7b4a0ddecb21acbcdc019": //3080 FE
+					Class24.ThisBiosType = 3;
+					MessageBox.Show("Warning 3080 FE tables not found.");
+					triedalready = true;
 					return true;
 				default:
-					Class24.ThisBiosType = 1;
+					if (Class24.ThisBiosType == 0)
+					{
+						Class24.ThisBiosType = 2;
+						Type2Warning();
+					}
+					else
+					{
+						Class24.ThisBiosType = 1;
+					}
+
 					return true;
             }
         }
 
-		private void KingPinWarning()
+		private void Type2Warning()
         {
-			MessageBox.Show("This is a Type2 Bios and has less support then Type1 (Reference).");
+			//MessageBox.Show("Type2 Bios have less support then Type1.");
 		}
 
 		private void UpdateDisplay()
@@ -166,7 +172,7 @@ namespace ABE
 			{
 				return;
 			}
-			this.lblName.Text = this.RomHeader.String_1.Replace("\r\n", " ");
+            this.lblName.Text = this.RomHeader.String_1.Replace("\r\n", " ");
 			this.lblGPU.Text = this.RomHeader.String_3;
 			this.lblBIOS.Text = this.RomHeader.String_2;
 			this.lblDevID.Text = string.Format("{0:X4} - {1:X4}", this.RomHeader.class26_0.UInt16_0, this.RomHeader.class26_0.UInt16_1);
@@ -184,6 +190,7 @@ namespace ABE
 			this.lblFilename.Text = this.FileName;
 			lblHash.Text = this.RomHeader.Hash;
 			lblDefaultPL.Text = this.RomHeader.GetDefaultPL;
+
 			lblMaxPL.Text = this.RomHeader.GetMaxPL;
 			lblMinimumPL.Text = this.RomHeader.GetMinimumPL;
 			lblDefault8pinPL.Text = this.RomHeader.GetDefault8pinPL;
@@ -210,7 +217,6 @@ namespace ABE
 			lblMaxAUX2PL.Text = this.RomHeader.GetMaxAUX2PL;
 			lblMaxAUX3PL.Text = this.RomHeader.GetMaxAUX3PL;
 			lblMaxAUX4PL.Text = this.RomHeader.GetMaxAUX4PL;
-
 		}
 
 
@@ -279,6 +285,18 @@ namespace ABE
 			}
 		}
 
+		public string FileDir
+		{
+			get
+			{
+				return this._FileDir;
+			}
+			set
+			{
+				this._FileDir = value;
+			}
+		}
+
 		public void ResetDisplay(bool unsupported = false)
 		{
 			this.lblName.Text = (unsupported ? "Unsupported Device" : "");
@@ -316,7 +334,12 @@ namespace ABE
 			this.lblDefaultSRC3PL.Text = "";
 			this.lblMaxSRC2PL.Text = "";
 			this.lblMaxSRC3PL.Text = "";
+			DisableControls();
+			this.lblChkSum.BackColor = SystemColors.Control;
+		}
 
+		private void DisableControls()
+        {
 			this.lblDefaultPL.Enabled = false;
 			this.lblMaxPL.Enabled = false;
 			this.Btn_Save.Enabled = false;
@@ -344,8 +367,6 @@ namespace ABE
 			this.lblDefaultSRC3PL.Enabled = false;
 			this.lblMaxSRC2PL.Enabled = false;
 			this.lblMaxSRC3PL.Enabled = false;
-
-			this.lblChkSum.BackColor = SystemColors.Control;
 		}
 
         private void Btn_open_Click(object sender, EventArgs e)
@@ -353,6 +374,8 @@ namespace ABE
 			OpenFileDialog openFileDialog = new OpenFileDialog();
 			openFileDialog.DefaultExt = "*.rom";
 			openFileDialog.Filter = "BIOS Files|*.rom;*.bin";
+			triedalready = false;
+			notsupported = false;
 			if (openFileDialog.ShowDialog() == DialogResult.OK)
 			{
 				this.method_3(openFileDialog.FileName);
@@ -368,11 +391,12 @@ namespace ABE
             }
             this.tcSettings.Enabled = false;
         }
+		
 
 		private void method_3(string string_0)
 		{
-			//try
-			//{
+			try
+			{
 				this.method_2();
 				this.class30_0 = new Class30(string_0);
 				Class25 @class = this.class30_0.list_0[0];
@@ -381,14 +405,41 @@ namespace ABE
 				{
 
 					this.FileName = new FileInfo(string_0).Name;
+					this.FileDir = string_0;
+
+				if (lblName.Text.Contains("3070") || lblName.Text.Contains("PG124") || lblName.Text.Contains("3060") || lblName.Text.Contains("3050"))
+				{
+					if (!notsupported)
+					{
+						notsupported = true;
+						MessageBox.Show(lblName.Text + " not supported");
+					}
+					DisableControls();
+					return;
+				}
+
+				if (lblDefaultPL.Text == "0" || lblMaxPL.Text == "0" || lblMinimumPL.Text == "0")
+                {
+					if (!triedalready)
+					{
+						DialogResult dialogResult = MessageBox.Show("Do you want to try open this rom as Type2?", "Something Doesnt Look Right!", MessageBoxButtons.YesNo);
+						if (dialogResult == DialogResult.Yes)
+						{
+							Class24.ThisBiosType = 0;
+							triedalready = true;
+							this.method_3(FileDir);
+						}
+					}
+                }
+
 					this.ImageChecksum = @class.Byte_0;
 					this.GeneratedChecksum = @class.method_2(false);
 					this.ImageChecksum2 = @class.Byte_2;
 					this.GeneratedChecksum2 = @class.method_2(true);
+					this.lblMinimumPL.Enabled = true;
 					this.lblDefaultPL.Enabled = true;
 					this.lblMaxPL.Enabled = true;
 					this.Btn_Save.Enabled = true;
-					this.lblMinimumPL.Enabled = true;
 					this.lblDefault8pinPL.Enabled = true;
 					this.lblMax8pinPL.Enabled = true;
 					this.lblDefaultSRCPL.Enabled = true;
@@ -415,11 +466,11 @@ namespace ABE
 				return;
 				}
 				this.ResetDisplay(true);
-			//}
-			//catch
-			//{
-			//	this.ResetDisplay(true);
-			//}
+			}
+			catch
+			{
+				this.ResetDisplay(true);
+			}
 		}
 
         private void Form1_Load(object sender, EventArgs e)
@@ -480,8 +531,8 @@ namespace ABE
 						{
 							Class29.setpower(class30_0.byte_1, Class24.A5, int.Parse(lblMinimumPL.Text));
 						}
-						else
-                        {
+						else if (Class24.ThisBiosType == 2)
+						{
 							Class29.setpower(class30_0.byte_1, Class24.B5, int.Parse(lblMinimumPL.Text));
 						}
 						break;
@@ -490,7 +541,7 @@ namespace ABE
 						{
 							Class29.setpower(class30_0.byte_1, Class24.A6, int.Parse(lblDefaultPL.Text));
 						}
-						else
+						else if (Class24.ThisBiosType == 2)
 						{
 							Class29.setpower(class30_0.byte_1, Class24.B6, int.Parse(lblDefaultPL.Text));
 						}
@@ -500,7 +551,7 @@ namespace ABE
 						{
 							Class29.setpower(class30_0.byte_1, Class24.A7, int.Parse(lblMaxPL.Text));
 						}
-						else
+						else if (Class24.ThisBiosType == 2)
 						{
 							Class29.setpower(class30_0.byte_1, Class24.B7, int.Parse(lblMaxPL.Text));
 						}
@@ -510,7 +561,7 @@ namespace ABE
 						{
 							Class29.setpower(class30_0.byte_1, Class24.A17, int.Parse(lblDefault8pinPL.Text));
 						}
-						else
+						else if (Class24.ThisBiosType == 2)
 						{
 							Class29.setpower(class30_0.byte_1, Class24.B17, int.Parse(lblDefault8pinPL.Text));
 						}
@@ -520,7 +571,7 @@ namespace ABE
 						{
 							Class29.setpower(class30_0.byte_1, Class24.A18, int.Parse(lblMax8pinPL.Text));
 						}
-						else
+						else if (Class24.ThisBiosType == 2)
 						{
 							Class29.setpower(class30_0.byte_1, Class24.B18, int.Parse(lblMax8pinPL.Text));
 						}
@@ -530,7 +581,7 @@ namespace ABE
 						{
 							Class29.setpower(class30_0.byte_1, Class24.A9, int.Parse(lblDefaultSRCPL.Text));
 						}
-						else
+						else if (Class24.ThisBiosType == 2)
 						{
 							Class29.setpower(class30_0.byte_1, Class24.A9, int.Parse(lblDefaultSRCPL.Text));
 						}
@@ -540,7 +591,7 @@ namespace ABE
 						{
 							Class29.setpower(class30_0.byte_1, Class24.A10, int.Parse(lblMaxSRCPL.Text));
 						}
-						else
+						else if (Class24.ThisBiosType == 2)
 						{
 							Class29.setpower(class30_0.byte_1, Class24.B10, int.Parse(lblMaxSRCPL.Text));
 						}
@@ -550,7 +601,7 @@ namespace ABE
 						{
 							Class29.setpower(class30_0.byte_1, Class24.A11, int.Parse(lblDefaultChipPL.Text));
 						}
-						else
+						else if (Class24.ThisBiosType == 2)
 						{
 							Class29.setpower(class30_0.byte_1, Class24.B11, int.Parse(lblDefaultChipPL.Text));
 						}
@@ -560,7 +611,7 @@ namespace ABE
 						{
 							Class29.setpower(class30_0.byte_1, Class24.A12, int.Parse(lblMaxChipPL.Text));
 						}
-						else
+						else if (Class24.ThisBiosType == 2)
 						{
 							Class29.setpower(class30_0.byte_1, Class24.B12, int.Parse(lblMaxChipPL.Text));
 						}
@@ -570,7 +621,7 @@ namespace ABE
 						{
 							Class29.setpower(class30_0.byte_1, Class24.A15, int.Parse(lblDefaultSlotPL.Text));
 						}
-						else
+						else if (Class24.ThisBiosType == 2)
 						{
 							Class29.setpower(class30_0.byte_1, Class24.B15, int.Parse(lblDefaultSlotPL.Text));
 						}
@@ -580,7 +631,7 @@ namespace ABE
 						{
 							Class29.setpower(class30_0.byte_1, Class24.A16, int.Parse(lblMaxSlotPL.Text));
 						}
-						else
+						else if (Class24.ThisBiosType == 2)
 						{
 							Class29.setpower(class30_0.byte_1, Class24.B16, int.Parse(lblMaxSlotPL.Text));
 						}
@@ -590,7 +641,7 @@ namespace ABE
 						{
 							Class29.setpower(class30_0.byte_1, Class24.A13, int.Parse(lblDefaultVRAMPL.Text));
 						}
-						else
+						else if (Class24.ThisBiosType == 2)
 						{
 							Class29.setpower(class30_0.byte_1, Class24.B13, int.Parse(lblDefaultVRAMPL.Text));
 						}
@@ -600,7 +651,7 @@ namespace ABE
 						{
 							Class29.setpower(class30_0.byte_1, Class24.A14, int.Parse(lblMaxVRAMPL.Text));
 						}
-						else
+						else if (Class24.ThisBiosType == 2)
 						{
 							Class29.setpower(class30_0.byte_1, Class24.B14, int.Parse(lblMaxVRAMPL.Text));
 						}
@@ -610,7 +661,7 @@ namespace ABE
 						{
 							Class29.setpower(class30_0.byte_1, Class24.A8, int.Parse(lblUnknownPL.Text));
 						}
-						else
+						else if (Class24.ThisBiosType == 2)
 						{
 							Class29.setpower(class30_0.byte_1, Class24.B8, int.Parse(lblUnknownPL.Text));
 						}
@@ -620,7 +671,7 @@ namespace ABE
 						{
 							Class29.setpower(class30_0.byte_1, Class24.A9_1, int.Parse(lblDefaultSRC2PL.Text));
 						}
-						else
+						else if (Class24.ThisBiosType == 2)
 						{
 							Class29.setpower(class30_0.byte_1, Class24.B9_1, int.Parse(lblDefaultSRC2PL.Text));
 						}
@@ -630,7 +681,7 @@ namespace ABE
 						{
 							Class29.setpower(class30_0.byte_1, Class24.A9_2, int.Parse(lblDefaultSRC3PL.Text));
 						}
-						else
+						else if (Class24.ThisBiosType == 2)
 						{
 							Class29.setpower(class30_0.byte_1, Class24.B9_2, int.Parse(lblDefaultSRC3PL.Text));
 						}
@@ -640,7 +691,7 @@ namespace ABE
 						{
 							Class29.setpower(class30_0.byte_1, Class24.A10_1, int.Parse(lblMaxSRC2PL.Text));
 						}
-						else
+						else if (Class24.ThisBiosType == 2)
 						{
 							Class29.setpower(class30_0.byte_1, Class24.B10_1, int.Parse(lblMaxSRC2PL.Text));
 						}
@@ -650,7 +701,7 @@ namespace ABE
 						{
 							Class29.setpower(class30_0.byte_1, Class24.A10_2, int.Parse(lblMaxSRC3PL.Text));
 						}
-						else
+						else if (Class24.ThisBiosType == 2)
 						{
 							Class29.setpower(class30_0.byte_1, Class24.B10_2, int.Parse(lblMaxSRC3PL.Text));
 						}
@@ -660,7 +711,7 @@ namespace ABE
 						{
 							Class29.setpower(class30_0.byte_1, Class24.A19, int.Parse(lblDefAUX1PL.Text));
 						}
-						else
+						else if (Class24.ThisBiosType == 2)
 						{
 							Class29.setpower(class30_0.byte_1, Class24.B19, int.Parse(lblDefAUX1PL.Text));
 						}
@@ -670,7 +721,7 @@ namespace ABE
 						{
 							Class29.setpower(class30_0.byte_1, Class24.A20, int.Parse(lblDefAUX2PL.Text));
 						}
-						else
+						else if (Class24.ThisBiosType == 2)
 						{
 							Class29.setpower(class30_0.byte_1, Class24.B20, int.Parse(lblDefAUX2PL.Text));
 						}
@@ -680,7 +731,7 @@ namespace ABE
 						{
 							Class29.setpower(class30_0.byte_1, Class24.A21, int.Parse(lblDefAUX3PL.Text));
 						}
-						else
+						else if (Class24.ThisBiosType == 2)
 						{
 							Class29.setpower(class30_0.byte_1, Class24.B21, int.Parse(lblDefAUX3PL.Text));
 						}
@@ -690,7 +741,7 @@ namespace ABE
 						{
 							Class29.setpower(class30_0.byte_1, Class24.A22, int.Parse(lblDefAUX4PL.Text));
 						}
-						else
+						else if (Class24.ThisBiosType == 2)
 						{
 							Class29.setpower(class30_0.byte_1, Class24.B22, int.Parse(lblDefAUX4PL.Text));
 						}
@@ -700,7 +751,7 @@ namespace ABE
 						{
 							Class29.setpower(class30_0.byte_1, Class24.A23, int.Parse(lblMaxAUX1PL.Text));
 						}
-						else
+						else if (Class24.ThisBiosType == 2)
 						{
 							Class29.setpower(class30_0.byte_1, Class24.B23, int.Parse(lblMaxAUX1PL.Text));
 						}
@@ -710,7 +761,7 @@ namespace ABE
 						{
 							Class29.setpower(class30_0.byte_1, Class24.A24, int.Parse(lblMaxAUX2PL.Text));
 						}
-						else
+						else if (Class24.ThisBiosType == 2)
 						{
 							Class29.setpower(class30_0.byte_1, Class24.B24, int.Parse(lblMaxAUX2PL.Text));
 						}
@@ -720,7 +771,7 @@ namespace ABE
 						{
 							Class29.setpower(class30_0.byte_1, Class24.A25, int.Parse(lblMaxAUX3PL.Text));
 						}
-						else
+						else if (Class24.ThisBiosType == 2)
 						{
 							Class29.setpower(class30_0.byte_1, Class24.B25, int.Parse(lblMaxAUX3PL.Text));
 						}
@@ -730,7 +781,7 @@ namespace ABE
 						{
 							Class29.setpower(class30_0.byte_1, Class24.A26, int.Parse(lblMaxAUX4PL.Text));
 						}
-						else
+						else if (Class24.ThisBiosType == 2)
 						{
 							Class29.setpower(class30_0.byte_1, Class24.B26, int.Parse(lblMaxAUX4PL.Text));
 						}
@@ -862,36 +913,6 @@ namespace ABE
 			EditBiosBoardPowerLimit(13);
 		}
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-			string databasedump = 
-				lblSubVendor.Text + "," + 
-				lblDate.Text + "," + 
-				lblBIOS.Text + "," + 
-				lblHash.Text + "," + 
-				lblMinimumPL.Text + "," + 
-				lblDefaultPL.Text + "," + 
-				lblMaxPL.Text + "," + 
-				lblDefault8pinPL.Text + "," + 
-				lblMax8pinPL.Text + "," + 
-				lblDefaultSRCPL.Text + "," + 
-				lblMaxSRCPL.Text + "," + 
-				lblDefaultChipPL.Text + "," +
-				lblMaxChipPL.Text + "," +
-				lblDefaultSlotPL.Text + "," +
-				lblMaxSlotPL.Text + "," +
-				lblDefaultVRAMPL.Text + "," +
-				lblMaxVRAMPL.Text + "," +
-				lblUnknownPL.Text;
-			Clipboard.SetText(databasedump);
-
-		}
-
-        private void lFilename_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-			button1.Visible = true;
-		}
-
         private void lblDefaultSRC2PL_Validated(object sender, EventArgs e)
         {
 			EditBiosBoardPowerLimit(14);
@@ -951,5 +972,35 @@ namespace ABE
         {
 			EditBiosBoardPowerLimit(25);
 		}
-    }
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			string databasedump =
+				lblSubVendor.Text + "," +
+				lblDate.Text + "," +
+				lblBIOS.Text + "," +
+				lblHash.Text + "," +
+				lblMinimumPL.Text + "," +
+				lblDefaultPL.Text + "," +
+				lblMaxPL.Text + "," +
+				lblDefault8pinPL.Text + "," +
+				lblMax8pinPL.Text + "," +
+				lblDefaultSRCPL.Text + "," +
+				lblMaxSRCPL.Text + "," +
+				lblDefaultChipPL.Text + "," +
+				lblMaxChipPL.Text + "," +
+				lblDefaultSlotPL.Text + "," +
+				lblMaxSlotPL.Text + "," +
+				lblDefaultVRAMPL.Text + "," +
+				lblMaxVRAMPL.Text + "," +
+				lblUnknownPL.Text;
+			Clipboard.SetText(databasedump);
+
+		}
+
+		private void lFilename_MouseDoubleClick(object sender, MouseEventArgs e)
+		{
+			button1.Visible = true;
+		}
+	}
 }

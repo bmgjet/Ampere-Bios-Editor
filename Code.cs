@@ -4,6 +4,57 @@ using System.IO;
 using System.Security.Cryptography;
 using System.Text;
 
+//Firmware-Checksum 0x18FFF
+//Firmware-Start 0x9200
+
+
+//Type 1 Bios
+//Settings-Checksum 0x8E1FF
+//Settings-Start 0x19000
+
+//PowerLimits
+//Board Minimum PL 0x8BDF2
+//Board Default PL 0x8BDF6
+//Board Max PL 0x8BDFA
+//Unknown 0X8BE00 (350W=3335) (400W=3588) Single Table
+
+//AUX Def 0x8C833 (400000)   Part Low
+//		  0x8C866
+//		  0x8C899
+//        0x8C8CC
+
+//AUX MAX 0x8C837 (500000)   Part High
+//		  0x8C86A
+//		  0x8C89D
+//		  0x8C8D0
+
+
+//SRC Def 0x8BF02 (150000) Plug1
+//        0x8BF45 (150000) Plug2 
+//        0x8C051 (150000) Plug3 
+
+//SRC Max 0x8BF06 (175000) Plug1 
+//        0x8BF49 (175000) Plug2 
+//		  0x8C055 (175000) Plug3 
+
+//ChipPower Def 0x8C0D7 (350w=226800)(400W=243000) Part1
+//ChipPower Max 0x8C0DB (350w=226800)(400w=319920) Part2
+
+//VRAM 0x8C1A0 (93750) Part1
+//VRAM 0x8C1A4 (350w=100000)(400w=107800) Part2
+
+//PCI-E Slot Def 0x8C1E3
+//PCI-E Slot Max 0x8C1E7
+
+//8pinPlug Def 0x8C226 (350w=121500)(400w=145800) Part1
+//8pinPlug Max 0x8C22A (350w=121500)(400W=162000) Part2
+
+//Type 2 Bios 
+//Look up with address B table vs A table.
+
+//3080FE
+//Look up with address C table vs A table.
+
 internal class Class24 : Class1
 {
 	public Class24(byte[] byte_2, int int_11) : base(byte_2, int_11)
@@ -73,10 +124,15 @@ internal class Class24 : Class1
 			{
 				return this.byte_0.spower(Class24.A6);
 			}
-			else
-            {
+			else if (Class24.ThisBiosType == 2)
+			{
 				return this.byte_0.spower(Class24.B6);
 			}
+			else if (Class24.ThisBiosType == 3)
+			{
+				return this.byte_0.spower(Class24.C6);
+			}
+			return "0";
 
 		}
 	}
@@ -89,24 +145,34 @@ internal class Class24 : Class1
 			{
 				return this.byte_0.spower(Class24.A7);
 			}
-			else
-            {
+			else if (Class24.ThisBiosType == 2)
+			{
 				return this.byte_0.spower(Class24.B7);
 			}
+			else if (Class24.ThisBiosType == 3)
+			{
+				return this.byte_0.spower(Class24.C7);
+			}
+			return "0";
 		}
 	}
 	public string GetMinimumPL
 	{
 		get
 		{
-			if (Class24.ThisBiosType == 1)
+            if (Class24.ThisBiosType == 1)
+            {
+                return this.byte_0.spower(Class24.A5);
+            }
+            else if (Class24.ThisBiosType == 2)
+            {
+                return this.byte_0.spower(Class24.B5);
+            }
+			else if (Class24.ThisBiosType == 3)
 			{
-				return this.byte_0.spower(Class24.A5);
+				return this.byte_0.spower(Class24.C5);
 			}
-			else
-			{
-				return this.byte_0.spower(Class24.B5);
-			}
+			return "0";
 		}
 	}
 
@@ -118,10 +184,12 @@ internal class Class24 : Class1
 			{
 				return this.byte_0.spower(Class24.A17);
 			}
-			else
+			else if (Class24.ThisBiosType == 2)
 			{
 				return this.byte_0.spower(Class24.B17);
 			}
+
+			return "0";
 		}
 	}
 
@@ -133,10 +201,11 @@ internal class Class24 : Class1
 			{
 				return this.byte_0.spower(Class24.A18);
 			}
-			else
+			else if (Class24.ThisBiosType == 2)
 			{
 				return this.byte_0.spower(Class24.B18);
 			}
+			return "0";
 		}
 	}
 
@@ -148,10 +217,15 @@ internal class Class24 : Class1
 			{
 				return this.byte_0.spower(Class24.A9);
 			}
-			else
+			else if (Class24.ThisBiosType == 2)
 			{
 				return this.byte_0.spower(Class24.B9);
 			}
+			else if (Class24.ThisBiosType == 3)
+			{
+				return this.byte_0.spower(Class24.C9);
+			}
+			return "0";
 		}
 	}
 
@@ -163,10 +237,15 @@ internal class Class24 : Class1
 			{
 				return this.byte_0.spower(Class24.A9_1);
 			}
-			else
+			else if (Class24.ThisBiosType == 2)
 			{
 				return this.byte_0.spower(Class24.B9_1);
 			}
+			else if (Class24.ThisBiosType == 3)
+			{
+				return this.byte_0.spower(Class24.C9_1);
+			}
+			return "0";
 		}
 	}
 
@@ -178,10 +257,11 @@ internal class Class24 : Class1
 			{
 				return this.byte_0.spower(Class24.A9_2);
 			}
-			else
+			else if (Class24.ThisBiosType == 2)
 			{
 				return this.byte_0.spower(Class24.B9_2);
 			}
+			return "0";
 		}
 	}
 
@@ -193,10 +273,15 @@ internal class Class24 : Class1
 			{
 				return this.byte_0.spower(Class24.A10);
 			}
-			else
+			else if (Class24.ThisBiosType == 2)
 			{
 				return this.byte_0.spower(Class24.B10);
 			}
+			else if (Class24.ThisBiosType == 3)
+			{
+				return this.byte_0.spower(Class24.C10);
+			}
+			return "0";
 		}
 	}
 
@@ -208,10 +293,15 @@ internal class Class24 : Class1
 			{
 				return this.byte_0.spower(Class24.A10_1);
 			}
-			else
+			else if (Class24.ThisBiosType == 2)
 			{
 				return this.byte_0.spower(Class24.B10_1);
 			}
+			else if (Class24.ThisBiosType == 3)
+			{
+				return this.byte_0.spower(Class24.C10_1);
+			}
+			return "0";
 		}
 	}
 
@@ -224,10 +314,11 @@ internal class Class24 : Class1
 			{
 				return this.byte_0.spower(Class24.A10_2);
 			}
-			else
+			else if (Class24.ThisBiosType == 2)
 			{
 				return this.byte_0.spower(Class24.B10_2);
 			}
+			return "0";
 		}
 	}
 
@@ -239,10 +330,11 @@ internal class Class24 : Class1
 			{
 				return this.byte_0.spower(Class24.A11);
 			}
-			else
+			else if (Class24.ThisBiosType == 2)
 			{
 				return this.byte_0.spower(Class24.B11);
 			}
+			return "0";
 		}
 	}
 
@@ -254,10 +346,11 @@ internal class Class24 : Class1
 			{
 				return this.byte_0.spower(Class24.A12);
 			}
-			else
+			else if (Class24.ThisBiosType == 2)
 			{
 				return this.byte_0.spower(Class24.B12);
 			}
+			return "0";
 		}
 	}
 
@@ -269,10 +362,11 @@ internal class Class24 : Class1
 			{
 				return this.byte_0.spower(Class24.A15);
 			}
-			else
+			else if (Class24.ThisBiosType == 2)
 			{
 				return this.byte_0.spower(Class24.B15);
 			}
+			return "0";
 		}
 	}
 
@@ -284,10 +378,11 @@ internal class Class24 : Class1
 			{
 				return this.byte_0.spower(Class24.A16);
 			}
-			else
+			else if (Class24.ThisBiosType == 2)
 			{
 				return this.byte_0.spower(Class24.B16);
 			}
+			return "0";
 		}
 	}
 
@@ -299,10 +394,11 @@ internal class Class24 : Class1
 			{
 				return this.byte_0.spower(Class24.A13);
 			}
-			else
+			else if (Class24.ThisBiosType == 2)
 			{
 				return this.byte_0.spower(Class24.B13);
 			}
+			return "0";
 		}
 	}
 
@@ -314,10 +410,11 @@ internal class Class24 : Class1
 			{
 				return this.byte_0.spower(Class24.A14);
 			}
-			else
+			else if (Class24.ThisBiosType == 2)
 			{
 				return this.byte_0.spower(Class24.B14);
 			}
+			return "0";
 		}
 	}
 
@@ -329,10 +426,15 @@ internal class Class24 : Class1
 			{
 				return this.byte_0.spower(Class24.A8);
 			}
-			else
+			else if (Class24.ThisBiosType == 2)
 			{
 				return this.byte_0.spower(Class24.B8);
 			}
+			else if (Class24.ThisBiosType == 3)
+			{
+				return this.byte_0.spower(Class24.C8);
+			}
+			return "0";
 		}
 	}
 
@@ -344,10 +446,11 @@ internal class Class24 : Class1
 			{
 				return this.byte_0.spower(Class24.A19);
 			}
-			else
+			else if (Class24.ThisBiosType == 2)
 			{
 				return this.byte_0.spower(Class24.B19);
 			}
+			return "0";
 		}
 	}
 	public string GetDefAUX2PL
@@ -358,10 +461,11 @@ internal class Class24 : Class1
 			{
 				return this.byte_0.spower(Class24.A20);
 			}
-			else
+			else if (Class24.ThisBiosType == 2)
 			{
 				return this.byte_0.spower(Class24.B20);
 			}
+			return "0";
 		}
 	}
 	public string GetDefAUX3PL
@@ -372,10 +476,11 @@ internal class Class24 : Class1
 			{
 				return this.byte_0.spower(Class24.A21);
 			}
-			else
+			else if (Class24.ThisBiosType == 2)
 			{
 				return this.byte_0.spower(Class24.B21);
 			}
+			return "0";
 		}
 	}
 	public string GetDefAUX4PL
@@ -386,10 +491,11 @@ internal class Class24 : Class1
 			{
 				return this.byte_0.spower(Class24.A22);
 			}
-			else
+			else if (Class24.ThisBiosType == 2)
 			{
 				return this.byte_0.spower(Class24.B22);
 			}
+			return "0";
 		}
 	}
 
@@ -401,10 +507,11 @@ internal class Class24 : Class1
 			{
 				return this.byte_0.spower(Class24.A23);
 			}
-			else
+			else if (Class24.ThisBiosType == 2)
 			{
 				return this.byte_0.spower(Class24.B23);
 			}
+			return "0";
 		}
 	}
 
@@ -416,10 +523,11 @@ internal class Class24 : Class1
 			{
 				return this.byte_0.spower(Class24.A24);
 			}
-			else
+			else if (Class24.ThisBiosType == 2)
 			{
 				return this.byte_0.spower(Class24.B24);
 			}
+			return "0";
 		}
 	}
 
@@ -431,10 +539,11 @@ internal class Class24 : Class1
 			{
 				return this.byte_0.spower(Class24.A25);
 			}
-			else
+			else if (Class24.ThisBiosType == 2)
 			{
 				return this.byte_0.spower(Class24.B25);
 			}
+			return "0";
 		}
 	}
 
@@ -446,10 +555,11 @@ internal class Class24 : Class1
 			{
 				return this.byte_0.spower(Class24.A26);
 			}
-			else
+			else if (Class24.ThisBiosType == 2)
 			{
 				return this.byte_0.spower(Class24.B26);
 			}
+			return "0";
 		}
 	}
 
@@ -525,64 +635,94 @@ internal class Class24 : Class1
 
 	//Bios Type 1
 
-	public static int A3 = 0x8E1FF;
-	public static int A4 = 0x19000;
-	public static int A5 = 0x8BDF2;
-	public static int A6 = 0x8BDF6;
-	public static int A7 = 0x8BDFA;
-	public static int A8 = 0X8BE00;
-	public static int A9 = 0x8BF02;
-	public static int A9_1 = 0x8BF45;
-	public static int A9_2 = 0x8C051;
-	public static int A10 = 0x8BF06;
-	public static int A10_1 = 0x8BF49;
-	public static int A10_2 = 0x8C055;
-	public static int A11 = 0x8C0D7;
-	public static int A12 = 0x8C0DB;
-	public static int A13 = 0x8C1A0;
-	public static int A14 = 0x8C1A4;
-	public static int A15 = 0x8C1E3;
-	public static int A16 = 0x8C1E7;
-	public static int A17 = 0x8C226;
-	public static int A18 = 0x8C22A;
-	public static int A19 = 0x8C837;
-	public static int A20 = 0x8C866;
-	public static int A21 = 0x8C899;
-	public static int A22 = 0x8C8CC;
-	public static int A23 = 0x8C837;
-	public static int A24 = 0x8C86A;
-	public static int A25 = 0x8C89D;
-	public static int A26 = 0x8C8D0;
+	public static int A3 = 0x8E1FF; //Settings Table Checksum
+	public static int A4 = 0x19000; //Settings Table Start
+	public static int A5 = 0x8BDF2; //Min TDP
+	public static int A6 = 0x8BDF6; //Default TDP
+	public static int A7 = 0x8BDFA; //Max TDP
+	public static int A8 = 0X8BE00; //Unknown (gets higher with higher powerlimited cards)
+	public static int A9 = 0x8BF02; //SRC
+	public static int A9_1 = 0x8BF45; //2
+	public static int A9_2 = 0x8C051; //3
+	public static int A10 = 0x8BF06; //Max
+	public static int A10_1 = 0x8BF49; //2
+	public static int A10_2 = 0x8C055; //3
+	public static int A11 = 0x8C0D7; //chip power
+	public static int A12 = 0x8C0DB; //max
+	public static int A13 = 0x8C1A0; //Vram
+	public static int A14 = 0x8C1A4; //max
+	public static int A15 = 0x8C1E3; //Slot
+	public static int A16 = 0x8C1E7; //max
+	public static int A17 = 0x8C226; //8pin
+	public static int A18 = 0x8C22A; //max
+	public static int A19 = 0x8C833; //AUX
+	public static int A20 = 0x8C866; //2
+	public static int A21 = 0x8C899; //3
+	public static int A22 = 0x8C8CC; //4
+	public static int A23 = 0x8C837; //Aux Hi
+	public static int A24 = 0x8C86A; //2
+	public static int A25 = 0x8C89D; //3
+	public static int A26 = 0x8C8D0; //4
 
 	//Bios Type 2
-	public static int B3 = 0x8F3FF;
-	public static int B4 = Class24.A4;
-	public static int B5 = 0x8CF04;
-	public static int B6 = 0x8CF08;
-	public static int B7 = 0X8CF0C;
-	public static int B8 = 0x8CF12;
-	public static int B9 = 0;
-	public static int B9_1 = 0;
-	public static int B9_2 = 0;
-	public static int B10 = 0;
-	public static int B10_1 = 0;
-	public static int B10_2 = 0;
-	public static int B11 = 0;
-	public static int B12 = 0;
-	public static int B13 = 0;
-	public static int B14 = 0;
-	public static int B15 = 0;
-	public static int B16 = 0;
-	public static int B17 = 0;
-	public static int B18 = 0;
-	public static int B19 = 0;
-	public static int B20 = 0;
-	public static int B21 = 0;
-	public static int B22 = 0;
-	public static int B23 = 0;
-	public static int B24 = 0;
-	public static int B25 = 0;
-	public static int B26 = 0;
+	public static int B3 = 0x8F3FF; //Settings Table Checksum
+	public static int B4 = Class24.A4; //Settings Table Start
+	public static int B5 = 0x8CF04; //Min TDP
+	public static int B6 = 0x8CF08; //Default TDP
+	public static int B7 = 0X8CF0C; //Max TDP
+	public static int B8 = 0x8CF12; //Unknown
+	public static int B9 = 0x8D024;  //SRC
+	public static int B9_1 = 0x8D06B; //2
+	public static int B9_2 = 0x8D187; //3
+	public static int B10 = 0x8D028;  //max
+	public static int B10_1 = 0x8D06F; //2
+	public static int B10_2 = 0x8D18B; //3
+	public static int B11 = 0x8D215; //Chip power
+	public static int B12 = 0x8D219; //max
+	public static int B13 = 0x8D331;  //Vram
+	public static int B14 = 0x8D335;	//max
+	public static int B15 = 0x8CFDD; //slot
+	public static int B16 = 0x8CFE1; //max
+	public static int B17 = 0x8D024;  //8pin
+	public static int B18 = 0x8D028; //max
+	public static int B19 = 0x8D98D;	//Aux
+	public static int B20 = 0x8D9C0; //2
+	public static int B21 = 0x8D9F3; //3
+	public static int B22 = 0x8DA26; //4
+	public static int B23 = 0x8D991;  //Aux Hi
+	public static int B24 = 0x8D9C4; //2
+	public static int B25 = 0x8D9F7; //3
+	public static int B26 = 0x8DA2A; //4
+
+	//Bios Type 3
+	public static int C3 = 0x8F3FF; //Settings Table Checksum
+	public static int C4 = Class24.A4; //Settings Table Start
+	public static int C5 = 0x8BB0A; //Min TDP
+	public static int C6 = 0x8BB0E; //Default TDP
+	public static int C7 = 0x8BB12; //Max TDP
+	public static int C8 = 0x8BB18; //Unknown
+	public static int C9 = 0x8BC1A;  //SRC
+	public static int C9_1 = 0x8BC5D; //2
+	public static int C9_2 = 0; //3
+	public static int C10 = 0x8BC1E;  //max
+	public static int C10_1 = 0x8BC61; //2
+	public static int C10_2 = 0; //3
+	public static int C11 = 0; //Chip power
+	public static int C12 = 0; //max
+	public static int C13 = 0;  //Vram
+	public static int C14 = 0;    //max
+	public static int C15 = 0; //slot
+	public static int C16 = 0; //max
+	public static int C17 = 0;  //8pin
+	public static int C18 = 0; //max
+	public static int C19 = 0;    //Aux
+	public static int C20 = 0; //2
+	public static int C21 = 0; //3
+	public static int C22 = 0; //4
+	public static int C23 = 0;  //Aux Hi
+	public static int C24 = 0; //2
+	public static int C25 = 0; //3
+	public static int C26 = 0; //4
 
 	private static byte[] byte_1 = new byte[]
 	{
@@ -811,10 +951,11 @@ internal class Class25 : Class1
 			{
 				return this.byte_0[Class24.A3];
 			}
-			else
-            {
+			else if (Class24.ThisBiosType == 2)
+			{
 				return this.byte_0[Class24.B3];
 			}
+			return 0;
 		}
 		set
 		{
@@ -822,10 +963,11 @@ internal class Class25 : Class1
 			{
 				this.byte_0[Class24.A3] = value;
 			}
-			else
-            {
+			else if (Class24.ThisBiosType == 2)
+			{
 				this.byte_0[Class24.B3] = value;
 			}
+			
 		}
 	}
 
@@ -843,7 +985,11 @@ internal class Class25 : Class1
 				datastart = Class24.B4;
 				dataend = Class24.B3;
 			}
-			for (int i = datastart; i < dataend; i++)
+			else if (Class24.ThisBiosType == 3)
+            {
+
+            }
+				for (int i = datastart; i < dataend; i++)
 			{
 				num += (ulong)this.byte_0[i];
 			}

@@ -152,6 +152,12 @@
             this.label59 = new System.Windows.Forms.Label();
             this.label60 = new System.Windows.Forms.Label();
             this.label61 = new System.Windows.Forms.Label();
+            this.VFRTable = new System.Windows.Forms.DataGridView();
+            this.FanTable = new System.Windows.Forms.DataGridView();
+            this.maskedTextBox5 = new System.Windows.Forms.MaskedTextBox();
+            this.label62 = new System.Windows.Forms.Label();
+            this.trackBar4 = new System.Windows.Forms.TrackBar();
+            this.label63 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -160,6 +166,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trbSlider)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.VFRTable)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FanTable)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar4)).BeginInit();
             this.SuspendLayout();
             // 
             // lblChkSum
@@ -903,6 +914,10 @@
             // 
             // tcSettings
             // 
+            this.tcSettings.Controls.Add(this.maskedTextBox5);
+            this.tcSettings.Controls.Add(this.label62);
+            this.tcSettings.Controls.Add(this.trackBar4);
+            this.tcSettings.Controls.Add(this.label63);
             this.tcSettings.Controls.Add(this.maskedTextBox4);
             this.tcSettings.Controls.Add(this.label9);
             this.tcSettings.Controls.Add(this.maskedTextBox3);
@@ -923,14 +938,14 @@
             this.tcSettings.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tcSettings.Name = "tcSettings";
             this.tcSettings.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tcSettings.Size = new System.Drawing.Size(430, 243);
+            this.tcSettings.Size = new System.Drawing.Size(430, 400);
             this.tcSettings.TabIndex = 0;
             this.tcSettings.Text = "Common";
             this.tcSettings.UseVisualStyleBackColor = true;
             // 
             // maskedTextBox4
             // 
-            this.maskedTextBox4.Location = new System.Drawing.Point(288, 107);
+            this.maskedTextBox4.Location = new System.Drawing.Point(311, 117);
             this.maskedTextBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.maskedTextBox4.Name = "maskedTextBox4";
             this.maskedTextBox4.Size = new System.Drawing.Size(58, 20);
@@ -939,7 +954,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(346, 110);
+            this.label9.Location = new System.Drawing.Point(369, 120);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(27, 13);
@@ -948,7 +963,7 @@
             // 
             // maskedTextBox3
             // 
-            this.maskedTextBox3.Location = new System.Drawing.Point(288, 77);
+            this.maskedTextBox3.Location = new System.Drawing.Point(311, 87);
             this.maskedTextBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.maskedTextBox3.Name = "maskedTextBox3";
             this.maskedTextBox3.Size = new System.Drawing.Size(58, 20);
@@ -957,7 +972,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(346, 80);
+            this.label8.Location = new System.Drawing.Point(369, 90);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(27, 13);
@@ -966,7 +981,7 @@
             // 
             // maskedTextBox2
             // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(288, 47);
+            this.maskedTextBox2.Location = new System.Drawing.Point(311, 57);
             this.maskedTextBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.maskedTextBox2.Name = "maskedTextBox2";
             this.maskedTextBox2.Size = new System.Drawing.Size(58, 20);
@@ -975,7 +990,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(346, 50);
+            this.label7.Location = new System.Drawing.Point(369, 60);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(27, 13);
@@ -984,7 +999,7 @@
             // 
             // maskedTextBox1
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(288, 18);
+            this.maskedTextBox1.Location = new System.Drawing.Point(311, 28);
             this.maskedTextBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.Size = new System.Drawing.Size(58, 20);
@@ -993,7 +1008,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(346, 21);
+            this.label6.Location = new System.Drawing.Point(369, 31);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(27, 13);
@@ -1004,7 +1019,7 @@
             // 
             this.trackBar3.AutoSize = false;
             this.trackBar3.BackColor = System.Drawing.Color.White;
-            this.trackBar3.Location = new System.Drawing.Point(88, 106);
+            this.trackBar3.Location = new System.Drawing.Point(111, 116);
             this.trackBar3.Maximum = 97;
             this.trackBar3.Name = "trackBar3";
             this.trackBar3.Size = new System.Drawing.Size(195, 23);
@@ -1015,7 +1030,7 @@
             // 
             this.trackBar2.AutoSize = false;
             this.trackBar2.BackColor = System.Drawing.Color.White;
-            this.trackBar2.Location = new System.Drawing.Point(88, 76);
+            this.trackBar2.Location = new System.Drawing.Point(111, 86);
             this.trackBar2.Maximum = 97;
             this.trackBar2.Name = "trackBar2";
             this.trackBar2.Size = new System.Drawing.Size(195, 23);
@@ -1026,7 +1041,7 @@
             // 
             this.trackBar1.AutoSize = false;
             this.trackBar1.BackColor = System.Drawing.Color.White;
-            this.trackBar1.Location = new System.Drawing.Point(88, 47);
+            this.trackBar1.Location = new System.Drawing.Point(111, 57);
             this.trackBar1.Maximum = 97;
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Size = new System.Drawing.Size(195, 23);
@@ -1037,7 +1052,7 @@
             // 
             this.trbSlider.AutoSize = false;
             this.trbSlider.BackColor = System.Drawing.Color.White;
-            this.trbSlider.Location = new System.Drawing.Point(88, 17);
+            this.trbSlider.Location = new System.Drawing.Point(111, 27);
             this.trbSlider.Maximum = 97;
             this.trbSlider.Name = "trbSlider";
             this.trbSlider.Size = new System.Drawing.Size(195, 23);
@@ -1047,7 +1062,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(14, 116);
+            this.label5.Location = new System.Drawing.Point(37, 126);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(63, 13);
@@ -1057,7 +1072,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(8, 87);
+            this.label4.Location = new System.Drawing.Point(31, 97);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(67, 13);
@@ -1067,7 +1082,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(22, 57);
+            this.label3.Location = new System.Drawing.Point(45, 67);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 13);
@@ -1077,7 +1092,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(14, 28);
+            this.label2.Location = new System.Drawing.Point(37, 38);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(62, 13);
@@ -1086,21 +1101,23 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.VFRTable);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPage2.Size = new System.Drawing.Size(430, 243);
+            this.tabPage2.Size = new System.Drawing.Size(430, 400);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "VFR Table";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.FanTable);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(430, 243);
+            this.tabPage1.Size = new System.Drawing.Size(430, 400);
             this.tabPage1.TabIndex = 3;
             this.tabPage1.Text = "Fan Curve";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -1613,6 +1630,63 @@
             this.label61.TabIndex = 85;
             this.label61.Text = "mW";
             // 
+            // VFRTable
+            // 
+            this.VFRTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.VFRTable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.VFRTable.Location = new System.Drawing.Point(2, 2);
+            this.VFRTable.Name = "VFRTable";
+            this.VFRTable.Size = new System.Drawing.Size(426, 396);
+            this.VFRTable.TabIndex = 0;
+            // 
+            // FanTable
+            // 
+            this.FanTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.FanTable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.FanTable.Location = new System.Drawing.Point(0, 0);
+            this.FanTable.Name = "FanTable";
+            this.FanTable.Size = new System.Drawing.Size(430, 400);
+            this.FanTable.TabIndex = 0;
+            // 
+            // maskedTextBox5
+            // 
+            this.maskedTextBox5.Location = new System.Drawing.Point(311, 146);
+            this.maskedTextBox5.Margin = new System.Windows.Forms.Padding(2);
+            this.maskedTextBox5.Name = "maskedTextBox5";
+            this.maskedTextBox5.Size = new System.Drawing.Size(58, 20);
+            this.maskedTextBox5.TabIndex = 19;
+            // 
+            // label62
+            // 
+            this.label62.AutoSize = true;
+            this.label62.Location = new System.Drawing.Point(369, 149);
+            this.label62.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label62.Name = "label62";
+            this.label62.Size = new System.Drawing.Size(27, 13);
+            this.label62.TabIndex = 18;
+            this.label62.Text = "Mhz";
+            // 
+            // trackBar4
+            // 
+            this.trackBar4.AutoSize = false;
+            this.trackBar4.BackColor = System.Drawing.Color.White;
+            this.trackBar4.Location = new System.Drawing.Point(111, 145);
+            this.trackBar4.Maximum = 97;
+            this.trackBar4.Name = "trackBar4";
+            this.trackBar4.Size = new System.Drawing.Size(195, 23);
+            this.trackBar4.TabIndex = 17;
+            this.trackBar4.Value = 67;
+            // 
+            // label63
+            // 
+            this.label63.AutoSize = true;
+            this.label63.Location = new System.Drawing.Point(23, 153);
+            this.label63.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label63.Name = "label63";
+            this.label63.Size = new System.Drawing.Size(76, 13);
+            this.label63.TabIndex = 16;
+            this.label63.Text = "Temp Throttle:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1656,6 +1730,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trbSlider)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.VFRTable)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FanTable)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1784,6 +1863,12 @@
         private System.Windows.Forms.Label label59;
         private System.Windows.Forms.Label label60;
         private System.Windows.Forms.Label label61;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox5;
+        private System.Windows.Forms.Label label62;
+        private System.Windows.Forms.TrackBar trackBar4;
+        private System.Windows.Forms.Label label63;
+        private System.Windows.Forms.DataGridView VFRTable;
+        private System.Windows.Forms.DataGridView FanTable;
     }
 }
 
