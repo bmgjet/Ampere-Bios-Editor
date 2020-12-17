@@ -4,8 +4,7 @@ using System.Drawing;
 using System.IO;
 using System.Reflection;
 using System.Windows.Forms;
-
-
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace ABE
 {
@@ -166,19 +165,43 @@ namespace ABE
 			//MessageBox.Show("Type2 Bios have less support then Type1.");
 		}
 
+
+		private void ResetVFRTable()
+        {
+            for (int y = 0; y < Class24.Temperture.Length; y++)
+            {
+                Class24.Temperture[y] = 99 - y;
+            }
+            CreateVFRChart();
+			CreateTFRChart();
+		}
+
+
+		private void ResetFanTable()
+		{
+            for (int y = 0; y < Class24.FanTarget.Length; y++)
+            {
+				Class24.FanScaler[y] = y;
+				Class24.FanTarget[y] = y;
+            }
+            CreateFanChart();
+		}
+
+
 		private void UpdateDisplay()
 		{
 			if (this.RomHeader == null)
 			{
 				return;
 			}
-            this.lblName.Text = this.RomHeader.String_1.Replace("\r\n", " ");
+			this.lblName.Text = this.RomHeader.String_1.Replace("\r\n", " ");
 			this.lblGPU.Text = this.RomHeader.String_3;
 			this.lblBIOS.Text = this.RomHeader.String_2;
 			this.lblDevID.Text = string.Format("{0:X4} - {1:X4}", this.RomHeader.class26_0.UInt16_0, this.RomHeader.class26_0.UInt16_1);
 			this.lblSubVendor.Text = this.RomHeader.String_4.ToUpper();
 			this.lblDate.Text = this.RomHeader.String_0;
 			this.lblChkSum.Text = string.Format("{0:X2} - [{1:X2}] / {2:X2} - [{3:X2}]", this.ImageChecksum, this.GeneratedChecksum, this.ImageChecksum2, this.GeneratedChecksum2);
+			
 			if (this.ImageChecksum == this.GeneratedChecksum && this.ImageChecksum2 == this.GeneratedChecksum2)
 			{
 				this.lblChkSum.BackColor = Color.LightGreen;
@@ -217,7 +240,41 @@ namespace ABE
 			lblMaxAUX2PL.Text = this.RomHeader.GetMaxAUX2PL;
 			lblMaxAUX3PL.Text = this.RomHeader.GetMaxAUX3PL;
 			lblMaxAUX4PL.Text = this.RomHeader.GetMaxAUX4PL;
+
+			if (this.RomHeader.GetBoostClock == "0")
+			{
+				lblBoostClock.Text = this.RomHeader.class26_0.referenceclocks.ToString();
+			}
+			else
+			{
+				lblBoostClock.Text = this.RomHeader.GetBoostClock;
+			}
+			Class24.BoostClock = int.Parse(lblBoostClock.Text);
+
+			ResetVFRTable();
+			ResetFanTable();
+
+			if (this.lblBaseClock.Text == "")
+			{
+				lblBaseClock.Text = trackBarBaseClock.Value.ToString();
+			}
+			if (this.lblFBClock.Text == "")
+			{
+				lblFBClock.Text = trackBarFBClock.Value.ToString();
+			}
+			if (this.lblVideoClock.Text == "")
+			{
+				lblVideoClock.Text = trackBarVideoClock.Value.ToString();
+			}
+			if (this.lblTempLimit.Text == "")
+			{
+				lblTempLimit.Text = trackBarTempLimit.Value.ToString();
+			}
+
+			trackBarBoostClock.Value = int.Parse(lblBoostClock.Text);
 		}
+
+
 
 
 		public byte ImageChecksum2
@@ -334,8 +391,21 @@ namespace ABE
 			this.lblDefaultSRC3PL.Text = "";
 			this.lblMaxSRC2PL.Text = "";
 			this.lblMaxSRC3PL.Text = "";
+			this.lblBoostClock.Text = "";
+			this.lblBaseClock.Text = "";
+			this.lblFBClock.Text = "";
+			this.lblVideoClock.Text = "";
+			this.lblTempLimit.Text = "";
+			GridDefaults();
 			DisableControls();
 			this.lblChkSum.BackColor = SystemColors.Control;
+		}
+
+		private void GridDefaults()
+        {
+			Class24.Voltage = new[] { 700, 706, 712, 718, 725, 731, 737, 743, 750, 756, 762, 768, 775, 781, 787, 793, 800, 806, 812, 818, 825, 831, 837, 843, 850, 856, 862, 868, 875, 881, 887, 893, 900, 906, 912, 918, 925, 931, 937, 943, 950, 956, 962, 968, 975, 981, 987, 993, 1000, 1006, 1012, 1018, 1025, 1031, 1037, 1043, 1050, 1056, 1062, 1068, 1075, 1081, 1087, 1093, 1100, 1106, 1112, 1118, 1125, 1131, 1137, 1143, 1150, 1156, 1162, 1168, 1175, 1181, 1187, 1193, 1200, 1206, 1212, 1218, 1225, 1231, 1237, 1243, 1250 };
+			Class24.Frequency = new[] { 1245, 1275, 1290, 1305, 1335, 1350, 1365, 1380, 1410, 1400, 1425, 1440, 1455, 1470, 1485, 1515, 1530, 1545, 1560, 1575, 1590, 1605, 1620, 1635, 1650, 1665, 1680, 1695, 1710, 1725, 1725, 1740, 1755, 1770, 1785, 1800, 1800, 1815, 1830, 1830, 1845, 1860, 1875, 1875, 1890, 1890, 1905, 1920, 1920, 1935, 1935, 1950, 1950, 1965, 1965, 1980, 1980, 1995, 1995, 1995, 2010, 2010, 2010, 2025, 2025, 2025, 2025, 2040, 2040, 2040, 2040, 2040, 2040, 2040, 2055, 2055, 2055, 2055, 2055, 2055, 2055, 2055, 2055, 2055, 2055, 2055, 2055, 2055, 2055 };
+
 		}
 
 		private void DisableControls()
@@ -367,6 +437,10 @@ namespace ABE
 			this.lblDefaultSRC3PL.Enabled = false;
 			this.lblMaxSRC2PL.Enabled = false;
 			this.lblMaxSRC3PL.Enabled = false;
+			this.label65.Enabled = false;
+			this.trackBarBoostClock.Enabled = false;
+			this.lblBoostClock.Enabled = false;
+			this.tcSettings.Enabled = false;
 		}
 
         private void Btn_open_Click(object sender, EventArgs e)
@@ -389,7 +463,6 @@ namespace ABE
             {
                 @interface.Reset();
             }
-            this.tcSettings.Enabled = false;
         }
 		
 
@@ -463,7 +536,11 @@ namespace ABE
 					this.lblDefaultSRC3PL.Enabled = true;
 					this.lblMaxSRC2PL.Enabled = true;
 					this.lblMaxSRC3PL.Enabled = true;
-				return;
+					this.label65.Enabled = true;
+					this.trackBarBoostClock.Enabled = true;
+					this.lblBoostClock.Enabled = true;
+					this.tcSettings.Enabled = true;
+					return;
 				}
 				this.ResetDisplay(true);
 			}
@@ -475,6 +552,7 @@ namespace ABE
 
         private void Form1_Load(object sender, EventArgs e)
         {
+			
 			this.method_2();
 			Version version = Assembly.GetExecutingAssembly().GetName().Version;
 			this.Text = string.Format("ABE v{0}.{1}{2}", version.Major, version.Minor, version.Build);
@@ -786,6 +864,21 @@ namespace ABE
 							Class29.setpower(class30_0.byte_1, Class24.B26, int.Parse(lblMaxAUX4PL.Text));
 						}
 						break;
+					case 26:
+						if(lblBoostClock.Text == trackBarBoostClock.Value.ToString())
+                        {
+						if (Class24.ThisBiosType == 1)
+						{
+							Class29.setpower(class30_0.byte_1, Class24.A27, int.Parse(lblBoostClock.Text) * 1000);
+						}
+						else if (Class24.ThisBiosType == 2)
+						{
+							Class29.setpower(class30_0.byte_1, Class24.B27, int.Parse(lblBoostClock.Text) * 1000);
+						}
+						}
+						break;
+
+
 					default:
 						break;
 				}
@@ -809,6 +902,97 @@ namespace ABE
 
 			}
         }
+
+		Point? prevPosition = null;
+		ToolTip tooltip = new ToolTip();
+
+		private void chart_MouseMove(object sender, MouseEventArgs e)
+		{
+			var pos = e.Location;
+			if (prevPosition.HasValue && pos == prevPosition.Value)
+				return;
+			tooltip.RemoveAll();
+			prevPosition = pos;
+			var results = chart1.HitTest(pos.X, pos.Y, true, ChartElementType.PlottingArea); // set ChartElementType.PlottingArea for full area, not only DataPoints
+			foreach (var result in results)
+			{
+				if (result.ChartElementType == ChartElementType.PlottingArea) // set ChartElementType.PlottingArea for full area, not only DataPoints
+				{
+					var yVal = result.ChartArea.AxisY.PixelPositionToValue(pos.Y);
+					var xVal = result.ChartArea.AxisX.PixelPositionToValue(pos.X);
+					tooltip.Show(((int)yVal).ToString() + "MHz@"+ ((int)xVal).ToString()+"MV", chart1, pos.X, pos.Y - 15);
+				}
+			}
+		}
+		private void chart2_MouseMove(object sender, MouseEventArgs e)
+		{
+			var pos = e.Location;
+			if (prevPosition.HasValue && pos == prevPosition.Value)
+				return;
+			tooltip.RemoveAll();
+			prevPosition = pos;
+			var results = chart2.HitTest(pos.X, pos.Y, true, ChartElementType.DataPoint); // set ChartElementType.PlottingArea for full area, not only DataPoints
+			foreach (var result in results)
+			{
+				if (result.ChartElementType == ChartElementType.DataPoint) // set ChartElementType.PlottingArea for full area, not only DataPoints
+				{
+					var yVal = result.ChartArea.AxisY.PixelPositionToValue(pos.Y);
+					var xVal = result.ChartArea.AxisX.PixelPositionToValue(pos.X);
+					tooltip.Show(((int)yVal).ToString() + "% @ " + ((int)xVal).ToString() + "C", chart2, pos.X, pos.Y - 15);
+				}
+			}
+		}
+
+		private void chart3_MouseMove(object sender, MouseEventArgs e)
+		{
+			var pos = e.Location;
+			if (prevPosition.HasValue && pos == prevPosition.Value)
+				return;
+			tooltip.RemoveAll();
+			prevPosition = pos;
+			var results = chart3.HitTest(pos.X, pos.Y, true, ChartElementType.DataPoint); // set ChartElementType.PlottingArea for full area, not only DataPoints
+			foreach (var result in results)
+			{
+				if (result.ChartElementType == ChartElementType.DataPoint) // set ChartElementType.PlottingArea for full area, not only DataPoints
+				{
+					var yVal = result.ChartArea.AxisY.PixelPositionToValue(pos.Y);
+					var xVal = result.ChartArea.AxisX.PixelPositionToValue(pos.X);
+					tooltip.Show(((int)yVal).ToString() + "% @ " + ((int)xVal).ToString() + "C", chart3, pos.X, pos.Y - 15);
+				}
+			}
+		}
+
+		private void CreateVFRChart()
+		{
+			chart1.Series.Clear();
+			var series = new Series("VFR");
+			series.ChartType = SeriesChartType.StepLine;
+			series.Color = Color.Black;
+			series.Points.DataBindXY(Class24.Voltage, Class24.Frequency);
+			chart1.Series.Add(series);
+		}
+
+		private void CreateTFRChart()
+		{
+			chart3.Series.Clear();
+			var series = new Series("TFR");
+			series.ChartType = SeriesChartType.Spline;
+			series.Color = Color.Black;
+			series.Points.DataBindXY(Class24.FanScaler, Class24.Temperture);
+			chart3.Series.Add(series);
+			chart3.ChartAreas[0].AxisX.Title = "Temperature C";
+		}
+
+		private void CreateFanChart()
+		{
+			chart2.Series.Clear();
+			var series = new Series("Fan");
+			series.ChartType = SeriesChartType.Spline;
+			series.Color = Color.Black;
+			series.Points.DataBindXY(Class24.FanScaler, Class24.FanTarget);
+			chart2.Series.Add(series);
+			chart2.ChartAreas[0].AxisX.Title = "Temperature C";
+		}
 
 		public void method_1(string string_1)
 		{
@@ -1002,5 +1186,41 @@ namespace ABE
 		{
 			button1.Visible = true;
 		}
-	}
+
+        private void trackBarBoostClock_ValueChanged(object sender, EventArgs e)
+        {
+			lblBoostClock.Text = trackBarBoostClock.Value.ToString();
+		}
+
+        private void lblBoostClock_Validated(object sender, EventArgs e)
+        {
+			trackBarBoostClock.Value = int.Parse(lblBoostClock.Text);
+			EditBiosBoardPowerLimit(26);
+		}
+
+        private void trackBarBaseClock_ValueChanged(object sender, EventArgs e)
+        {
+			lblBaseClock.Text = trackBarBaseClock.Value.ToString();
+		}
+
+        private void trackBarVideoClock_ValueChanged(object sender, EventArgs e)
+        {
+			lblVideoClock.Text = trackBarVideoClock.Value.ToString();
+		}
+
+        private void trackBarFBClock_ValueChanged(object sender, EventArgs e)
+        {
+			lblFBClock.Text = trackBarFBClock.Value.ToString();
+		}
+
+        private void trackBarTempLimit_ValueChanged(object sender, EventArgs e)
+        {
+			lblTempLimit.Text = trackBarTempLimit.Value.ToString();
+		}
+
+        private void trackBarBoostClock_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+			EditBiosBoardPowerLimit(26);
+		}
+    }
 }

@@ -7,3 +7,4 @@ C:\Users\bmg\source\repos\ABE\obj\Debug\ABE.csproj.GenerateResource.cache
 C:\Users\bmg\source\repos\ABE\obj\Debug\ABE.csproj.CoreCompileInputs.cache
 C:\Users\bmg\source\repos\ABE\obj\Debug\ABE.exe
 C:\Users\bmg\source\repos\ABE\obj\Debug\ABE.pdb
+C:\Users\bmg\source\repos\ABE\obj\Debug\ABE.csprojAssemblyReference.cache

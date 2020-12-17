@@ -12,6 +12,9 @@ using System.Text;
 //Settings-Checksum 0x8E1FF
 //Settings-Start 0x19000
 
+//Clocks
+//Boost Clock 0x8E103
+
 //PowerLimits
 //Board Minimum PL 0x8BDF2
 //Board Default PL 0x8BDF6
@@ -160,17 +163,38 @@ internal class Class24 : Class1
 	{
 		get
 		{
-            if (Class24.ThisBiosType == 1)
-            {
-                return this.byte_0.spower(Class24.A5);
-            }
-            else if (Class24.ThisBiosType == 2)
-            {
-                return this.byte_0.spower(Class24.B5);
-            }
+			if (Class24.ThisBiosType == 1)
+			{
+				return this.byte_0.spower(Class24.A5);
+			}
+			else if (Class24.ThisBiosType == 2)
+			{
+				return this.byte_0.spower(Class24.B5);
+			}
 			else if (Class24.ThisBiosType == 3)
 			{
 				return this.byte_0.spower(Class24.C5);
+			}
+			return "0";
+		}
+	}
+
+	public string GetBoostClock
+	{
+		get
+		{
+			
+			if (Class24.ThisBiosType == 1)
+			{
+				return this.byte_0.ClockSpeed(Class24.A27);
+			}
+			else if (Class24.ThisBiosType == 2)
+			{
+				return this.byte_0.ClockSpeed(Class24.B27);
+			}
+			else if (Class24.ThisBiosType == 3)
+			{
+				return this.byte_0.ClockSpeed(Class24.C27);
 			}
 			return "0";
 		}
@@ -580,6 +604,8 @@ internal class Class24 : Class1
 	}
 
 
+
+
 	public string String_3
 	{
 		get
@@ -616,6 +642,8 @@ internal class Class24 : Class1
 			return this.byte_0.smethod_1(21034, 30);
 		}
 	}
+
+
 
 
 	public static byte ThisBiosType = 1;
@@ -663,6 +691,7 @@ internal class Class24 : Class1
 	public static int A24 = 0x8C86A; //2
 	public static int A25 = 0x8C89D; //3
 	public static int A26 = 0x8C8D0; //4
+	public static int A27 = 0x8E103; //Boost Clock
 
 	//Bios Type 2
 	public static int B3 = 0x8F3FF; //Settings Table Checksum
@@ -680,12 +709,12 @@ internal class Class24 : Class1
 	public static int B11 = 0x8D215; //Chip power
 	public static int B12 = 0x8D219; //max
 	public static int B13 = 0x8D331;  //Vram
-	public static int B14 = 0x8D335;	//max
+	public static int B14 = 0x8D335;    //max
 	public static int B15 = 0x8CFDD; //slot
 	public static int B16 = 0x8CFE1; //max
 	public static int B17 = 0x8D024;  //8pin
 	public static int B18 = 0x8D028; //max
-	public static int B19 = 0x8D98D;	//Aux
+	public static int B19 = 0x8D98D;    //Aux
 	public static int B20 = 0x8D9C0; //2
 	public static int B21 = 0x8D9F3; //3
 	public static int B22 = 0x8DA26; //4
@@ -693,6 +722,7 @@ internal class Class24 : Class1
 	public static int B24 = 0x8D9C4; //2
 	public static int B25 = 0x8D9F7; //3
 	public static int B26 = 0x8DA2A; //4
+	public static int B27 = 0x8F25E; //boost clock
 
 	//Bios Type 3
 	public static int C3 = 0x8F3FF; //Settings Table Checksum
@@ -723,6 +753,16 @@ internal class Class24 : Class1
 	public static int C24 = 0; //2
 	public static int C25 = 0; //3
 	public static int C26 = 0; //4
+	public static int C27 = 0; //boost clock
+
+
+	public static int[] Voltage; // = new[] { 700, 706, 712, 718, 725, 731, 737, 743, 750, 756, 762, 768, 775, 781, 787, 793, 800, 806, 812, 818, 825, 831, 837, 843, 850, 856, 862, 868, 875, 881, 887, 893, 900, 906, 912, 918, 925, 931, 937, 943, 950, 956, 962, 968, 975, 981, 987, 993, 1000, 1006, 1012, 1018, 1025, 1031, 1037, 1043, 1050, 1056, 1062, 1068, 1075, 1081, 1087, 1093, 1100, 1106, 1112, 1118, 1125, 1131, 1137, 1143, 1150, 1156, 1162, 1168, 1175, 1181, 1187, 1193, 1200, 1206, 1212, 1218, 1225, 1231, 1237, 1243, 1250 };
+	public static int[] Frequency; // = new[] { 1245, 1275, 1290, 1305, 1335, 1350, 1365, 1380, 1410, 1400, 1425, 1440, 1455, 1470, 1485, 1515, 1530, 1545, 1560, 1575, 1590, 1605, 1620, 1635, 1650, 1665, 1680, 1695, 1710, 1725, 1725, 1740, 1755, 1770, 1785, 1800, 1800, 1815, 1830, 1830, 1845, 1860, 1875, 1875, 1890, 1890, 1905, 1920, 1920, 1935, 1935, 1950, 1950, 1965, 1965, 1980, 1980, 1995, 1995, 1995, 2010, 2010, 2010, 2025, 2025, 2025, 2025, 2040, 2040, 2040, 2040, 2040, 2040, 2040, 2055, 2055, 2055, 2055, 2055, 2055, 2055, 2055, 2055, 2055, 2055, 2055, 2055, 2055, 2055 };
+	public static int[] Temperture = new int[100];
+	public static int[] FanTarget = new int[100];
+	public static int[] FanScaler = new int[100];
+	public static int BoostClock = 0;
+
 
 	private static byte[] byte_1 = new byte[]
 	{
@@ -750,6 +790,42 @@ internal class Class26 : Class1
 			return this.byte_0.smethod_0(this.byte_1, this.int_0, false, null) == this.int_0;
 		}
 	}
+
+	public int card
+    {
+        get
+        {
+			if (UInt16_1 == 0x2204)
+				return 3080;
+			else if (UInt16_1 == 0x2206)
+				return 3080;
+			else
+				return 0;
+		}
+	}
+
+	public int offsetVFR
+    {
+		get
+		{
+			return Class24.BoostClock - referenceclocks;
+		}
+
+    }
+		
+
+	public int referenceclocks
+    {
+		get
+        {
+			if (UInt16_1 == 0x2204)
+				return 1695;
+			else if (UInt16_1 == 0x2206)
+				return 1710;
+			else
+				return 0;
+		}
+    }
 
 	public ushort UInt16_0
 	{
@@ -863,6 +939,13 @@ internal static class Class29
 		return @string;
 	}
 
+	internal static string ClockSpeed(this byte[] byte_0, int int_0)
+	{
+		byte[] Clock = { byte_0[int_0], byte_0[int_0 + 1], byte_0[int_0 + 2], byte_0[int_0 + 3] };
+		int Speed = BitConverter.ToInt32(Clock, 0) / 1000;
+		string @string = Speed.ToString();
+		return @string;
+	}
 
 
 	internal static void setpower(this byte[] byte_0, int int_0,int NewPL)

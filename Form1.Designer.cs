@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.lblChkSum = new System.Windows.Forms.Label();
             this.lChkSum = new System.Windows.Forms.Label();
@@ -49,24 +52,37 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.label54 = new System.Windows.Forms.Label();
+            this.lblDefAUX1PL = new System.Windows.Forms.MaskedTextBox();
+            this.label53 = new System.Windows.Forms.Label();
+            this.label52 = new System.Windows.Forms.Label();
+            this.label51 = new System.Windows.Forms.Label();
+            this.label50 = new System.Windows.Forms.Label();
+            this.label49 = new System.Windows.Forms.Label();
+            this.label48 = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
+            this.label45 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.lblMaxSRC2PL = new System.Windows.Forms.MaskedTextBox();
+            this.lblMaxSRC3PL = new System.Windows.Forms.MaskedTextBox();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.lblDefaultSRC2PL = new System.Windows.Forms.MaskedTextBox();
+            this.lblDefaultSRC3PL = new System.Windows.Forms.MaskedTextBox();
+            this.label38 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.lblMaxVRAMPL = new System.Windows.Forms.MaskedTextBox();
-            this.label34 = new System.Windows.Forms.Label();
-            this.lblMaxSRCPL = new System.Windows.Forms.MaskedTextBox();
-            this.label31 = new System.Windows.Forms.Label();
             this.lblMinimumPL = new System.Windows.Forms.MaskedTextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.lblDefaultSRCPL = new System.Windows.Forms.MaskedTextBox();
             this.lblDefaultPL = new System.Windows.Forms.MaskedTextBox();
-            this.label28 = new System.Windows.Forms.Label();
-            this.lblDefaultVRAMPL = new System.Windows.Forms.MaskedTextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.lblDefaultChipPL = new System.Windows.Forms.MaskedTextBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -88,20 +104,51 @@
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.lblDefaultSlotPL = new System.Windows.Forms.MaskedTextBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.lblMaxSRCPL = new System.Windows.Forms.MaskedTextBox();
+            this.label34 = new System.Windows.Forms.Label();
+            this.lblMaxVRAMPL = new System.Windows.Forms.MaskedTextBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.lblDefaultVRAMPL = new System.Windows.Forms.MaskedTextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.lblDefAUX2PL = new System.Windows.Forms.MaskedTextBox();
+            this.lblDefAUX3PL = new System.Windows.Forms.MaskedTextBox();
+            this.lblDefAUX4PL = new System.Windows.Forms.MaskedTextBox();
+            this.lblMaxAUX1PL = new System.Windows.Forms.MaskedTextBox();
+            this.lblMaxAUX2PL = new System.Windows.Forms.MaskedTextBox();
+            this.lblMaxAUX3PL = new System.Windows.Forms.MaskedTextBox();
+            this.lblMaxAUX4PL = new System.Windows.Forms.MaskedTextBox();
+            this.label55 = new System.Windows.Forms.Label();
+            this.label56 = new System.Windows.Forms.Label();
+            this.label57 = new System.Windows.Forms.Label();
+            this.label58 = new System.Windows.Forms.Label();
+            this.label59 = new System.Windows.Forms.Label();
+            this.label60 = new System.Windows.Forms.Label();
+            this.label61 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.lblUnknownPL = new System.Windows.Forms.MaskedTextBox();
+            this.label37 = new System.Windows.Forms.Label();
             this.tcSettings = new System.Windows.Forms.TabPage();
-            this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.trackBar3 = new System.Windows.Forms.TrackBar();
-            this.trackBar2 = new System.Windows.Forms.TrackBar();
-            this.trackBar1 = new System.Windows.Forms.TrackBar();
-            this.trbSlider = new System.Windows.Forms.TrackBar();
             this.label5 = new System.Windows.Forms.Label();
+            this.lblBoostClock = new System.Windows.Forms.MaskedTextBox();
+            this.label64 = new System.Windows.Forms.Label();
+            this.trackBarBoostClock = new System.Windows.Forms.TrackBar();
+            this.label65 = new System.Windows.Forms.Label();
+            this.lblTempLimit = new System.Windows.Forms.MaskedTextBox();
+            this.label62 = new System.Windows.Forms.Label();
+            this.trackBarTempLimit = new System.Windows.Forms.TrackBar();
+            this.label63 = new System.Windows.Forms.Label();
+            this.lblVideoClock = new System.Windows.Forms.MaskedTextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.lblFBClock = new System.Windows.Forms.MaskedTextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lblBaseClock = new System.Windows.Forms.MaskedTextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.trackBarVideoClock = new System.Windows.Forms.TrackBar();
+            this.trackBarFBClock = new System.Windows.Forms.TrackBar();
+            this.trackBarBaseClock = new System.Windows.Forms.TrackBar();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -111,66 +158,27 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblHash = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.Btn_Save = new System.Windows.Forms.Button();
-            this.lblUnknownPL = new System.Windows.Forms.MaskedTextBox();
-            this.label37 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.label38 = new System.Windows.Forms.Label();
-            this.lblDefaultSRC3PL = new System.Windows.Forms.MaskedTextBox();
-            this.lblDefaultSRC2PL = new System.Windows.Forms.MaskedTextBox();
-            this.label39 = new System.Windows.Forms.Label();
-            this.label40 = new System.Windows.Forms.Label();
-            this.label41 = new System.Windows.Forms.Label();
-            this.label42 = new System.Windows.Forms.Label();
-            this.label43 = new System.Windows.Forms.Label();
-            this.lblMaxSRC3PL = new System.Windows.Forms.MaskedTextBox();
-            this.lblMaxSRC2PL = new System.Windows.Forms.MaskedTextBox();
-            this.label44 = new System.Windows.Forms.Label();
-            this.label45 = new System.Windows.Forms.Label();
-            this.label46 = new System.Windows.Forms.Label();
-            this.label47 = new System.Windows.Forms.Label();
-            this.label48 = new System.Windows.Forms.Label();
-            this.label49 = new System.Windows.Forms.Label();
-            this.label50 = new System.Windows.Forms.Label();
-            this.label51 = new System.Windows.Forms.Label();
-            this.label52 = new System.Windows.Forms.Label();
-            this.label53 = new System.Windows.Forms.Label();
-            this.lblDefAUX1PL = new System.Windows.Forms.MaskedTextBox();
-            this.lblDefAUX2PL = new System.Windows.Forms.MaskedTextBox();
-            this.lblDefAUX3PL = new System.Windows.Forms.MaskedTextBox();
-            this.lblDefAUX4PL = new System.Windows.Forms.MaskedTextBox();
-            this.lblMaxAUX1PL = new System.Windows.Forms.MaskedTextBox();
-            this.lblMaxAUX2PL = new System.Windows.Forms.MaskedTextBox();
-            this.lblMaxAUX3PL = new System.Windows.Forms.MaskedTextBox();
-            this.lblMaxAUX4PL = new System.Windows.Forms.MaskedTextBox();
-            this.label54 = new System.Windows.Forms.Label();
-            this.label55 = new System.Windows.Forms.Label();
-            this.label56 = new System.Windows.Forms.Label();
-            this.label57 = new System.Windows.Forms.Label();
-            this.label58 = new System.Windows.Forms.Label();
-            this.label59 = new System.Windows.Forms.Label();
-            this.label60 = new System.Windows.Forms.Label();
-            this.label61 = new System.Windows.Forms.Label();
-            this.VFRTable = new System.Windows.Forms.DataGridView();
-            this.FanTable = new System.Windows.Forms.DataGridView();
-            this.maskedTextBox5 = new System.Windows.Forms.MaskedTextBox();
-            this.label62 = new System.Windows.Forms.Label();
-            this.trackBar4 = new System.Windows.Forms.TrackBar();
-            this.label63 = new System.Windows.Forms.Label();
+            this.Btn_Save = new System.Windows.Forms.Button();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.chart3 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabControl1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tcSettings.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trbSlider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarBoostClock)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarTempLimit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarVideoClock)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarFBClock)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarBaseClock)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.VFRTable)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.FanTable)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
+            this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart3)).BeginInit();
             this.SuspendLayout();
             // 
             // lblChkSum
@@ -328,9 +336,10 @@
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tcSettings);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Location = new System.Drawing.Point(10, 189);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabControl1.Location = new System.Drawing.Point(10, 174);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(438, 426);
@@ -340,7 +349,7 @@
             // 
             this.tabPage3.Controls.Add(this.tableLayoutPanel1);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(430, 400);
             this.tabPage3.TabIndex = 2;
@@ -436,7 +445,7 @@
             this.tableLayoutPanel1.Controls.Add(this.label37, 5, 9);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 15;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.666667F));
@@ -457,6 +466,258 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(430, 400);
             this.tableLayoutPanel1.TabIndex = 61;
             // 
+            // label54
+            // 
+            this.label54.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label54.AutoSize = true;
+            this.label54.Location = new System.Drawing.Point(180, 299);
+            this.label54.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(26, 13);
+            this.label54.TabIndex = 69;
+            this.label54.Text = "mW";
+            // 
+            // lblDefAUX1PL
+            // 
+            this.lblDefAUX1PL.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblDefAUX1PL.Enabled = false;
+            this.lblDefAUX1PL.Location = new System.Drawing.Point(101, 290);
+            this.lblDefAUX1PL.Margin = new System.Windows.Forms.Padding(2);
+            this.lblDefAUX1PL.Mask = "0000000";
+            this.lblDefAUX1PL.Name = "lblDefAUX1PL";
+            this.lblDefAUX1PL.Size = new System.Drawing.Size(75, 20);
+            this.lblDefAUX1PL.TabIndex = 69;
+            this.lblDefAUX1PL.Validated += new System.EventHandler(this.lblDefAUX1PL_Validated);
+            // 
+            // label53
+            // 
+            this.label53.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label53.AutoSize = true;
+            this.label53.Location = new System.Drawing.Point(234, 387);
+            this.label53.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(77, 13);
+            this.label53.TabIndex = 71;
+            this.label53.Text = "Max AUX4 PL:";
+            // 
+            // label52
+            // 
+            this.label52.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label52.AutoSize = true;
+            this.label52.Location = new System.Drawing.Point(234, 356);
+            this.label52.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(77, 13);
+            this.label52.TabIndex = 71;
+            this.label52.Text = "Max AUX3 PL:";
+            // 
+            // label51
+            // 
+            this.label51.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label51.AutoSize = true;
+            this.label51.Location = new System.Drawing.Point(234, 325);
+            this.label51.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(77, 13);
+            this.label51.TabIndex = 71;
+            this.label51.Text = "Max AUX2 PL:";
+            // 
+            // label50
+            // 
+            this.label50.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label50.AutoSize = true;
+            this.label50.Location = new System.Drawing.Point(234, 299);
+            this.label50.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(77, 13);
+            this.label50.TabIndex = 70;
+            this.label50.Text = "Max AUX1 PL:";
+            // 
+            // label49
+            // 
+            this.label49.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label49.AutoSize = true;
+            this.label49.Location = new System.Drawing.Point(23, 387);
+            this.label49.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(74, 13);
+            this.label49.TabIndex = 70;
+            this.label49.Text = "Def AUX4 PL:";
+            // 
+            // label48
+            // 
+            this.label48.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label48.AutoSize = true;
+            this.label48.Location = new System.Drawing.Point(23, 356);
+            this.label48.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(74, 13);
+            this.label48.TabIndex = 70;
+            this.label48.Text = "Def AUX3 PL:";
+            // 
+            // label47
+            // 
+            this.label47.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label47.AutoSize = true;
+            this.label47.Location = new System.Drawing.Point(23, 325);
+            this.label47.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(74, 13);
+            this.label47.TabIndex = 70;
+            this.label47.Text = "Def AUX2 PL:";
+            // 
+            // label46
+            // 
+            this.label46.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label46.AutoSize = true;
+            this.label46.Location = new System.Drawing.Point(23, 299);
+            this.label46.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(74, 13);
+            this.label46.TabIndex = 69;
+            this.label46.Text = "Def AUX1 PL:";
+            // 
+            // label45
+            // 
+            this.label45.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label45.AutoSize = true;
+            this.label45.Location = new System.Drawing.Point(394, 195);
+            this.label45.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(26, 13);
+            this.label45.TabIndex = 69;
+            this.label45.Text = "mW";
+            // 
+            // label44
+            // 
+            this.label44.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(180, 221);
+            this.label44.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(26, 13);
+            this.label44.TabIndex = 69;
+            this.label44.Text = "mW";
+            // 
+            // lblMaxSRC2PL
+            // 
+            this.lblMaxSRC2PL.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblMaxSRC2PL.Enabled = false;
+            this.lblMaxSRC2PL.Location = new System.Drawing.Point(315, 186);
+            this.lblMaxSRC2PL.Margin = new System.Windows.Forms.Padding(2);
+            this.lblMaxSRC2PL.Mask = "0000000";
+            this.lblMaxSRC2PL.Name = "lblMaxSRC2PL";
+            this.lblMaxSRC2PL.Size = new System.Drawing.Size(75, 20);
+            this.lblMaxSRC2PL.TabIndex = 69;
+            this.lblMaxSRC2PL.Validated += new System.EventHandler(this.lblMaxSRC2PL_Validated);
+            // 
+            // lblMaxSRC3PL
+            // 
+            this.lblMaxSRC3PL.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblMaxSRC3PL.Enabled = false;
+            this.lblMaxSRC3PL.Location = new System.Drawing.Point(101, 212);
+            this.lblMaxSRC3PL.Margin = new System.Windows.Forms.Padding(2);
+            this.lblMaxSRC3PL.Mask = "0000000";
+            this.lblMaxSRC3PL.Name = "lblMaxSRC3PL";
+            this.lblMaxSRC3PL.Size = new System.Drawing.Size(75, 20);
+            this.lblMaxSRC3PL.TabIndex = 69;
+            this.lblMaxSRC3PL.Validated += new System.EventHandler(this.lblMaxSRC3PL_Validated);
+            // 
+            // label43
+            // 
+            this.label43.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(20, 221);
+            this.label43.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(77, 13);
+            this.label43.TabIndex = 69;
+            this.label43.Text = "Max SRC3 PL:";
+            // 
+            // label42
+            // 
+            this.label42.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(234, 195);
+            this.label42.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(77, 13);
+            this.label42.TabIndex = 69;
+            this.label42.Text = "Max SRC2 PL:";
+            // 
+            // label41
+            // 
+            this.label41.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(237, 143);
+            this.label41.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(74, 13);
+            this.label41.TabIndex = 70;
+            this.label41.Text = "Def SRC2 PL:";
+            // 
+            // label40
+            // 
+            this.label40.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(394, 143);
+            this.label40.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(26, 13);
+            this.label40.TabIndex = 69;
+            this.label40.Text = "mW";
+            // 
+            // label39
+            // 
+            this.label39.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(180, 169);
+            this.label39.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(26, 13);
+            this.label39.TabIndex = 69;
+            this.label39.Text = "mW";
+            // 
+            // lblDefaultSRC2PL
+            // 
+            this.lblDefaultSRC2PL.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblDefaultSRC2PL.Enabled = false;
+            this.lblDefaultSRC2PL.Location = new System.Drawing.Point(315, 134);
+            this.lblDefaultSRC2PL.Margin = new System.Windows.Forms.Padding(2);
+            this.lblDefaultSRC2PL.Mask = "0000000";
+            this.lblDefaultSRC2PL.Name = "lblDefaultSRC2PL";
+            this.lblDefaultSRC2PL.Size = new System.Drawing.Size(75, 20);
+            this.lblDefaultSRC2PL.TabIndex = 69;
+            this.lblDefaultSRC2PL.Validated += new System.EventHandler(this.lblDefaultSRC2PL_Validated);
+            // 
+            // lblDefaultSRC3PL
+            // 
+            this.lblDefaultSRC3PL.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblDefaultSRC3PL.Enabled = false;
+            this.lblDefaultSRC3PL.Location = new System.Drawing.Point(101, 160);
+            this.lblDefaultSRC3PL.Margin = new System.Windows.Forms.Padding(2);
+            this.lblDefaultSRC3PL.Mask = "0000000";
+            this.lblDefaultSRC3PL.Name = "lblDefaultSRC3PL";
+            this.lblDefaultSRC3PL.Size = new System.Drawing.Size(75, 20);
+            this.lblDefaultSRC3PL.TabIndex = 69;
+            this.lblDefaultSRC3PL.Validated += new System.EventHandler(this.lblDefaultSRC3PL_Validated);
+            // 
+            // label38
+            // 
+            this.label38.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(23, 169);
+            this.label38.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(74, 13);
+            this.label38.TabIndex = 69;
+            this.label38.Text = "Def SRC3 PL:";
+            // 
             // label15
             // 
             this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -468,72 +729,13 @@
             this.label15.TabIndex = 28;
             this.label15.Text = "MinTDP PL:";
             // 
-            // label30
-            // 
-            this.label30.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(180, 273);
-            this.label30.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(26, 13);
-            this.label30.TabIndex = 53;
-            this.label30.Text = "mW";
-            // 
-            // lblMaxVRAMPL
-            // 
-            this.lblMaxVRAMPL.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblMaxVRAMPL.Enabled = false;
-            this.lblMaxVRAMPL.Location = new System.Drawing.Point(101, 264);
-            this.lblMaxVRAMPL.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.lblMaxVRAMPL.Mask = "0000000";
-            this.lblMaxVRAMPL.Name = "lblMaxVRAMPL";
-            this.lblMaxVRAMPL.Size = new System.Drawing.Size(75, 20);
-            this.lblMaxVRAMPL.TabIndex = 54;
-            this.lblMaxVRAMPL.Validated += new System.EventHandler(this.lblMaxVRAMPL_Validated);
-            // 
-            // label34
-            // 
-            this.label34.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(180, 195);
-            this.label34.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(26, 13);
-            this.label34.TabIndex = 59;
-            this.label34.Text = "mW";
-            // 
-            // lblMaxSRCPL
-            // 
-            this.lblMaxSRCPL.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblMaxSRCPL.Enabled = false;
-            this.lblMaxSRCPL.Location = new System.Drawing.Point(101, 186);
-            this.lblMaxSRCPL.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.lblMaxSRCPL.Mask = "0000000";
-            this.lblMaxSRCPL.Name = "lblMaxSRCPL";
-            this.lblMaxSRCPL.Size = new System.Drawing.Size(75, 20);
-            this.lblMaxSRCPL.TabIndex = 60;
-            this.lblMaxSRCPL.Validated += new System.EventHandler(this.lblMaxSRCPL_Validated);
-            // 
-            // label31
-            // 
-            this.label31.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(17, 273);
-            this.label31.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(80, 13);
-            this.label31.TabIndex = 52;
-            this.label31.Text = "Max VRAM PL:";
-            // 
             // lblMinimumPL
             // 
             this.lblMinimumPL.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMinimumPL.Enabled = false;
             this.lblMinimumPL.Location = new System.Drawing.Point(101, 4);
-            this.lblMinimumPL.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lblMinimumPL.Margin = new System.Windows.Forms.Padding(2);
             this.lblMinimumPL.Mask = "0000000";
             this.lblMinimumPL.Name = "lblMinimumPL";
             this.lblMinimumPL.Size = new System.Drawing.Size(75, 20);
@@ -550,17 +752,6 @@
             this.label14.Size = new System.Drawing.Size(26, 13);
             this.label14.TabIndex = 29;
             this.label14.Text = "mW";
-            // 
-            // label35
-            // 
-            this.label35.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(20, 195);
-            this.label35.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(77, 13);
-            this.label35.TabIndex = 58;
-            this.label35.Text = "Max SRC1 PL:";
             // 
             // label10
             // 
@@ -590,7 +781,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDefaultSRCPL.Enabled = false;
             this.lblDefaultSRCPL.Location = new System.Drawing.Point(101, 134);
-            this.lblDefaultSRCPL.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lblDefaultSRCPL.Margin = new System.Windows.Forms.Padding(2);
             this.lblDefaultSRCPL.Mask = "0000000";
             this.lblDefaultSRCPL.Name = "lblDefaultSRCPL";
             this.lblDefaultSRCPL.Size = new System.Drawing.Size(75, 20);
@@ -603,36 +794,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDefaultPL.Enabled = false;
             this.lblDefaultPL.Location = new System.Drawing.Point(101, 30);
-            this.lblDefaultPL.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lblDefaultPL.Margin = new System.Windows.Forms.Padding(2);
             this.lblDefaultPL.Mask = "0000000";
             this.lblDefaultPL.Name = "lblDefaultPL";
             this.lblDefaultPL.Size = new System.Drawing.Size(75, 20);
             this.lblDefaultPL.TabIndex = 25;
             this.lblDefaultPL.Validated += new System.EventHandler(this.lblDefaultPL_Validated);
-            // 
-            // label28
-            // 
-            this.label28.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(180, 247);
-            this.label28.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(26, 13);
-            this.label28.TabIndex = 50;
-            this.label28.Text = "mW";
-            // 
-            // lblDefaultVRAMPL
-            // 
-            this.lblDefaultVRAMPL.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblDefaultVRAMPL.Enabled = false;
-            this.lblDefaultVRAMPL.Location = new System.Drawing.Point(101, 238);
-            this.lblDefaultVRAMPL.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.lblDefaultVRAMPL.Mask = "0000000";
-            this.lblDefaultVRAMPL.Name = "lblDefaultVRAMPL";
-            this.lblDefaultVRAMPL.Size = new System.Drawing.Size(75, 20);
-            this.lblDefaultVRAMPL.TabIndex = 51;
-            this.lblDefaultVRAMPL.Validated += new System.EventHandler(this.lblDefaultVRAMPL_Validated);
             // 
             // label12
             // 
@@ -656,17 +823,6 @@
             this.label33.TabIndex = 55;
             this.label33.Text = "Def SRC1 PL:";
             // 
-            // label29
-            // 
-            this.label29.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(20, 247);
-            this.label29.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(77, 13);
-            this.label29.TabIndex = 49;
-            this.label29.Text = "Def VRAM PL:";
-            // 
             // label17
             // 
             this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -684,7 +840,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDefaultChipPL.Enabled = false;
             this.lblDefaultChipPL.Location = new System.Drawing.Point(315, 30);
-            this.lblDefaultChipPL.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lblDefaultChipPL.Margin = new System.Windows.Forms.Padding(2);
             this.lblDefaultChipPL.Mask = "0000000";
             this.lblDefaultChipPL.Name = "lblDefaultChipPL";
             this.lblDefaultChipPL.Size = new System.Drawing.Size(75, 20);
@@ -719,7 +875,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMaxPL.Enabled = false;
             this.lblMaxPL.Location = new System.Drawing.Point(101, 56);
-            this.lblMaxPL.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lblMaxPL.Margin = new System.Windows.Forms.Padding(2);
             this.lblMaxPL.Mask = "0000000";
             this.lblMaxPL.Name = "lblMaxPL";
             this.lblMaxPL.Size = new System.Drawing.Size(75, 20);
@@ -765,7 +921,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMaxSlotPL.Enabled = false;
             this.lblMaxSlotPL.Location = new System.Drawing.Point(315, 108);
-            this.lblMaxSlotPL.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lblMaxSlotPL.Margin = new System.Windows.Forms.Padding(2);
             this.lblMaxSlotPL.Mask = "0000000";
             this.lblMaxSlotPL.Name = "lblMaxSlotPL";
             this.lblMaxSlotPL.Size = new System.Drawing.Size(75, 20);
@@ -789,7 +945,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMax8pinPL.Enabled = false;
             this.lblMax8pinPL.Location = new System.Drawing.Point(101, 108);
-            this.lblMax8pinPL.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lblMax8pinPL.Margin = new System.Windows.Forms.Padding(2);
             this.lblMax8pinPL.Mask = "0000000";
             this.lblMax8pinPL.Name = "lblMax8pinPL";
             this.lblMax8pinPL.Size = new System.Drawing.Size(75, 20);
@@ -813,7 +969,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMaxChipPL.Enabled = false;
             this.lblMaxChipPL.Location = new System.Drawing.Point(315, 56);
-            this.lblMaxChipPL.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lblMaxChipPL.Margin = new System.Windows.Forms.Padding(2);
             this.lblMaxChipPL.Mask = "0000000";
             this.lblMaxChipPL.Name = "lblMaxChipPL";
             this.lblMaxChipPL.Size = new System.Drawing.Size(75, 20);
@@ -870,7 +1026,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDefault8pinPL.Enabled = false;
             this.lblDefault8pinPL.Location = new System.Drawing.Point(101, 82);
-            this.lblDefault8pinPL.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lblDefault8pinPL.Margin = new System.Windows.Forms.Padding(2);
             this.lblDefault8pinPL.Mask = "0000000";
             this.lblDefault8pinPL.Name = "lblDefault8pinPL";
             this.lblDefault8pinPL.Size = new System.Drawing.Size(75, 20);
@@ -905,551 +1061,117 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDefaultSlotPL.Enabled = false;
             this.lblDefaultSlotPL.Location = new System.Drawing.Point(315, 82);
-            this.lblDefaultSlotPL.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lblDefaultSlotPL.Margin = new System.Windows.Forms.Padding(2);
             this.lblDefaultSlotPL.Mask = "0000000";
             this.lblDefaultSlotPL.Name = "lblDefaultSlotPL";
             this.lblDefaultSlotPL.Size = new System.Drawing.Size(75, 20);
             this.lblDefaultSlotPL.TabIndex = 39;
             this.lblDefaultSlotPL.Validated += new System.EventHandler(this.lblDefaultSlotPL_Validated);
             // 
-            // tcSettings
+            // label35
             // 
-            this.tcSettings.Controls.Add(this.maskedTextBox5);
-            this.tcSettings.Controls.Add(this.label62);
-            this.tcSettings.Controls.Add(this.trackBar4);
-            this.tcSettings.Controls.Add(this.label63);
-            this.tcSettings.Controls.Add(this.maskedTextBox4);
-            this.tcSettings.Controls.Add(this.label9);
-            this.tcSettings.Controls.Add(this.maskedTextBox3);
-            this.tcSettings.Controls.Add(this.label8);
-            this.tcSettings.Controls.Add(this.maskedTextBox2);
-            this.tcSettings.Controls.Add(this.label7);
-            this.tcSettings.Controls.Add(this.maskedTextBox1);
-            this.tcSettings.Controls.Add(this.label6);
-            this.tcSettings.Controls.Add(this.trackBar3);
-            this.tcSettings.Controls.Add(this.trackBar2);
-            this.tcSettings.Controls.Add(this.trackBar1);
-            this.tcSettings.Controls.Add(this.trbSlider);
-            this.tcSettings.Controls.Add(this.label5);
-            this.tcSettings.Controls.Add(this.label4);
-            this.tcSettings.Controls.Add(this.label3);
-            this.tcSettings.Controls.Add(this.label2);
-            this.tcSettings.Location = new System.Drawing.Point(4, 22);
-            this.tcSettings.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tcSettings.Name = "tcSettings";
-            this.tcSettings.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tcSettings.Size = new System.Drawing.Size(430, 400);
-            this.tcSettings.TabIndex = 0;
-            this.tcSettings.Text = "Common";
-            this.tcSettings.UseVisualStyleBackColor = true;
+            this.label35.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(20, 195);
+            this.label35.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(77, 13);
+            this.label35.TabIndex = 58;
+            this.label35.Text = "Max SRC1 PL:";
             // 
-            // maskedTextBox4
+            // lblMaxSRCPL
             // 
-            this.maskedTextBox4.Location = new System.Drawing.Point(311, 117);
-            this.maskedTextBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.maskedTextBox4.Name = "maskedTextBox4";
-            this.maskedTextBox4.Size = new System.Drawing.Size(58, 20);
-            this.maskedTextBox4.TabIndex = 15;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(369, 120);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(27, 13);
-            this.label9.TabIndex = 14;
-            this.label9.Text = "Mhz";
-            // 
-            // maskedTextBox3
-            // 
-            this.maskedTextBox3.Location = new System.Drawing.Point(311, 87);
-            this.maskedTextBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.maskedTextBox3.Name = "maskedTextBox3";
-            this.maskedTextBox3.Size = new System.Drawing.Size(58, 20);
-            this.maskedTextBox3.TabIndex = 13;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(369, 90);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(27, 13);
-            this.label8.TabIndex = 12;
-            this.label8.Text = "Mhz";
-            // 
-            // maskedTextBox2
-            // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(311, 57);
-            this.maskedTextBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(58, 20);
-            this.maskedTextBox2.TabIndex = 11;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(369, 60);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(27, 13);
-            this.label7.TabIndex = 10;
-            this.label7.Text = "Mhz";
-            // 
-            // maskedTextBox1
-            // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(311, 28);
-            this.maskedTextBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(58, 20);
-            this.maskedTextBox1.TabIndex = 9;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(369, 31);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(27, 13);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "Mhz";
-            // 
-            // trackBar3
-            // 
-            this.trackBar3.AutoSize = false;
-            this.trackBar3.BackColor = System.Drawing.Color.White;
-            this.trackBar3.Location = new System.Drawing.Point(111, 116);
-            this.trackBar3.Maximum = 97;
-            this.trackBar3.Name = "trackBar3";
-            this.trackBar3.Size = new System.Drawing.Size(195, 23);
-            this.trackBar3.TabIndex = 7;
-            this.trackBar3.Value = 67;
-            // 
-            // trackBar2
-            // 
-            this.trackBar2.AutoSize = false;
-            this.trackBar2.BackColor = System.Drawing.Color.White;
-            this.trackBar2.Location = new System.Drawing.Point(111, 86);
-            this.trackBar2.Maximum = 97;
-            this.trackBar2.Name = "trackBar2";
-            this.trackBar2.Size = new System.Drawing.Size(195, 23);
-            this.trackBar2.TabIndex = 6;
-            this.trackBar2.Value = 67;
-            // 
-            // trackBar1
-            // 
-            this.trackBar1.AutoSize = false;
-            this.trackBar1.BackColor = System.Drawing.Color.White;
-            this.trackBar1.Location = new System.Drawing.Point(111, 57);
-            this.trackBar1.Maximum = 97;
-            this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(195, 23);
-            this.trackBar1.TabIndex = 5;
-            this.trackBar1.Value = 67;
-            // 
-            // trbSlider
-            // 
-            this.trbSlider.AutoSize = false;
-            this.trbSlider.BackColor = System.Drawing.Color.White;
-            this.trbSlider.Location = new System.Drawing.Point(111, 27);
-            this.trbSlider.Maximum = 97;
-            this.trbSlider.Name = "trbSlider";
-            this.trbSlider.Size = new System.Drawing.Size(195, 23);
-            this.trbSlider.TabIndex = 4;
-            this.trbSlider.Value = 67;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(37, 126);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(63, 13);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "XBar Clock:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(31, 97);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(67, 13);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Video Clock:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(45, 67);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 13);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "FB Clock:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(37, 38);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 13);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Core Clock:";
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.VFRTable);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPage2.Size = new System.Drawing.Size(430, 400);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "VFR Table";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.FanTable);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(430, 400);
-            this.tabPage1.TabIndex = 3;
-            this.tabPage1.Text = "Fan Curve";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // Btn_open
-            // 
-            this.Btn_open.Location = new System.Drawing.Point(339, 615);
-            this.Btn_open.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Btn_open.Name = "Btn_open";
-            this.Btn_open.Size = new System.Drawing.Size(105, 33);
-            this.Btn_open.TabIndex = 64;
-            this.Btn_open.Text = "Open";
-            this.Btn_open.UseVisualStyleBackColor = true;
-            this.Btn_open.Click += new System.EventHandler(this.Btn_open_Click);
-            // 
-            // label1
-            // 
-            this.label1.Location = new System.Drawing.Point(6, 152);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 13);
-            this.label1.TabIndex = 65;
-            this.label1.Text = "MD5 Hash";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // lblHash
-            // 
-            this.lblHash.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblHash.Location = new System.Drawing.Point(66, 148);
-            this.lblHash.Name = "lblHash";
-            this.lblHash.Size = new System.Drawing.Size(382, 20);
-            this.lblHash.TabIndex = 66;
-            this.lblHash.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Btn_Save
-            // 
-            this.Btn_Save.Enabled = false;
-            this.Btn_Save.Location = new System.Drawing.Point(14, 615);
-            this.Btn_Save.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Btn_Save.Name = "Btn_Save";
-            this.Btn_Save.Size = new System.Drawing.Size(105, 33);
-            this.Btn_Save.TabIndex = 67;
-            this.Btn_Save.Text = "Save As";
-            this.Btn_Save.UseVisualStyleBackColor = true;
-            this.Btn_Save.Click += new System.EventHandler(this.Btn_Save_Click);
-            // 
-            // lblUnknownPL
-            // 
-            this.lblUnknownPL.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.lblMaxSRCPL.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblUnknownPL.Enabled = false;
-            this.lblUnknownPL.Location = new System.Drawing.Point(315, 238);
-            this.lblUnknownPL.Margin = new System.Windows.Forms.Padding(2);
-            this.lblUnknownPL.Mask = "0000000";
-            this.lblUnknownPL.Name = "lblUnknownPL";
-            this.lblUnknownPL.Size = new System.Drawing.Size(75, 20);
-            this.lblUnknownPL.TabIndex = 68;
-            this.lblUnknownPL.Validated += new System.EventHandler(this.lblUnknownPL_Validated);
+            this.lblMaxSRCPL.Enabled = false;
+            this.lblMaxSRCPL.Location = new System.Drawing.Point(101, 186);
+            this.lblMaxSRCPL.Margin = new System.Windows.Forms.Padding(2);
+            this.lblMaxSRCPL.Mask = "0000000";
+            this.lblMaxSRCPL.Name = "lblMaxSRCPL";
+            this.lblMaxSRCPL.Size = new System.Drawing.Size(75, 20);
+            this.lblMaxSRCPL.TabIndex = 60;
+            this.lblMaxSRCPL.Validated += new System.EventHandler(this.lblMaxSRCPL_Validated);
             // 
-            // label37
+            // label34
             // 
-            this.label37.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(394, 247);
-            this.label37.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(26, 13);
-            this.label37.TabIndex = 68;
-            this.label37.Text = "mW";
+            this.label34.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(180, 195);
+            this.label34.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(26, 13);
+            this.label34.TabIndex = 59;
+            this.label34.Text = "mW";
             // 
-            // label36
+            // lblMaxVRAMPL
             // 
-            this.label36.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(239, 247);
-            this.label36.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(72, 13);
-            this.label36.TabIndex = 68;
-            this.label36.Text = "Unknown PL:";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(124, 623);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(33, 25);
-            this.button1.TabIndex = 68;
-            this.button1.Text = "D";
-            this.toolTip1.SetToolTip(this.button1, "Dump Power Table Into Clipboard as CSV");
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Visible = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label38
-            // 
-            this.label38.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(23, 169);
-            this.label38.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(74, 13);
-            this.label38.TabIndex = 69;
-            this.label38.Text = "Def SRC3 PL:";
-            // 
-            // lblDefaultSRC3PL
-            // 
-            this.lblDefaultSRC3PL.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.lblMaxVRAMPL.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblDefaultSRC3PL.Enabled = false;
-            this.lblDefaultSRC3PL.Location = new System.Drawing.Point(101, 160);
-            this.lblDefaultSRC3PL.Margin = new System.Windows.Forms.Padding(2);
-            this.lblDefaultSRC3PL.Mask = "0000000";
-            this.lblDefaultSRC3PL.Name = "lblDefaultSRC3PL";
-            this.lblDefaultSRC3PL.Size = new System.Drawing.Size(75, 20);
-            this.lblDefaultSRC3PL.TabIndex = 69;
-            this.lblDefaultSRC3PL.Validated += new System.EventHandler(this.lblDefaultSRC3PL_Validated);
+            this.lblMaxVRAMPL.Enabled = false;
+            this.lblMaxVRAMPL.Location = new System.Drawing.Point(101, 264);
+            this.lblMaxVRAMPL.Margin = new System.Windows.Forms.Padding(2);
+            this.lblMaxVRAMPL.Mask = "0000000";
+            this.lblMaxVRAMPL.Name = "lblMaxVRAMPL";
+            this.lblMaxVRAMPL.Size = new System.Drawing.Size(75, 20);
+            this.lblMaxVRAMPL.TabIndex = 54;
+            this.lblMaxVRAMPL.Validated += new System.EventHandler(this.lblMaxVRAMPL_Validated);
             // 
-            // lblDefaultSRC2PL
+            // label30
             // 
-            this.lblDefaultSRC2PL.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.label30.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(180, 273);
+            this.label30.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(26, 13);
+            this.label30.TabIndex = 53;
+            this.label30.Text = "mW";
+            // 
+            // label31
+            // 
+            this.label31.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(17, 273);
+            this.label31.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(80, 13);
+            this.label31.TabIndex = 52;
+            this.label31.Text = "Max VRAM PL:";
+            // 
+            // label29
+            // 
+            this.label29.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(20, 247);
+            this.label29.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(77, 13);
+            this.label29.TabIndex = 49;
+            this.label29.Text = "Def VRAM PL:";
+            // 
+            // lblDefaultVRAMPL
+            // 
+            this.lblDefaultVRAMPL.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblDefaultSRC2PL.Enabled = false;
-            this.lblDefaultSRC2PL.Location = new System.Drawing.Point(315, 134);
-            this.lblDefaultSRC2PL.Margin = new System.Windows.Forms.Padding(2);
-            this.lblDefaultSRC2PL.Mask = "0000000";
-            this.lblDefaultSRC2PL.Name = "lblDefaultSRC2PL";
-            this.lblDefaultSRC2PL.Size = new System.Drawing.Size(75, 20);
-            this.lblDefaultSRC2PL.TabIndex = 69;
-            this.lblDefaultSRC2PL.Validated += new System.EventHandler(this.lblDefaultSRC2PL_Validated);
+            this.lblDefaultVRAMPL.Enabled = false;
+            this.lblDefaultVRAMPL.Location = new System.Drawing.Point(101, 238);
+            this.lblDefaultVRAMPL.Margin = new System.Windows.Forms.Padding(2);
+            this.lblDefaultVRAMPL.Mask = "0000000";
+            this.lblDefaultVRAMPL.Name = "lblDefaultVRAMPL";
+            this.lblDefaultVRAMPL.Size = new System.Drawing.Size(75, 20);
+            this.lblDefaultVRAMPL.TabIndex = 51;
+            this.lblDefaultVRAMPL.Validated += new System.EventHandler(this.lblDefaultVRAMPL_Validated);
             // 
-            // label39
+            // label28
             // 
-            this.label39.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(180, 169);
-            this.label39.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(26, 13);
-            this.label39.TabIndex = 69;
-            this.label39.Text = "mW";
-            // 
-            // label40
-            // 
-            this.label40.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(394, 143);
-            this.label40.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(26, 13);
-            this.label40.TabIndex = 69;
-            this.label40.Text = "mW";
-            // 
-            // label41
-            // 
-            this.label41.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(237, 143);
-            this.label41.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(74, 13);
-            this.label41.TabIndex = 70;
-            this.label41.Text = "Def SRC2 PL:";
-            // 
-            // label42
-            // 
-            this.label42.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(234, 195);
-            this.label42.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(77, 13);
-            this.label42.TabIndex = 69;
-            this.label42.Text = "Max SRC2 PL:";
-            // 
-            // label43
-            // 
-            this.label43.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(20, 221);
-            this.label43.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(77, 13);
-            this.label43.TabIndex = 69;
-            this.label43.Text = "Max SRC3 PL:";
-            // 
-            // lblMaxSRC3PL
-            // 
-            this.lblMaxSRC3PL.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblMaxSRC3PL.Enabled = false;
-            this.lblMaxSRC3PL.Location = new System.Drawing.Point(101, 212);
-            this.lblMaxSRC3PL.Margin = new System.Windows.Forms.Padding(2);
-            this.lblMaxSRC3PL.Mask = "0000000";
-            this.lblMaxSRC3PL.Name = "lblMaxSRC3PL";
-            this.lblMaxSRC3PL.Size = new System.Drawing.Size(75, 20);
-            this.lblMaxSRC3PL.TabIndex = 69;
-            this.lblMaxSRC3PL.Validated += new System.EventHandler(this.lblMaxSRC3PL_Validated);
-            // 
-            // lblMaxSRC2PL
-            // 
-            this.lblMaxSRC2PL.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblMaxSRC2PL.Enabled = false;
-            this.lblMaxSRC2PL.Location = new System.Drawing.Point(315, 186);
-            this.lblMaxSRC2PL.Margin = new System.Windows.Forms.Padding(2);
-            this.lblMaxSRC2PL.Mask = "0000000";
-            this.lblMaxSRC2PL.Name = "lblMaxSRC2PL";
-            this.lblMaxSRC2PL.Size = new System.Drawing.Size(75, 20);
-            this.lblMaxSRC2PL.TabIndex = 69;
-            this.lblMaxSRC2PL.Validated += new System.EventHandler(this.lblMaxSRC2PL_Validated);
-            // 
-            // label44
-            // 
-            this.label44.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(180, 221);
-            this.label44.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(26, 13);
-            this.label44.TabIndex = 69;
-            this.label44.Text = "mW";
-            // 
-            // label45
-            // 
-            this.label45.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(394, 195);
-            this.label45.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(26, 13);
-            this.label45.TabIndex = 69;
-            this.label45.Text = "mW";
-            // 
-            // label46
-            // 
-            this.label46.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label46.AutoSize = true;
-            this.label46.Location = new System.Drawing.Point(23, 299);
-            this.label46.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(74, 13);
-            this.label46.TabIndex = 69;
-            this.label46.Text = "Def AUX1 PL:";
-            // 
-            // label47
-            // 
-            this.label47.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(23, 325);
-            this.label47.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(74, 13);
-            this.label47.TabIndex = 70;
-            this.label47.Text = "Def AUX2 PL:";
-            // 
-            // label48
-            // 
-            this.label48.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label48.AutoSize = true;
-            this.label48.Location = new System.Drawing.Point(23, 356);
-            this.label48.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(74, 13);
-            this.label48.TabIndex = 70;
-            this.label48.Text = "Def AUX3 PL:";
-            // 
-            // label49
-            // 
-            this.label49.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label49.AutoSize = true;
-            this.label49.Location = new System.Drawing.Point(23, 387);
-            this.label49.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(74, 13);
-            this.label49.TabIndex = 70;
-            this.label49.Text = "Def AUX4 PL:";
-            // 
-            // label50
-            // 
-            this.label50.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label50.AutoSize = true;
-            this.label50.Location = new System.Drawing.Point(234, 299);
-            this.label50.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(77, 13);
-            this.label50.TabIndex = 70;
-            this.label50.Text = "Max AUX1 PL:";
-            // 
-            // label51
-            // 
-            this.label51.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label51.AutoSize = true;
-            this.label51.Location = new System.Drawing.Point(234, 325);
-            this.label51.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(77, 13);
-            this.label51.TabIndex = 71;
-            this.label51.Text = "Max AUX2 PL:";
-            // 
-            // label52
-            // 
-            this.label52.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label52.AutoSize = true;
-            this.label52.Location = new System.Drawing.Point(234, 356);
-            this.label52.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(77, 13);
-            this.label52.TabIndex = 71;
-            this.label52.Text = "Max AUX3 PL:";
-            // 
-            // label53
-            // 
-            this.label53.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label53.AutoSize = true;
-            this.label53.Location = new System.Drawing.Point(234, 387);
-            this.label53.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(77, 13);
-            this.label53.TabIndex = 71;
-            this.label53.Text = "Max AUX4 PL:";
-            // 
-            // lblDefAUX1PL
-            // 
-            this.lblDefAUX1PL.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblDefAUX1PL.Enabled = false;
-            this.lblDefAUX1PL.Location = new System.Drawing.Point(101, 290);
-            this.lblDefAUX1PL.Margin = new System.Windows.Forms.Padding(2);
-            this.lblDefAUX1PL.Mask = "0000000";
-            this.lblDefAUX1PL.Name = "lblDefAUX1PL";
-            this.lblDefAUX1PL.Size = new System.Drawing.Size(75, 20);
-            this.lblDefAUX1PL.TabIndex = 69;
-            this.lblDefAUX1PL.Validated += new System.EventHandler(this.lblDefAUX1PL_Validated);
+            this.label28.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(180, 247);
+            this.label28.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(26, 13);
+            this.label28.TabIndex = 50;
+            this.label28.Text = "mW";
             // 
             // lblDefAUX2PL
             // 
@@ -1542,17 +1264,6 @@
             this.lblMaxAUX4PL.TabIndex = 78;
             this.lblMaxAUX4PL.Validated += new System.EventHandler(this.lblMaxAUX4PL_Validated);
             // 
-            // label54
-            // 
-            this.label54.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label54.AutoSize = true;
-            this.label54.Location = new System.Drawing.Point(180, 299);
-            this.label54.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(26, 13);
-            this.label54.TabIndex = 69;
-            this.label54.Text = "mW";
-            // 
             // label55
             // 
             this.label55.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -1630,68 +1341,452 @@
             this.label61.TabIndex = 85;
             this.label61.Text = "mW";
             // 
-            // VFRTable
+            // label36
             // 
-            this.VFRTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.VFRTable.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.VFRTable.Location = new System.Drawing.Point(2, 2);
-            this.VFRTable.Name = "VFRTable";
-            this.VFRTable.Size = new System.Drawing.Size(426, 396);
-            this.VFRTable.TabIndex = 0;
+            this.label36.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(239, 247);
+            this.label36.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(72, 13);
+            this.label36.TabIndex = 68;
+            this.label36.Text = "Unknown PL:";
             // 
-            // FanTable
+            // lblUnknownPL
             // 
-            this.FanTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.FanTable.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.FanTable.Location = new System.Drawing.Point(0, 0);
-            this.FanTable.Name = "FanTable";
-            this.FanTable.Size = new System.Drawing.Size(430, 400);
-            this.FanTable.TabIndex = 0;
+            this.lblUnknownPL.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblUnknownPL.Enabled = false;
+            this.lblUnknownPL.Location = new System.Drawing.Point(315, 238);
+            this.lblUnknownPL.Margin = new System.Windows.Forms.Padding(2);
+            this.lblUnknownPL.Mask = "0000000";
+            this.lblUnknownPL.Name = "lblUnknownPL";
+            this.lblUnknownPL.Size = new System.Drawing.Size(75, 20);
+            this.lblUnknownPL.TabIndex = 68;
+            this.lblUnknownPL.Validated += new System.EventHandler(this.lblUnknownPL_Validated);
             // 
-            // maskedTextBox5
+            // label37
             // 
-            this.maskedTextBox5.Location = new System.Drawing.Point(311, 146);
-            this.maskedTextBox5.Margin = new System.Windows.Forms.Padding(2);
-            this.maskedTextBox5.Name = "maskedTextBox5";
-            this.maskedTextBox5.Size = new System.Drawing.Size(58, 20);
-            this.maskedTextBox5.TabIndex = 19;
+            this.label37.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(394, 247);
+            this.label37.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(26, 13);
+            this.label37.TabIndex = 68;
+            this.label37.Text = "mW";
+            // 
+            // tcSettings
+            // 
+            this.tcSettings.Controls.Add(this.label5);
+            this.tcSettings.Controls.Add(this.lblBoostClock);
+            this.tcSettings.Controls.Add(this.label64);
+            this.tcSettings.Controls.Add(this.trackBarBoostClock);
+            this.tcSettings.Controls.Add(this.label65);
+            this.tcSettings.Controls.Add(this.lblTempLimit);
+            this.tcSettings.Controls.Add(this.label62);
+            this.tcSettings.Controls.Add(this.trackBarTempLimit);
+            this.tcSettings.Controls.Add(this.label63);
+            this.tcSettings.Controls.Add(this.lblVideoClock);
+            this.tcSettings.Controls.Add(this.label8);
+            this.tcSettings.Controls.Add(this.lblFBClock);
+            this.tcSettings.Controls.Add(this.label7);
+            this.tcSettings.Controls.Add(this.lblBaseClock);
+            this.tcSettings.Controls.Add(this.label6);
+            this.tcSettings.Controls.Add(this.trackBarVideoClock);
+            this.tcSettings.Controls.Add(this.trackBarFBClock);
+            this.tcSettings.Controls.Add(this.trackBarBaseClock);
+            this.tcSettings.Controls.Add(this.label4);
+            this.tcSettings.Controls.Add(this.label3);
+            this.tcSettings.Controls.Add(this.label2);
+            this.tcSettings.Location = new System.Drawing.Point(4, 22);
+            this.tcSettings.Margin = new System.Windows.Forms.Padding(2);
+            this.tcSettings.Name = "tcSettings";
+            this.tcSettings.Padding = new System.Windows.Forms.Padding(2);
+            this.tcSettings.Size = new System.Drawing.Size(430, 400);
+            this.tcSettings.TabIndex = 0;
+            this.tcSettings.Text = "Common";
+            this.tcSettings.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(45, 47);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(331, 52);
+            this.label5.TabIndex = 24;
+            this.label5.Text = "Note:\r\nThese don\'t really do much since turbo boost 3.0 will switch the card \r\nto" +
+    " the VFR tables as soon as it sees any 3D load.\r\n\r\n";
+            // 
+            // lblBoostClock
+            // 
+            this.lblBoostClock.Location = new System.Drawing.Point(311, 131);
+            this.lblBoostClock.Margin = new System.Windows.Forms.Padding(2);
+            this.lblBoostClock.Mask = "0000";
+            this.lblBoostClock.Name = "lblBoostClock";
+            this.lblBoostClock.Size = new System.Drawing.Size(58, 20);
+            this.lblBoostClock.TabIndex = 23;
+            this.lblBoostClock.Text = "0";
+            this.lblBoostClock.Validated += new System.EventHandler(this.lblBoostClock_Validated);
+            // 
+            // label64
+            // 
+            this.label64.AutoSize = true;
+            this.label64.Location = new System.Drawing.Point(369, 134);
+            this.label64.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label64.Name = "label64";
+            this.label64.Size = new System.Drawing.Size(27, 13);
+            this.label64.TabIndex = 22;
+            this.label64.Text = "Mhz";
+            // 
+            // trackBarBoostClock
+            // 
+            this.trackBarBoostClock.AutoSize = false;
+            this.trackBarBoostClock.BackColor = System.Drawing.Color.White;
+            this.trackBarBoostClock.Location = new System.Drawing.Point(111, 130);
+            this.trackBarBoostClock.Maximum = 2800;
+            this.trackBarBoostClock.Name = "trackBarBoostClock";
+            this.trackBarBoostClock.Size = new System.Drawing.Size(195, 23);
+            this.trackBarBoostClock.TabIndex = 21;
+            this.trackBarBoostClock.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.trackBarBoostClock.Value = 1695;
+            this.trackBarBoostClock.ValueChanged += new System.EventHandler(this.trackBarBoostClock_ValueChanged);
+            this.trackBarBoostClock.Validating += new System.ComponentModel.CancelEventHandler(this.trackBarBoostClock_Validating);
+            // 
+            // label65
+            // 
+            this.label65.AutoSize = true;
+            this.label65.Location = new System.Drawing.Point(38, 134);
+            this.label65.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(67, 13);
+            this.label65.TabIndex = 20;
+            this.label65.Text = "Boost Clock:";
+            // 
+            // lblTempLimit
+            // 
+            this.lblTempLimit.Enabled = false;
+            this.lblTempLimit.Location = new System.Drawing.Point(311, 247);
+            this.lblTempLimit.Margin = new System.Windows.Forms.Padding(2);
+            this.lblTempLimit.Mask = "00";
+            this.lblTempLimit.Name = "lblTempLimit";
+            this.lblTempLimit.Size = new System.Drawing.Size(58, 20);
+            this.lblTempLimit.TabIndex = 19;
+            this.lblTempLimit.Text = "0";
             // 
             // label62
             // 
             this.label62.AutoSize = true;
-            this.label62.Location = new System.Drawing.Point(369, 149);
+            this.label62.Enabled = false;
+            this.label62.Location = new System.Drawing.Point(369, 250);
             this.label62.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label62.Name = "label62";
-            this.label62.Size = new System.Drawing.Size(27, 13);
+            this.label62.Size = new System.Drawing.Size(14, 13);
             this.label62.TabIndex = 18;
-            this.label62.Text = "Mhz";
+            this.label62.Text = "C";
             // 
-            // trackBar4
+            // trackBarTempLimit
             // 
-            this.trackBar4.AutoSize = false;
-            this.trackBar4.BackColor = System.Drawing.Color.White;
-            this.trackBar4.Location = new System.Drawing.Point(111, 145);
-            this.trackBar4.Maximum = 97;
-            this.trackBar4.Name = "trackBar4";
-            this.trackBar4.Size = new System.Drawing.Size(195, 23);
-            this.trackBar4.TabIndex = 17;
-            this.trackBar4.Value = 67;
+            this.trackBarTempLimit.AutoSize = false;
+            this.trackBarTempLimit.BackColor = System.Drawing.Color.White;
+            this.trackBarTempLimit.Enabled = false;
+            this.trackBarTempLimit.Location = new System.Drawing.Point(111, 246);
+            this.trackBarTempLimit.Maximum = 99;
+            this.trackBarTempLimit.Name = "trackBarTempLimit";
+            this.trackBarTempLimit.Size = new System.Drawing.Size(195, 23);
+            this.trackBarTempLimit.TabIndex = 17;
+            this.trackBarTempLimit.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.trackBarTempLimit.Value = 83;
+            this.trackBarTempLimit.ValueChanged += new System.EventHandler(this.trackBarTempLimit_ValueChanged);
             // 
             // label63
             // 
             this.label63.AutoSize = true;
-            this.label63.Location = new System.Drawing.Point(23, 153);
+            this.label63.Enabled = false;
+            this.label63.Location = new System.Drawing.Point(24, 250);
             this.label63.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label63.Name = "label63";
             this.label63.Size = new System.Drawing.Size(76, 13);
             this.label63.TabIndex = 16;
             this.label63.Text = "Temp Throttle:";
             // 
+            // lblVideoClock
+            // 
+            this.lblVideoClock.Enabled = false;
+            this.lblVideoClock.Location = new System.Drawing.Point(311, 218);
+            this.lblVideoClock.Margin = new System.Windows.Forms.Padding(2);
+            this.lblVideoClock.Mask = "0000";
+            this.lblVideoClock.Name = "lblVideoClock";
+            this.lblVideoClock.Size = new System.Drawing.Size(58, 20);
+            this.lblVideoClock.TabIndex = 13;
+            this.lblVideoClock.Text = "0";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Enabled = false;
+            this.label8.Location = new System.Drawing.Point(369, 221);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(27, 13);
+            this.label8.TabIndex = 12;
+            this.label8.Text = "Mhz";
+            // 
+            // lblFBClock
+            // 
+            this.lblFBClock.Enabled = false;
+            this.lblFBClock.Location = new System.Drawing.Point(311, 189);
+            this.lblFBClock.Margin = new System.Windows.Forms.Padding(2);
+            this.lblFBClock.Mask = "0000";
+            this.lblFBClock.Name = "lblFBClock";
+            this.lblFBClock.Size = new System.Drawing.Size(58, 20);
+            this.lblFBClock.TabIndex = 11;
+            this.lblFBClock.Text = "0";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Enabled = false;
+            this.label7.Location = new System.Drawing.Point(369, 192);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(27, 13);
+            this.label7.TabIndex = 10;
+            this.label7.Text = "Mhz";
+            // 
+            // lblBaseClock
+            // 
+            this.lblBaseClock.Enabled = false;
+            this.lblBaseClock.Location = new System.Drawing.Point(311, 160);
+            this.lblBaseClock.Margin = new System.Windows.Forms.Padding(2);
+            this.lblBaseClock.Mask = "0000";
+            this.lblBaseClock.Name = "lblBaseClock";
+            this.lblBaseClock.Size = new System.Drawing.Size(58, 20);
+            this.lblBaseClock.TabIndex = 9;
+            this.lblBaseClock.Text = "0";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Enabled = false;
+            this.label6.Location = new System.Drawing.Point(369, 164);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(27, 13);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Mhz";
+            // 
+            // trackBarVideoClock
+            // 
+            this.trackBarVideoClock.AutoSize = false;
+            this.trackBarVideoClock.BackColor = System.Drawing.Color.White;
+            this.trackBarVideoClock.Enabled = false;
+            this.trackBarVideoClock.Location = new System.Drawing.Point(111, 217);
+            this.trackBarVideoClock.Maximum = 2800;
+            this.trackBarVideoClock.Name = "trackBarVideoClock";
+            this.trackBarVideoClock.Size = new System.Drawing.Size(195, 23);
+            this.trackBarVideoClock.TabIndex = 6;
+            this.trackBarVideoClock.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.trackBarVideoClock.Value = 1755;
+            this.trackBarVideoClock.ValueChanged += new System.EventHandler(this.trackBarVideoClock_ValueChanged);
+            // 
+            // trackBarFBClock
+            // 
+            this.trackBarFBClock.AutoSize = false;
+            this.trackBarFBClock.BackColor = System.Drawing.Color.White;
+            this.trackBarFBClock.Enabled = false;
+            this.trackBarFBClock.Location = new System.Drawing.Point(111, 189);
+            this.trackBarFBClock.Maximum = 1406;
+            this.trackBarFBClock.Name = "trackBarFBClock";
+            this.trackBarFBClock.Size = new System.Drawing.Size(195, 23);
+            this.trackBarFBClock.TabIndex = 5;
+            this.trackBarFBClock.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.trackBarFBClock.Value = 1219;
+            this.trackBarFBClock.ValueChanged += new System.EventHandler(this.trackBarFBClock_ValueChanged);
+            // 
+            // trackBarBaseClock
+            // 
+            this.trackBarBaseClock.AutoSize = false;
+            this.trackBarBaseClock.BackColor = System.Drawing.Color.White;
+            this.trackBarBaseClock.Enabled = false;
+            this.trackBarBaseClock.Location = new System.Drawing.Point(111, 159);
+            this.trackBarBaseClock.Maximum = 2800;
+            this.trackBarBaseClock.Name = "trackBarBaseClock";
+            this.trackBarBaseClock.Size = new System.Drawing.Size(195, 23);
+            this.trackBarBaseClock.TabIndex = 4;
+            this.trackBarBaseClock.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.trackBarBaseClock.Value = 1395;
+            this.trackBarBaseClock.ValueChanged += new System.EventHandler(this.trackBarBaseClock_ValueChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Enabled = false;
+            this.label4.Location = new System.Drawing.Point(33, 223);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(67, 13);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Video Clock:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Enabled = false;
+            this.label3.Location = new System.Drawing.Point(45, 192);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(53, 13);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "FB Clock:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Enabled = false;
+            this.label2.Location = new System.Drawing.Point(38, 164);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(62, 13);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Core Clock:";
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.chart1);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage2.Size = new System.Drawing.Size(430, 400);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "VFR Table";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.chart2);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Size = new System.Drawing.Size(430, 400);
+            this.tabPage1.TabIndex = 3;
+            this.tabPage1.Text = "Fan Curve";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // Btn_open
+            // 
+            this.Btn_open.Location = new System.Drawing.Point(339, 602);
+            this.Btn_open.Margin = new System.Windows.Forms.Padding(2);
+            this.Btn_open.Name = "Btn_open";
+            this.Btn_open.Size = new System.Drawing.Size(105, 33);
+            this.Btn_open.TabIndex = 64;
+            this.Btn_open.Text = "Open";
+            this.Btn_open.UseVisualStyleBackColor = true;
+            this.Btn_open.Click += new System.EventHandler(this.Btn_open_Click);
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(6, 152);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(57, 13);
+            this.label1.TabIndex = 65;
+            this.label1.Text = "MD5 Hash";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // lblHash
+            // 
+            this.lblHash.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblHash.Location = new System.Drawing.Point(66, 148);
+            this.lblHash.Name = "lblHash";
+            this.lblHash.Size = new System.Drawing.Size(382, 20);
+            this.lblHash.TabIndex = 66;
+            this.lblHash.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(124, 610);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(33, 25);
+            this.button1.TabIndex = 68;
+            this.button1.Text = "D";
+            this.toolTip1.SetToolTip(this.button1, "Dump Power Table Into Clipboard as CSV");
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Visible = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // Btn_Save
+            // 
+            this.Btn_Save.Enabled = false;
+            this.Btn_Save.Location = new System.Drawing.Point(14, 602);
+            this.Btn_Save.Margin = new System.Windows.Forms.Padding(2);
+            this.Btn_Save.Name = "Btn_Save";
+            this.Btn_Save.Size = new System.Drawing.Size(105, 33);
+            this.Btn_Save.TabIndex = 67;
+            this.Btn_Save.Text = "Save As";
+            this.Btn_Save.UseVisualStyleBackColor = true;
+            this.Btn_Save.Click += new System.EventHandler(this.Btn_Save_Click);
+            // 
+            // chart1
+            // 
+            this.chart1.BackColor = System.Drawing.SystemColors.Control;
+            this.chart1.BackSecondaryColor = System.Drawing.Color.Black;
+            this.chart1.BorderlineColor = System.Drawing.Color.Black;
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chart1.Location = new System.Drawing.Point(2, 2);
+            this.chart1.Name = "chart1";
+            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Grayscale;
+            this.chart1.Size = new System.Drawing.Size(426, 396);
+            this.chart1.TabIndex = 0;
+            this.chart1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.chart_MouseMove);
+            // 
+            // chart2
+            // 
+            this.chart2.BackColor = System.Drawing.SystemColors.Control;
+            this.chart2.BackSecondaryColor = System.Drawing.Color.Black;
+            this.chart2.BorderlineColor = System.Drawing.Color.Black;
+            chartArea3.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea3);
+            this.chart2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chart2.Location = new System.Drawing.Point(0, 0);
+            this.chart2.Name = "chart2";
+            this.chart2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Grayscale;
+            this.chart2.Size = new System.Drawing.Size(430, 400);
+            this.chart2.TabIndex = 1;
+            this.chart2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.chart2_MouseMove);
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.chart3);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(430, 400);
+            this.tabPage4.TabIndex = 4;
+            this.tabPage4.Text = "TFR Table";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // chart3
+            // 
+            this.chart3.BackColor = System.Drawing.SystemColors.Control;
+            this.chart3.BackSecondaryColor = System.Drawing.Color.Black;
+            this.chart3.BorderlineColor = System.Drawing.Color.Black;
+            chartArea2.Name = "ChartArea1";
+            this.chart3.ChartAreas.Add(chartArea2);
+            this.chart3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chart3.Location = new System.Drawing.Point(0, 0);
+            this.chart3.Name = "chart3";
+            this.chart3.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Grayscale;
+            this.chart3.Size = new System.Drawing.Size(430, 400);
+            this.chart3.TabIndex = 1;
+            this.chart3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.chart3_MouseMove);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(457, 654);
+            this.ClientSize = new System.Drawing.Size(457, 639);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Btn_Save);
             this.Controls.Add(this.lblHash);
@@ -1714,8 +1809,9 @@
             this.Controls.Add(this.lGPU);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.lName);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Ampere Bios Edior - ABE";
@@ -1726,15 +1822,17 @@
             this.tableLayoutPanel1.PerformLayout();
             this.tcSettings.ResumeLayout(false);
             this.tcSettings.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trbSlider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarBoostClock)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarTempLimit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarVideoClock)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarFBClock)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarBaseClock)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.VFRTable)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.FanTable)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
+            this.tabPage4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chart3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1764,21 +1862,17 @@
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblHash;
-        private System.Windows.Forms.TrackBar trackBar3;
-        private System.Windows.Forms.TrackBar trackBar2;
-        private System.Windows.Forms.TrackBar trackBar1;
-        private System.Windows.Forms.TrackBar trbSlider;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TrackBar trackBarVideoClock;
+        private System.Windows.Forms.TrackBar trackBarFBClock;
+        private System.Windows.Forms.TrackBar trackBarBaseClock;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox4;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox3;
+        private System.Windows.Forms.MaskedTextBox lblVideoClock;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
+        private System.Windows.Forms.MaskedTextBox lblFBClock;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox lblBaseClock;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Button Btn_Save;
@@ -1863,12 +1957,19 @@
         private System.Windows.Forms.Label label59;
         private System.Windows.Forms.Label label60;
         private System.Windows.Forms.Label label61;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox5;
+        private System.Windows.Forms.MaskedTextBox lblTempLimit;
         private System.Windows.Forms.Label label62;
-        private System.Windows.Forms.TrackBar trackBar4;
+        private System.Windows.Forms.TrackBar trackBarTempLimit;
         private System.Windows.Forms.Label label63;
-        private System.Windows.Forms.DataGridView VFRTable;
-        private System.Windows.Forms.DataGridView FanTable;
+        private System.Windows.Forms.MaskedTextBox lblBoostClock;
+        private System.Windows.Forms.Label label64;
+        private System.Windows.Forms.TrackBar trackBarBoostClock;
+        private System.Windows.Forms.Label label65;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart3;
     }
 }
 
