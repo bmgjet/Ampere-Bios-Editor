@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             this.lblChkSum = new System.Windows.Forms.Label();
             this.lChkSum = new System.Windows.Forms.Label();
             this.lblFilename = new System.Windows.Forms.Label();
@@ -131,6 +131,9 @@
             this.lblUnknownPL = new System.Windows.Forms.MaskedTextBox();
             this.label37 = new System.Windows.Forms.Label();
             this.tcSettings = new System.Windows.Forms.TabPage();
+            this.label9 = new System.Windows.Forms.Label();
+            this.InjectUID = new System.Windows.Forms.Button();
+            this.ExtractUID = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.lblBoostClock = new System.Windows.Forms.MaskedTextBox();
             this.label64 = new System.Windows.Forms.Label();
@@ -153,17 +156,18 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.chart3 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.Btn_open = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.lblHash = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.Btn_Save = new System.Windows.Forms.Button();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.chart3 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabControl1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -174,11 +178,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBarFBClock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarBaseClock)).BeginInit();
             this.tabPage2.SuspendLayout();
-            this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart3)).BeginInit();
+            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             this.SuspendLayout();
             // 
             // lblChkSum
@@ -330,6 +334,7 @@
             this.lName.TabIndex = 47;
             this.lName.Text = "Name";
             this.lName.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lName.DoubleClick += new System.EventHandler(this.lChkSum_DoubleClick);
             // 
             // tabControl1
             // 
@@ -339,17 +344,18 @@
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Location = new System.Drawing.Point(10, 174);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(438, 426);
             this.tabControl1.TabIndex = 63;
+            this.tabControl1.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabControl1_Selecting);
             // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.tableLayoutPanel1);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(430, 400);
             this.tabPage3.TabIndex = 2;
@@ -444,8 +450,9 @@
             this.tableLayoutPanel1.Controls.Add(this.lblUnknownPL, 4, 9);
             this.tableLayoutPanel1.Controls.Add(this.label37, 5, 9);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Enabled = false;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 15;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.666667F));
@@ -483,7 +490,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDefAUX1PL.Enabled = false;
             this.lblDefAUX1PL.Location = new System.Drawing.Point(101, 290);
-            this.lblDefAUX1PL.Margin = new System.Windows.Forms.Padding(2);
+            this.lblDefAUX1PL.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lblDefAUX1PL.Mask = "0000000";
             this.lblDefAUX1PL.Name = "lblDefAUX1PL";
             this.lblDefAUX1PL.Size = new System.Drawing.Size(75, 20);
@@ -606,7 +613,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMaxSRC2PL.Enabled = false;
             this.lblMaxSRC2PL.Location = new System.Drawing.Point(315, 186);
-            this.lblMaxSRC2PL.Margin = new System.Windows.Forms.Padding(2);
+            this.lblMaxSRC2PL.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lblMaxSRC2PL.Mask = "0000000";
             this.lblMaxSRC2PL.Name = "lblMaxSRC2PL";
             this.lblMaxSRC2PL.Size = new System.Drawing.Size(75, 20);
@@ -619,7 +626,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMaxSRC3PL.Enabled = false;
             this.lblMaxSRC3PL.Location = new System.Drawing.Point(101, 212);
-            this.lblMaxSRC3PL.Margin = new System.Windows.Forms.Padding(2);
+            this.lblMaxSRC3PL.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lblMaxSRC3PL.Mask = "0000000";
             this.lblMaxSRC3PL.Name = "lblMaxSRC3PL";
             this.lblMaxSRC3PL.Size = new System.Drawing.Size(75, 20);
@@ -687,7 +694,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDefaultSRC2PL.Enabled = false;
             this.lblDefaultSRC2PL.Location = new System.Drawing.Point(315, 134);
-            this.lblDefaultSRC2PL.Margin = new System.Windows.Forms.Padding(2);
+            this.lblDefaultSRC2PL.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lblDefaultSRC2PL.Mask = "0000000";
             this.lblDefaultSRC2PL.Name = "lblDefaultSRC2PL";
             this.lblDefaultSRC2PL.Size = new System.Drawing.Size(75, 20);
@@ -700,7 +707,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDefaultSRC3PL.Enabled = false;
             this.lblDefaultSRC3PL.Location = new System.Drawing.Point(101, 160);
-            this.lblDefaultSRC3PL.Margin = new System.Windows.Forms.Padding(2);
+            this.lblDefaultSRC3PL.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lblDefaultSRC3PL.Mask = "0000000";
             this.lblDefaultSRC3PL.Name = "lblDefaultSRC3PL";
             this.lblDefaultSRC3PL.Size = new System.Drawing.Size(75, 20);
@@ -735,7 +742,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMinimumPL.Enabled = false;
             this.lblMinimumPL.Location = new System.Drawing.Point(101, 4);
-            this.lblMinimumPL.Margin = new System.Windows.Forms.Padding(2);
+            this.lblMinimumPL.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lblMinimumPL.Mask = "0000000";
             this.lblMinimumPL.Name = "lblMinimumPL";
             this.lblMinimumPL.Size = new System.Drawing.Size(75, 20);
@@ -781,7 +788,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDefaultSRCPL.Enabled = false;
             this.lblDefaultSRCPL.Location = new System.Drawing.Point(101, 134);
-            this.lblDefaultSRCPL.Margin = new System.Windows.Forms.Padding(2);
+            this.lblDefaultSRCPL.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lblDefaultSRCPL.Mask = "0000000";
             this.lblDefaultSRCPL.Name = "lblDefaultSRCPL";
             this.lblDefaultSRCPL.Size = new System.Drawing.Size(75, 20);
@@ -794,7 +801,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDefaultPL.Enabled = false;
             this.lblDefaultPL.Location = new System.Drawing.Point(101, 30);
-            this.lblDefaultPL.Margin = new System.Windows.Forms.Padding(2);
+            this.lblDefaultPL.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lblDefaultPL.Mask = "0000000";
             this.lblDefaultPL.Name = "lblDefaultPL";
             this.lblDefaultPL.Size = new System.Drawing.Size(75, 20);
@@ -840,7 +847,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDefaultChipPL.Enabled = false;
             this.lblDefaultChipPL.Location = new System.Drawing.Point(315, 30);
-            this.lblDefaultChipPL.Margin = new System.Windows.Forms.Padding(2);
+            this.lblDefaultChipPL.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lblDefaultChipPL.Mask = "0000000";
             this.lblDefaultChipPL.Name = "lblDefaultChipPL";
             this.lblDefaultChipPL.Size = new System.Drawing.Size(75, 20);
@@ -875,7 +882,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMaxPL.Enabled = false;
             this.lblMaxPL.Location = new System.Drawing.Point(101, 56);
-            this.lblMaxPL.Margin = new System.Windows.Forms.Padding(2);
+            this.lblMaxPL.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lblMaxPL.Mask = "0000000";
             this.lblMaxPL.Name = "lblMaxPL";
             this.lblMaxPL.Size = new System.Drawing.Size(75, 20);
@@ -921,7 +928,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMaxSlotPL.Enabled = false;
             this.lblMaxSlotPL.Location = new System.Drawing.Point(315, 108);
-            this.lblMaxSlotPL.Margin = new System.Windows.Forms.Padding(2);
+            this.lblMaxSlotPL.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lblMaxSlotPL.Mask = "0000000";
             this.lblMaxSlotPL.Name = "lblMaxSlotPL";
             this.lblMaxSlotPL.Size = new System.Drawing.Size(75, 20);
@@ -945,7 +952,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMax8pinPL.Enabled = false;
             this.lblMax8pinPL.Location = new System.Drawing.Point(101, 108);
-            this.lblMax8pinPL.Margin = new System.Windows.Forms.Padding(2);
+            this.lblMax8pinPL.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lblMax8pinPL.Mask = "0000000";
             this.lblMax8pinPL.Name = "lblMax8pinPL";
             this.lblMax8pinPL.Size = new System.Drawing.Size(75, 20);
@@ -969,7 +976,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMaxChipPL.Enabled = false;
             this.lblMaxChipPL.Location = new System.Drawing.Point(315, 56);
-            this.lblMaxChipPL.Margin = new System.Windows.Forms.Padding(2);
+            this.lblMaxChipPL.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lblMaxChipPL.Mask = "0000000";
             this.lblMaxChipPL.Name = "lblMaxChipPL";
             this.lblMaxChipPL.Size = new System.Drawing.Size(75, 20);
@@ -1026,7 +1033,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDefault8pinPL.Enabled = false;
             this.lblDefault8pinPL.Location = new System.Drawing.Point(101, 82);
-            this.lblDefault8pinPL.Margin = new System.Windows.Forms.Padding(2);
+            this.lblDefault8pinPL.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lblDefault8pinPL.Mask = "0000000";
             this.lblDefault8pinPL.Name = "lblDefault8pinPL";
             this.lblDefault8pinPL.Size = new System.Drawing.Size(75, 20);
@@ -1061,7 +1068,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDefaultSlotPL.Enabled = false;
             this.lblDefaultSlotPL.Location = new System.Drawing.Point(315, 82);
-            this.lblDefaultSlotPL.Margin = new System.Windows.Forms.Padding(2);
+            this.lblDefaultSlotPL.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lblDefaultSlotPL.Mask = "0000000";
             this.lblDefaultSlotPL.Name = "lblDefaultSlotPL";
             this.lblDefaultSlotPL.Size = new System.Drawing.Size(75, 20);
@@ -1085,7 +1092,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMaxSRCPL.Enabled = false;
             this.lblMaxSRCPL.Location = new System.Drawing.Point(101, 186);
-            this.lblMaxSRCPL.Margin = new System.Windows.Forms.Padding(2);
+            this.lblMaxSRCPL.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lblMaxSRCPL.Mask = "0000000";
             this.lblMaxSRCPL.Name = "lblMaxSRCPL";
             this.lblMaxSRCPL.Size = new System.Drawing.Size(75, 20);
@@ -1109,7 +1116,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMaxVRAMPL.Enabled = false;
             this.lblMaxVRAMPL.Location = new System.Drawing.Point(101, 264);
-            this.lblMaxVRAMPL.Margin = new System.Windows.Forms.Padding(2);
+            this.lblMaxVRAMPL.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lblMaxVRAMPL.Mask = "0000000";
             this.lblMaxVRAMPL.Name = "lblMaxVRAMPL";
             this.lblMaxVRAMPL.Size = new System.Drawing.Size(75, 20);
@@ -1155,7 +1162,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDefaultVRAMPL.Enabled = false;
             this.lblDefaultVRAMPL.Location = new System.Drawing.Point(101, 238);
-            this.lblDefaultVRAMPL.Margin = new System.Windows.Forms.Padding(2);
+            this.lblDefaultVRAMPL.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lblDefaultVRAMPL.Mask = "0000000";
             this.lblDefaultVRAMPL.Name = "lblDefaultVRAMPL";
             this.lblDefaultVRAMPL.Size = new System.Drawing.Size(75, 20);
@@ -1179,7 +1186,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDefAUX2PL.Enabled = false;
             this.lblDefAUX2PL.Location = new System.Drawing.Point(101, 316);
-            this.lblDefAUX2PL.Margin = new System.Windows.Forms.Padding(2);
+            this.lblDefAUX2PL.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lblDefAUX2PL.Mask = "0000000";
             this.lblDefAUX2PL.Name = "lblDefAUX2PL";
             this.lblDefAUX2PL.Size = new System.Drawing.Size(75, 20);
@@ -1192,7 +1199,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDefAUX3PL.Enabled = false;
             this.lblDefAUX3PL.Location = new System.Drawing.Point(101, 347);
-            this.lblDefAUX3PL.Margin = new System.Windows.Forms.Padding(2);
+            this.lblDefAUX3PL.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lblDefAUX3PL.Mask = "0000000";
             this.lblDefAUX3PL.Name = "lblDefAUX3PL";
             this.lblDefAUX3PL.Size = new System.Drawing.Size(75, 20);
@@ -1205,7 +1212,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDefAUX4PL.Enabled = false;
             this.lblDefAUX4PL.Location = new System.Drawing.Point(101, 378);
-            this.lblDefAUX4PL.Margin = new System.Windows.Forms.Padding(2);
+            this.lblDefAUX4PL.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lblDefAUX4PL.Mask = "0000000";
             this.lblDefAUX4PL.Name = "lblDefAUX4PL";
             this.lblDefAUX4PL.Size = new System.Drawing.Size(75, 20);
@@ -1218,7 +1225,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMaxAUX1PL.Enabled = false;
             this.lblMaxAUX1PL.Location = new System.Drawing.Point(315, 290);
-            this.lblMaxAUX1PL.Margin = new System.Windows.Forms.Padding(2);
+            this.lblMaxAUX1PL.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lblMaxAUX1PL.Mask = "0000000";
             this.lblMaxAUX1PL.Name = "lblMaxAUX1PL";
             this.lblMaxAUX1PL.Size = new System.Drawing.Size(75, 20);
@@ -1231,7 +1238,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMaxAUX2PL.Enabled = false;
             this.lblMaxAUX2PL.Location = new System.Drawing.Point(315, 316);
-            this.lblMaxAUX2PL.Margin = new System.Windows.Forms.Padding(2);
+            this.lblMaxAUX2PL.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lblMaxAUX2PL.Mask = "0000000";
             this.lblMaxAUX2PL.Name = "lblMaxAUX2PL";
             this.lblMaxAUX2PL.Size = new System.Drawing.Size(75, 20);
@@ -1244,7 +1251,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMaxAUX3PL.Enabled = false;
             this.lblMaxAUX3PL.Location = new System.Drawing.Point(315, 347);
-            this.lblMaxAUX3PL.Margin = new System.Windows.Forms.Padding(2);
+            this.lblMaxAUX3PL.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lblMaxAUX3PL.Mask = "0000000";
             this.lblMaxAUX3PL.Name = "lblMaxAUX3PL";
             this.lblMaxAUX3PL.Size = new System.Drawing.Size(75, 20);
@@ -1257,7 +1264,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMaxAUX4PL.Enabled = false;
             this.lblMaxAUX4PL.Location = new System.Drawing.Point(315, 378);
-            this.lblMaxAUX4PL.Margin = new System.Windows.Forms.Padding(2);
+            this.lblMaxAUX4PL.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lblMaxAUX4PL.Mask = "0000000";
             this.lblMaxAUX4PL.Name = "lblMaxAUX4PL";
             this.lblMaxAUX4PL.Size = new System.Drawing.Size(75, 20);
@@ -1358,7 +1365,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblUnknownPL.Enabled = false;
             this.lblUnknownPL.Location = new System.Drawing.Point(315, 238);
-            this.lblUnknownPL.Margin = new System.Windows.Forms.Padding(2);
+            this.lblUnknownPL.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lblUnknownPL.Mask = "0000000";
             this.lblUnknownPL.Name = "lblUnknownPL";
             this.lblUnknownPL.Size = new System.Drawing.Size(75, 20);
@@ -1378,6 +1385,9 @@
             // 
             // tcSettings
             // 
+            this.tcSettings.Controls.Add(this.label9);
+            this.tcSettings.Controls.Add(this.InjectUID);
+            this.tcSettings.Controls.Add(this.ExtractUID);
             this.tcSettings.Controls.Add(this.label5);
             this.tcSettings.Controls.Add(this.lblBoostClock);
             this.tcSettings.Controls.Add(this.label64);
@@ -1400,18 +1410,50 @@
             this.tcSettings.Controls.Add(this.label3);
             this.tcSettings.Controls.Add(this.label2);
             this.tcSettings.Location = new System.Drawing.Point(4, 22);
-            this.tcSettings.Margin = new System.Windows.Forms.Padding(2);
+            this.tcSettings.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tcSettings.Name = "tcSettings";
-            this.tcSettings.Padding = new System.Windows.Forms.Padding(2);
+            this.tcSettings.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tcSettings.Size = new System.Drawing.Size(430, 400);
             this.tcSettings.TabIndex = 0;
             this.tcSettings.Text = "Common";
             this.tcSettings.UseVisualStyleBackColor = true;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(50, 234);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(328, 91);
+            this.label9.TabIndex = 27;
+            this.label9.Text = resources.GetString("label9.Text");
+            // 
+            // InjectUID
+            // 
+            this.InjectUID.Location = new System.Drawing.Point(112, 335);
+            this.InjectUID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.InjectUID.Name = "InjectUID";
+            this.InjectUID.Size = new System.Drawing.Size(98, 40);
+            this.InjectUID.TabIndex = 26;
+            this.InjectUID.Text = "Inject UID Info";
+            this.InjectUID.UseVisualStyleBackColor = true;
+            this.InjectUID.Click += new System.EventHandler(this.InjectUID_Click);
+            // 
+            // ExtractUID
+            // 
+            this.ExtractUID.Location = new System.Drawing.Point(212, 335);
+            this.ExtractUID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ExtractUID.Name = "ExtractUID";
+            this.ExtractUID.Size = new System.Drawing.Size(98, 40);
+            this.ExtractUID.TabIndex = 25;
+            this.ExtractUID.Text = "Extract UID Info";
+            this.ExtractUID.UseVisualStyleBackColor = true;
+            this.ExtractUID.Click += new System.EventHandler(this.ExtractUID_Click);
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(45, 47);
+            this.label5.Location = new System.Drawing.Point(48, 18);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(331, 52);
             this.label5.TabIndex = 24;
@@ -1420,8 +1462,8 @@
             // 
             // lblBoostClock
             // 
-            this.lblBoostClock.Location = new System.Drawing.Point(311, 131);
-            this.lblBoostClock.Margin = new System.Windows.Forms.Padding(2);
+            this.lblBoostClock.Location = new System.Drawing.Point(312, 79);
+            this.lblBoostClock.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lblBoostClock.Mask = "0000";
             this.lblBoostClock.Name = "lblBoostClock";
             this.lblBoostClock.Size = new System.Drawing.Size(58, 20);
@@ -1432,7 +1474,7 @@
             // label64
             // 
             this.label64.AutoSize = true;
-            this.label64.Location = new System.Drawing.Point(369, 134);
+            this.label64.Location = new System.Drawing.Point(370, 82);
             this.label64.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label64.Name = "label64";
             this.label64.Size = new System.Drawing.Size(27, 13);
@@ -1443,7 +1485,7 @@
             // 
             this.trackBarBoostClock.AutoSize = false;
             this.trackBarBoostClock.BackColor = System.Drawing.Color.White;
-            this.trackBarBoostClock.Location = new System.Drawing.Point(111, 130);
+            this.trackBarBoostClock.Location = new System.Drawing.Point(112, 78);
             this.trackBarBoostClock.Maximum = 2800;
             this.trackBarBoostClock.Name = "trackBarBoostClock";
             this.trackBarBoostClock.Size = new System.Drawing.Size(195, 23);
@@ -1456,7 +1498,7 @@
             // label65
             // 
             this.label65.AutoSize = true;
-            this.label65.Location = new System.Drawing.Point(38, 134);
+            this.label65.Location = new System.Drawing.Point(38, 82);
             this.label65.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label65.Name = "label65";
             this.label65.Size = new System.Drawing.Size(67, 13);
@@ -1466,8 +1508,8 @@
             // lblTempLimit
             // 
             this.lblTempLimit.Enabled = false;
-            this.lblTempLimit.Location = new System.Drawing.Point(311, 247);
-            this.lblTempLimit.Margin = new System.Windows.Forms.Padding(2);
+            this.lblTempLimit.Location = new System.Drawing.Point(312, 195);
+            this.lblTempLimit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lblTempLimit.Mask = "00";
             this.lblTempLimit.Name = "lblTempLimit";
             this.lblTempLimit.Size = new System.Drawing.Size(58, 20);
@@ -1478,7 +1520,7 @@
             // 
             this.label62.AutoSize = true;
             this.label62.Enabled = false;
-            this.label62.Location = new System.Drawing.Point(369, 250);
+            this.label62.Location = new System.Drawing.Point(370, 198);
             this.label62.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label62.Name = "label62";
             this.label62.Size = new System.Drawing.Size(14, 13);
@@ -1490,7 +1532,7 @@
             this.trackBarTempLimit.AutoSize = false;
             this.trackBarTempLimit.BackColor = System.Drawing.Color.White;
             this.trackBarTempLimit.Enabled = false;
-            this.trackBarTempLimit.Location = new System.Drawing.Point(111, 246);
+            this.trackBarTempLimit.Location = new System.Drawing.Point(112, 194);
             this.trackBarTempLimit.Maximum = 99;
             this.trackBarTempLimit.Name = "trackBarTempLimit";
             this.trackBarTempLimit.Size = new System.Drawing.Size(195, 23);
@@ -1503,7 +1545,7 @@
             // 
             this.label63.AutoSize = true;
             this.label63.Enabled = false;
-            this.label63.Location = new System.Drawing.Point(24, 250);
+            this.label63.Location = new System.Drawing.Point(24, 198);
             this.label63.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label63.Name = "label63";
             this.label63.Size = new System.Drawing.Size(76, 13);
@@ -1513,8 +1555,8 @@
             // lblVideoClock
             // 
             this.lblVideoClock.Enabled = false;
-            this.lblVideoClock.Location = new System.Drawing.Point(311, 218);
-            this.lblVideoClock.Margin = new System.Windows.Forms.Padding(2);
+            this.lblVideoClock.Location = new System.Drawing.Point(312, 166);
+            this.lblVideoClock.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lblVideoClock.Mask = "0000";
             this.lblVideoClock.Name = "lblVideoClock";
             this.lblVideoClock.Size = new System.Drawing.Size(58, 20);
@@ -1525,7 +1567,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Enabled = false;
-            this.label8.Location = new System.Drawing.Point(369, 221);
+            this.label8.Location = new System.Drawing.Point(370, 169);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(27, 13);
@@ -1535,8 +1577,8 @@
             // lblFBClock
             // 
             this.lblFBClock.Enabled = false;
-            this.lblFBClock.Location = new System.Drawing.Point(311, 189);
-            this.lblFBClock.Margin = new System.Windows.Forms.Padding(2);
+            this.lblFBClock.Location = new System.Drawing.Point(312, 137);
+            this.lblFBClock.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lblFBClock.Mask = "0000";
             this.lblFBClock.Name = "lblFBClock";
             this.lblFBClock.Size = new System.Drawing.Size(58, 20);
@@ -1547,7 +1589,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Enabled = false;
-            this.label7.Location = new System.Drawing.Point(369, 192);
+            this.label7.Location = new System.Drawing.Point(370, 140);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(27, 13);
@@ -1557,8 +1599,8 @@
             // lblBaseClock
             // 
             this.lblBaseClock.Enabled = false;
-            this.lblBaseClock.Location = new System.Drawing.Point(311, 160);
-            this.lblBaseClock.Margin = new System.Windows.Forms.Padding(2);
+            this.lblBaseClock.Location = new System.Drawing.Point(312, 108);
+            this.lblBaseClock.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lblBaseClock.Mask = "0000";
             this.lblBaseClock.Name = "lblBaseClock";
             this.lblBaseClock.Size = new System.Drawing.Size(58, 20);
@@ -1569,7 +1611,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Enabled = false;
-            this.label6.Location = new System.Drawing.Point(369, 164);
+            this.label6.Location = new System.Drawing.Point(370, 112);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(27, 13);
@@ -1581,7 +1623,7 @@
             this.trackBarVideoClock.AutoSize = false;
             this.trackBarVideoClock.BackColor = System.Drawing.Color.White;
             this.trackBarVideoClock.Enabled = false;
-            this.trackBarVideoClock.Location = new System.Drawing.Point(111, 217);
+            this.trackBarVideoClock.Location = new System.Drawing.Point(112, 165);
             this.trackBarVideoClock.Maximum = 2800;
             this.trackBarVideoClock.Name = "trackBarVideoClock";
             this.trackBarVideoClock.Size = new System.Drawing.Size(195, 23);
@@ -1595,7 +1637,7 @@
             this.trackBarFBClock.AutoSize = false;
             this.trackBarFBClock.BackColor = System.Drawing.Color.White;
             this.trackBarFBClock.Enabled = false;
-            this.trackBarFBClock.Location = new System.Drawing.Point(111, 189);
+            this.trackBarFBClock.Location = new System.Drawing.Point(112, 137);
             this.trackBarFBClock.Maximum = 1406;
             this.trackBarFBClock.Name = "trackBarFBClock";
             this.trackBarFBClock.Size = new System.Drawing.Size(195, 23);
@@ -1609,7 +1651,7 @@
             this.trackBarBaseClock.AutoSize = false;
             this.trackBarBaseClock.BackColor = System.Drawing.Color.White;
             this.trackBarBaseClock.Enabled = false;
-            this.trackBarBaseClock.Location = new System.Drawing.Point(111, 159);
+            this.trackBarBaseClock.Location = new System.Drawing.Point(112, 107);
             this.trackBarBaseClock.Maximum = 2800;
             this.trackBarBaseClock.Name = "trackBarBaseClock";
             this.trackBarBaseClock.Size = new System.Drawing.Size(195, 23);
@@ -1622,7 +1664,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Enabled = false;
-            this.label4.Location = new System.Drawing.Point(33, 223);
+            this.label4.Location = new System.Drawing.Point(34, 171);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(67, 13);
@@ -1633,7 +1675,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Enabled = false;
-            this.label3.Location = new System.Drawing.Point(45, 192);
+            this.label3.Location = new System.Drawing.Point(46, 140);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 13);
@@ -1644,7 +1686,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Enabled = false;
-            this.label2.Location = new System.Drawing.Point(38, 164);
+            this.label2.Location = new System.Drawing.Point(38, 112);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(62, 13);
@@ -1655,29 +1697,84 @@
             // 
             this.tabPage2.Controls.Add(this.chart1);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage2.Size = new System.Drawing.Size(430, 400);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "VFR Table";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // chart1
+            // 
+            this.chart1.BackColor = System.Drawing.SystemColors.Control;
+            this.chart1.BackSecondaryColor = System.Drawing.Color.Black;
+            this.chart1.BorderlineColor = System.Drawing.Color.Black;
+            chartArea7.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea7);
+            this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chart1.Location = new System.Drawing.Point(2, 2);
+            this.chart1.Name = "chart1";
+            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Grayscale;
+            this.chart1.Size = new System.Drawing.Size(426, 396);
+            this.chart1.TabIndex = 0;
+            this.chart1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.chart_MouseMove);
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.chart3);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(430, 400);
+            this.tabPage4.TabIndex = 4;
+            this.tabPage4.Text = "TFR Table";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // chart3
+            // 
+            this.chart3.BackColor = System.Drawing.SystemColors.Control;
+            this.chart3.BackSecondaryColor = System.Drawing.Color.Black;
+            this.chart3.BorderlineColor = System.Drawing.Color.Black;
+            chartArea8.Name = "ChartArea1";
+            this.chart3.ChartAreas.Add(chartArea8);
+            this.chart3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chart3.Location = new System.Drawing.Point(0, 0);
+            this.chart3.Name = "chart3";
+            this.chart3.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Grayscale;
+            this.chart3.Size = new System.Drawing.Size(430, 400);
+            this.chart3.TabIndex = 1;
+            this.chart3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.chart3_MouseMove);
+            // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.chart2);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Size = new System.Drawing.Size(430, 400);
             this.tabPage1.TabIndex = 3;
             this.tabPage1.Text = "Fan Curve";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // chart2
+            // 
+            this.chart2.BackColor = System.Drawing.SystemColors.Control;
+            this.chart2.BackSecondaryColor = System.Drawing.Color.Black;
+            this.chart2.BorderlineColor = System.Drawing.Color.Black;
+            chartArea9.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea9);
+            this.chart2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chart2.Location = new System.Drawing.Point(0, 0);
+            this.chart2.Name = "chart2";
+            this.chart2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Grayscale;
+            this.chart2.Size = new System.Drawing.Size(430, 400);
+            this.chart2.TabIndex = 1;
+            this.chart2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.chart2_MouseMove);
+            // 
             // Btn_open
             // 
             this.Btn_open.Location = new System.Drawing.Point(339, 602);
-            this.Btn_open.Margin = new System.Windows.Forms.Padding(2);
+            this.Btn_open.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Btn_open.Name = "Btn_open";
             this.Btn_open.Size = new System.Drawing.Size(105, 33);
             this.Btn_open.TabIndex = 64;
@@ -1707,7 +1804,7 @@
             // 
             this.button1.Location = new System.Drawing.Point(124, 610);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(33, 25);
+            this.button1.Size = new System.Drawing.Size(28, 25);
             this.button1.TabIndex = 68;
             this.button1.Text = "D";
             this.toolTip1.SetToolTip(this.button1, "Dump Power Table Into Clipboard as CSV");
@@ -1715,78 +1812,37 @@
             this.button1.Visible = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(158, 610);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(47, 25);
+            this.button2.TabIndex = 69;
+            this.button2.Text = "DAll";
+            this.toolTip1.SetToolTip(this.button2, "Open all rom files in same dir and dump there info to csv.");
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Visible = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Btn_Save
             // 
             this.Btn_Save.Enabled = false;
             this.Btn_Save.Location = new System.Drawing.Point(14, 602);
-            this.Btn_Save.Margin = new System.Windows.Forms.Padding(2);
+            this.Btn_Save.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Btn_Save.Name = "Btn_Save";
             this.Btn_Save.Size = new System.Drawing.Size(105, 33);
             this.Btn_Save.TabIndex = 67;
             this.Btn_Save.Text = "Save As";
             this.Btn_Save.UseVisualStyleBackColor = true;
+            this.Btn_Save.Visible = false;
             this.Btn_Save.Click += new System.EventHandler(this.Btn_Save_Click);
-            // 
-            // chart1
-            // 
-            this.chart1.BackColor = System.Drawing.SystemColors.Control;
-            this.chart1.BackSecondaryColor = System.Drawing.Color.Black;
-            this.chart1.BorderlineColor = System.Drawing.Color.Black;
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chart1.Location = new System.Drawing.Point(2, 2);
-            this.chart1.Name = "chart1";
-            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Grayscale;
-            this.chart1.Size = new System.Drawing.Size(426, 396);
-            this.chart1.TabIndex = 0;
-            this.chart1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.chart_MouseMove);
-            // 
-            // chart2
-            // 
-            this.chart2.BackColor = System.Drawing.SystemColors.Control;
-            this.chart2.BackSecondaryColor = System.Drawing.Color.Black;
-            this.chart2.BorderlineColor = System.Drawing.Color.Black;
-            chartArea3.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea3);
-            this.chart2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chart2.Location = new System.Drawing.Point(0, 0);
-            this.chart2.Name = "chart2";
-            this.chart2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Grayscale;
-            this.chart2.Size = new System.Drawing.Size(430, 400);
-            this.chart2.TabIndex = 1;
-            this.chart2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.chart2_MouseMove);
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Controls.Add(this.chart3);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(430, 400);
-            this.tabPage4.TabIndex = 4;
-            this.tabPage4.Text = "TFR Table";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // chart3
-            // 
-            this.chart3.BackColor = System.Drawing.SystemColors.Control;
-            this.chart3.BackSecondaryColor = System.Drawing.Color.Black;
-            this.chart3.BorderlineColor = System.Drawing.Color.Black;
-            chartArea2.Name = "ChartArea1";
-            this.chart3.ChartAreas.Add(chartArea2);
-            this.chart3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chart3.Location = new System.Drawing.Point(0, 0);
-            this.chart3.Name = "chart3";
-            this.chart3.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Grayscale;
-            this.chart3.Size = new System.Drawing.Size(430, 400);
-            this.chart3.TabIndex = 1;
-            this.chart3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.chart3_MouseMove);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(457, 639);
+            this.ClientSize = new System.Drawing.Size(457, 638);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Btn_Save);
             this.Controls.Add(this.lblHash);
@@ -1811,7 +1867,7 @@
             this.Controls.Add(this.lName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Ampere Bios Edior - ABE";
@@ -1828,11 +1884,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBarFBClock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarBaseClock)).EndInit();
             this.tabPage2.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
             this.tabPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart3)).EndInit();
+            this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1970,6 +2026,10 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart3;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button InjectUID;
+        private System.Windows.Forms.Button ExtractUID;
+        private System.Windows.Forms.Button button2;
     }
 }
 
