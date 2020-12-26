@@ -78,7 +78,7 @@ internal class Class24 : Class1
             }
             else if (Class24.ThisBiosType == 3)
             {
-                return this.byte_0.spower(Class24.C6);
+                return this.byte_0.spower(Class24.Type3[6]);
             }
             else if (Class24.ThisBiosType == 4)
             {
@@ -103,7 +103,7 @@ internal class Class24 : Class1
             }
             else if (Class24.ThisBiosType == 3)
             {
-                return this.byte_0.spower(Class24.C7);
+                return this.byte_0.spower(Class24.Type3[7]);
             }
             else if (Class24.ThisBiosType == 4)
             {
@@ -126,7 +126,7 @@ internal class Class24 : Class1
             }
             else if (Class24.ThisBiosType == 3)
             {
-                return this.byte_0.spower(Class24.C5);
+                return this.byte_0.spower(Class24.Type3[5]);
             }
             else if (Class24.ThisBiosType == 4)
             {
@@ -149,6 +149,10 @@ internal class Class24 : Class1
             {
                 return this.byte_0.ClockSpeed(Class24.Type2[31]);
             }
+            else if (Class24.ThisBiosType == 3)
+            {
+                return this.byte_0.ClockSpeed(Class24.Type3[31]);
+            }
             else if (Class24.ThisBiosType == 4)
             {
                 return this.byte_0.spower(Class24.XOC[31]);
@@ -168,6 +172,10 @@ internal class Class24 : Class1
             else if (Class24.ThisBiosType == 2)
             {
                 return this.byte_0.spower(Class24.Type2[21]);
+            }
+            else if (Class24.ThisBiosType == 3)
+            {
+                return this.byte_0.spower(Class24.Type3[21]);
             }
             else if (Class24.ThisBiosType == 4)
             {
@@ -189,6 +197,10 @@ internal class Class24 : Class1
             else if (Class24.ThisBiosType == 2)
             {
                 return this.byte_0.spower(Class24.Type2[22]);
+            }
+            else if (Class24.ThisBiosType == 3)
+            {
+                return this.byte_0.spower(Class24.Type3[22]);
             }
             else if (Class24.ThisBiosType == 4)
             {
@@ -212,7 +224,7 @@ internal class Class24 : Class1
             }
             else if (Class24.ThisBiosType == 3)
             {
-                return this.byte_0.spower(Class24.C9);
+                return this.byte_0.spower(Class24.Type3[9]);
             }
             else if (Class24.ThisBiosType == 4)
             {
@@ -236,7 +248,7 @@ internal class Class24 : Class1
             }
             else if (Class24.ThisBiosType == 3)
             {
-                return this.byte_0.spower(Class24.C9_1);
+                return this.byte_0.spower(Class24.Type3[10]);
             }
             else if (Class24.ThisBiosType == 4)
             {
@@ -257,6 +269,10 @@ internal class Class24 : Class1
             else if (Class24.ThisBiosType == 2)
             {
                 return this.byte_0.spower(Class24.Type2[11]);
+            }
+            else if (Class24.ThisBiosType == 3)
+            {
+                return this.byte_0.spower(Class24.Type3[11]);
             }
             else if (Class24.ThisBiosType == 4)
             {
@@ -280,7 +296,7 @@ internal class Class24 : Class1
             }
             else if (Class24.ThisBiosType == 3)
             {
-                return this.byte_0.spower(Class24.C10);
+                return this.byte_0.spower(Class24.Type3[12]);
             }
             else if (Class24.ThisBiosType == 4)
             {
@@ -304,7 +320,7 @@ internal class Class24 : Class1
             }
             else if (Class24.ThisBiosType == 3)
             {
-                return this.byte_0.spower(Class24.C10_1);
+                return this.byte_0.spower(Class24.Type3[13]);
             }
             else if (Class24.ThisBiosType == 4)
             {
@@ -327,6 +343,10 @@ internal class Class24 : Class1
             {
                 return this.byte_0.spower(Class24.Type2[14]);
             }
+            else if (Class24.ThisBiosType == 3)
+            {
+                return this.byte_0.spower(Class24.Type3[14]);
+            }
             else if (Class24.ThisBiosType == 4)
             {
                 return this.byte_0.spower(Class24.XOC[14]);
@@ -346,6 +366,10 @@ internal class Class24 : Class1
             else if (Class24.ThisBiosType == 2)
             {
                 return this.byte_0.spower(Class24.Type2[15]);
+            }
+            else if (Class24.ThisBiosType == 3)
+            {
+                return this.byte_0.spower(Class24.Type3[15]);
             }
             else if (Class24.ThisBiosType == 4)
             {
@@ -367,6 +391,10 @@ internal class Class24 : Class1
             {
                 return this.byte_0.spower(Class24.Type2[16]);
             }
+            else if (Class24.ThisBiosType == 3)
+            {
+                return this.byte_0.spower(Class24.Type3[16]);
+            }
             else if (Class24.ThisBiosType == 4)
             {
                 return this.byte_0.spower(Class24.XOC[16]);
@@ -386,6 +414,10 @@ internal class Class24 : Class1
             else if (Class24.ThisBiosType == 2)
             {
                 return this.byte_0.spower(Class24.Type2[19]);
+            }
+            else if (Class24.ThisBiosType == 3)
+            {
+                return this.byte_0.spower(Class24.Type3[19]);
             }
             else if (Class24.ThisBiosType == 4)
             {
@@ -407,6 +439,10 @@ internal class Class24 : Class1
             {
                 return this.byte_0.spower(Class24.Type2[20]);
             }
+            else if (Class24.ThisBiosType == 3)
+            {
+                return this.byte_0.spower(Class24.Type3[20]);
+            }
             else if (Class24.ThisBiosType == 4)
             {
                 return this.byte_0.spower(Class24.XOC[20]);
@@ -427,6 +463,10 @@ internal class Class24 : Class1
             {
                 return this.byte_0.spower(Class24.Type2[17]);
             }
+            else if (Class24.ThisBiosType == 3)
+            {
+                return this.byte_0.spower(Class24.Type3[17]);
+            }
             else if (Class24.ThisBiosType == 4)
             {
                 return this.byte_0.spower(Class24.XOC[17]);
@@ -446,6 +486,10 @@ internal class Class24 : Class1
             else if (Class24.ThisBiosType == 2)
             {
                 return this.byte_0.spower(Class24.Type2[18]);
+            }
+            else if (Class24.ThisBiosType == 3)
+            {
+                return this.byte_0.spower(Class24.Type3[18]);
             }
             else if (Class24.ThisBiosType == 4)
             {
@@ -469,7 +513,7 @@ internal class Class24 : Class1
             }
             else if (Class24.ThisBiosType == 3)
             {
-                return this.byte_0.spower(Class24.C8);
+                return this.byte_0.spower(Class24.Type3[8]);
             }
             else if (Class24.ThisBiosType == 4)
             {
@@ -491,6 +535,10 @@ internal class Class24 : Class1
             {
                 return this.byte_0.spower(Class24.Type2[23]);
             }
+            else if (Class24.ThisBiosType == 3)
+            {
+                return this.byte_0.spower(Class24.Type3[23]);
+            }
             else if (Class24.ThisBiosType == 4)
             {
                 return this.byte_0.spower(Class24.XOC[23]);
@@ -509,6 +557,10 @@ internal class Class24 : Class1
             else if (Class24.ThisBiosType == 2)
             {
                 return this.byte_0.spower(Class24.Type2[24]);
+            }
+            else if (Class24.ThisBiosType == 3)
+            {
+                return this.byte_0.spower(Class24.Type3[24]);
             }
             else if (Class24.ThisBiosType == 4)
             {
@@ -529,6 +581,10 @@ internal class Class24 : Class1
             {
                 return this.byte_0.spower(Class24.Type2[25]);
             }
+            else if (Class24.ThisBiosType == 3)
+            {
+                return this.byte_0.spower(Class24.Type3[25]);
+            }
             else if (Class24.ThisBiosType == 4)
             {
                 return this.byte_0.spower(Class24.XOC[25]);
@@ -547,6 +603,10 @@ internal class Class24 : Class1
             else if (Class24.ThisBiosType == 2)
             {
                 return this.byte_0.spower(Class24.Type2[26]);
+            }
+            else if (Class24.ThisBiosType == 3)
+            {
+                return this.byte_0.spower(Class24.Type3[26]);
             }
             else if (Class24.ThisBiosType == 4)
             {
@@ -568,6 +628,10 @@ internal class Class24 : Class1
             {
                 return this.byte_0.spower(Class24.Type2[27]);
             }
+            else if (Class24.ThisBiosType == 3)
+            {
+                return this.byte_0.spower(Class24.Type3[27]);
+            }
             else if (Class24.ThisBiosType == 4)
             {
                 return this.byte_0.spower(Class24.XOC[27]);
@@ -587,6 +651,10 @@ internal class Class24 : Class1
             else if (Class24.ThisBiosType == 2)
             {
                 return this.byte_0.spower(Class24.Type2[28]);
+            }
+            else if (Class24.ThisBiosType == 3)
+            {
+                return this.byte_0.spower(Class24.Type3[28]);
             }
             else if (Class24.ThisBiosType == 4)
             {
@@ -608,6 +676,10 @@ internal class Class24 : Class1
             {
                 return this.byte_0.spower(Class24.Type2[29]);
             }
+            else if (Class24.ThisBiosType == 3)
+            {
+                return this.byte_0.spower(Class24.Type3[29]);
+            }
             else if (Class24.ThisBiosType == 4)
             {
                 return this.byte_0.spower(Class24.XOC[29]);
@@ -627,6 +699,10 @@ internal class Class24 : Class1
             else if (Class24.ThisBiosType == 2)
             {
                 return this.byte_0.spower(Class24.Type2[30]);
+            }
+            else if (Class24.ThisBiosType == 3)
+            {
+                return this.byte_0.spower(Class24.Type3[30]);
             }
             else if (Class24.ThisBiosType == 4)
             {
@@ -764,6 +840,11 @@ internal class Class24 : Class1
     public static int[] Type2 = {Type1[0],Type1[1],Type1[2], 0x8F3FF,Type1[4],0x8CF04,0x8CF08,0X8CF0C,0x8CF12,0x8D024,0x8D06B,0x8D187,
 0x8D028, 0x8D06F,0x8D18B,0x8D215,0x8D219,0x8D331,0x8D335,0x8CFDD,0x8CFE1,0x8D024,0x8D028,0x8D98D,
 0x8D9C0,0x8D9F3,0x8DA26,0x8D991,0x8D9C4,0x8D9F7,0x8DA2A,0x8F25E};
+
+    public static int[] Type3 = {Type1[0],Type1[1],Type1[2], 0x8F3FF,Type1[4],0x8BB0A,0x8BB0E,0x8BB12,0x8BB18,Type1[9] - 0x2E8,Type1[10] - 0x2E8,Type1[11] - 0x2E8,
+Type1[12] - 0x2E8, Type1[13] - 0x2E8,Type1[14] - 0x2E8,Type1[15] - 0x2E8,Type1[16] - 0x2E8,Type1[17] - 0x2E8,Type1[18] - 0x2E8,Type1[19] - 0x2E8,Type1[20] - 0x2E8,Type1[21] - 0x2E8,Type1[22] - 0x2E8,Type1[23] - 0x2E8,
+Type1[24] - 0x2E8,Type1[25] - 0x2E8,Type1[26] - 0x2E8,Type1[27] - 0x2E8,Type1[28] - 0x2E8,Type1[29] - 0x2E8,Type1[30] - 0x2E8,Type1[31] - 0x2E8};
+
 
     public static int[] XOC = {Type1[0],Type1[1],Type1[2], 0x8EDFF,Type1[4],0x8CAA6,0x8CAAA,0x8CAAE,0x8CAB4,Type1[9] + 0xCB4,Type1[10] + 0xCB4,Type1[11] + 0xCB4,
 Type1[12] + 0xCB4, Type1[13] + 0xCB4,Type1[14] + 0xCB4,Type1[15] + 0xCB4,Type1[16] + 0xCB4,Type1[17] + 0xCB4,Type1[18] + 0xCB4,Type1[19] + 0xCB4,Type1[20] + 0xCB4,Type1[21] + 0xCB4,Type1[22] + 0xCB4,Type1[23] + 0xCB4,
@@ -1125,6 +1206,10 @@ internal class Class25 : Class1
             {
                 return this.byte_0[Class24.Type2[3]];
             }
+            else if (Class24.ThisBiosType == 3)
+            {
+                return this.byte_0[Class24.Type3[3]];
+            }
             else if (Class24.ThisBiosType == 4)
             {
                 return this.byte_0[Class24.XOC[3]];
@@ -1140,6 +1225,10 @@ internal class Class25 : Class1
             else if (Class24.ThisBiosType == 2)
             {
                 this.byte_0[Class24.Type2[3]] = value;
+            }
+            else if (Class24.ThisBiosType == 3)
+            {
+                this.byte_0[Class24.Type3[3]] = value;
             }
             else if (Class24.ThisBiosType == 4)
             {
@@ -1165,7 +1254,8 @@ internal class Class25 : Class1
             }
             else if (Class24.ThisBiosType == 3)
             {
-
+                datastart = Class24.Type3[4];
+                dataend = Class24.Type3[3];
             }
             else if (Class24.ThisBiosType == 4)
             {

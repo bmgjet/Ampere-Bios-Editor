@@ -203,7 +203,7 @@ namespace ABE
                     MessageBox.Show("Incorrect sized UID file!");
                     break;
                 case 4:
-                    MessageBox.Show("Warning 3080 FE tables not found.");
+                    MessageBox.Show("Warning 3080 FE limited support.");
                     break;
                 case 5:
                     MessageBox.Show(lblName.Text + " not supported");
@@ -685,6 +685,14 @@ namespace ABE
                         {
                             Class29.setpower(class30_0.byte_1, Class24.Type2[5], int.Parse(lblMinimumPL.Text));
                         }
+                        else if (Class24.ThisBiosType == 3)
+                        {
+                            Class29.setpower(class30_0.byte_1, Class24.Type3[5], int.Parse(lblMinimumPL.Text));
+                        }
+                        else if (Class24.ThisBiosType == 4)
+                        {
+                            Class29.setpower(class30_0.byte_1, Class24.XOC[5], int.Parse(lblMinimumPL.Text));
+                        }
                         break;
                     case 1:
                         if (Class24.ThisBiosType == 1)
@@ -694,6 +702,14 @@ namespace ABE
                         else if (Class24.ThisBiosType == 2)
                         {
                             Class29.setpower(class30_0.byte_1, Class24.Type2[6], int.Parse(lblDefaultPL.Text));
+                        }
+                        else if (Class24.ThisBiosType == 3)
+                        {
+                            Class29.setpower(class30_0.byte_1, Class24.Type3[6], int.Parse(lblDefaultPL.Text));
+                        }
+                        else if (Class24.ThisBiosType == 4)
+                        {
+                            Class29.setpower(class30_0.byte_1, Class24.XOC[6], int.Parse(lblDefaultPL.Text));
                         }
                         break;
                     case 2:
@@ -705,6 +721,14 @@ namespace ABE
                         {
                             Class29.setpower(class30_0.byte_1, Class24.Type2[7], int.Parse(lblMaxPL.Text));
                         }
+                        else if (Class24.ThisBiosType == 3)
+                        {
+                            Class29.setpower(class30_0.byte_1, Class24.Type3[7], int.Parse(lblMaxPL.Text));
+                        }
+                        else if (Class24.ThisBiosType == 4)
+                        {
+                            Class29.setpower(class30_0.byte_1, Class24.XOC[7], int.Parse(lblMaxPL.Text));
+                        }
                         break;
                     case 3:
                         if (Class24.ThisBiosType == 1)
@@ -714,6 +738,14 @@ namespace ABE
                         else if (Class24.ThisBiosType == 2)
                         {
                             Class29.setpower(class30_0.byte_1, Class24.Type2[21], int.Parse(lblDefault8pinPL.Text));
+                        }
+                        else if (Class24.ThisBiosType == 3)
+                        {
+                            Class29.setpower(class30_0.byte_1, Class24.Type3[21], int.Parse(lblDefault8pinPL.Text));
+                        }
+                        else if (Class24.ThisBiosType == 4)
+                        {
+                            Class29.setpower(class30_0.byte_1, Class24.XOC[21], int.Parse(lblDefault8pinPL.Text));
                         }
                         break;
                     case 4:
@@ -725,6 +757,14 @@ namespace ABE
                         {
                             Class29.setpower(class30_0.byte_1, Class24.Type2[22], int.Parse(lblMax8pinPL.Text));
                         }
+                        else if (Class24.ThisBiosType == 3)
+                        {
+                            Class29.setpower(class30_0.byte_1, Class24.Type3[22], int.Parse(lblMax8pinPL.Text));
+                        }
+                        else if (Class24.ThisBiosType == 4)
+                        {
+                            Class29.setpower(class30_0.byte_1, Class24.XOC[22], int.Parse(lblMax8pinPL.Text));
+                        }
                         break;
                     case 5:
                         if (Class24.ThisBiosType == 1)
@@ -734,6 +774,14 @@ namespace ABE
                         else if (Class24.ThisBiosType == 2)
                         {
                             Class29.setpower(class30_0.byte_1, Class24.Type2[9], int.Parse(lblDefaultSRCPL.Text));
+                        }
+                        else if (Class24.ThisBiosType == 3)
+                        {
+                            Class29.setpower(class30_0.byte_1, Class24.Type3[9], int.Parse(lblDefaultSRCPL.Text));
+                        }
+                        else if (Class24.ThisBiosType == 4)
+                        {
+                            Class29.setpower(class30_0.byte_1, Class24.XOC[9], int.Parse(lblDefaultSRCPL.Text));
                         }
                         break;
                     case 6:
@@ -745,6 +793,14 @@ namespace ABE
                         {
                             Class29.setpower(class30_0.byte_1, Class24.Type2[12], int.Parse(lblMaxSRCPL.Text));
                         }
+                        else if (Class24.ThisBiosType == 3)
+                        {
+                            Class29.setpower(class30_0.byte_1, Class24.Type3[12], int.Parse(lblMaxSRCPL.Text));
+                        }
+                        else if (Class24.ThisBiosType == 4)
+                        {
+                            Class29.setpower(class30_0.byte_1, Class24.XOC[12], int.Parse(lblMaxSRCPL.Text));
+                        }
                         break;
                     case 7:
                         if (Class24.ThisBiosType == 1)
@@ -754,6 +810,14 @@ namespace ABE
                         else if (Class24.ThisBiosType == 2)
                         {
                             Class29.setpower(class30_0.byte_1, Class24.Type2[15], int.Parse(lblDefaultChipPL.Text));
+                        }
+                        else if (Class24.ThisBiosType == 3)
+                        {
+                            Class29.setpower(class30_0.byte_1, Class24.Type3[15], int.Parse(lblDefaultChipPL.Text));
+                        }
+                        else if (Class24.ThisBiosType == 4)
+                        {
+                            Class29.setpower(class30_0.byte_1, Class24.XOC[15], int.Parse(lblDefaultChipPL.Text));
                         }
                         break;
                     case 8:
@@ -765,6 +829,14 @@ namespace ABE
                         {
                             Class29.setpower(class30_0.byte_1, Class24.Type2[16], int.Parse(lblMaxChipPL.Text));
                         }
+                        else if (Class24.ThisBiosType == 3)
+                        {
+                            Class29.setpower(class30_0.byte_1, Class24.Type3[16], int.Parse(lblMaxChipPL.Text));
+                        }
+                        else if (Class24.ThisBiosType == 4)
+                        {
+                            Class29.setpower(class30_0.byte_1, Class24.XOC[16], int.Parse(lblMaxChipPL.Text));
+                        }
                         break;
                     case 9:
                         if (Class24.ThisBiosType == 1)
@@ -774,6 +846,14 @@ namespace ABE
                         else if (Class24.ThisBiosType == 2)
                         {
                             Class29.setpower(class30_0.byte_1, Class24.Type2[19], int.Parse(lblDefaultSlotPL.Text));
+                        }
+                        else if (Class24.ThisBiosType == 3)
+                        {
+                            Class29.setpower(class30_0.byte_1, Class24.Type3[19], int.Parse(lblDefaultSlotPL.Text));
+                        }
+                        else if (Class24.ThisBiosType == 4)
+                        {
+                            Class29.setpower(class30_0.byte_1, Class24.XOC[19], int.Parse(lblDefaultSlotPL.Text));
                         }
                         break;
                     case 10:
@@ -785,6 +865,14 @@ namespace ABE
                         {
                             Class29.setpower(class30_0.byte_1, Class24.Type2[20], int.Parse(lblMaxSlotPL.Text));
                         }
+                        else if (Class24.ThisBiosType == 3)
+                        {
+                            Class29.setpower(class30_0.byte_1, Class24.Type3[20], int.Parse(lblMaxSlotPL.Text));
+                        }
+                        else if (Class24.ThisBiosType == 4)
+                        {
+                            Class29.setpower(class30_0.byte_1, Class24.XOC[20], int.Parse(lblMaxSlotPL.Text));
+                        }
                         break;
                     case 11:
                         if (Class24.ThisBiosType == 1)
@@ -794,6 +882,14 @@ namespace ABE
                         else if (Class24.ThisBiosType == 2)
                         {
                             Class29.setpower(class30_0.byte_1, Class24.Type2[17], int.Parse(lblDefaultVRAMPL.Text));
+                        }
+                        else if (Class24.ThisBiosType == 3)
+                        {
+                            Class29.setpower(class30_0.byte_1, Class24.Type3[17], int.Parse(lblDefaultVRAMPL.Text));
+                        }
+                        else if (Class24.ThisBiosType == 4)
+                        {
+                            Class29.setpower(class30_0.byte_1, Class24.XOC[17], int.Parse(lblDefaultVRAMPL.Text));
                         }
                         break;
                     case 12:
@@ -805,6 +901,14 @@ namespace ABE
                         {
                             Class29.setpower(class30_0.byte_1, Class24.Type2[18], int.Parse(lblMaxVRAMPL.Text));
                         }
+                        else if (Class24.ThisBiosType == 3)
+                        {
+                            Class29.setpower(class30_0.byte_1, Class24.Type3[18], int.Parse(lblMaxVRAMPL.Text));
+                        }
+                        else if (Class24.ThisBiosType == 4)
+                        {
+                            Class29.setpower(class30_0.byte_1, Class24.XOC[18], int.Parse(lblMaxVRAMPL.Text));
+                        }
                         break;
                     case 13:
                         if (Class24.ThisBiosType == 1)
@@ -814,6 +918,14 @@ namespace ABE
                         else if (Class24.ThisBiosType == 2)
                         {
                             Class29.setpower(class30_0.byte_1, Class24.Type2[8], int.Parse(lblUnknownPL.Text));
+                        }
+                        else if (Class24.ThisBiosType == 3)
+                        {
+                            Class29.setpower(class30_0.byte_1, Class24.Type3[8], int.Parse(lblUnknownPL.Text));
+                        }
+                        else if (Class24.ThisBiosType == 4)
+                        {
+                            Class29.setpower(class30_0.byte_1, Class24.XOC[8], int.Parse(lblUnknownPL.Text));
                         }
                         break;
                     case 14:
@@ -825,6 +937,14 @@ namespace ABE
                         {
                             Class29.setpower(class30_0.byte_1, Class24.Type2[10], int.Parse(lblDefaultSRC2PL.Text));
                         }
+                        else if (Class24.ThisBiosType == 3)
+                        {
+                            Class29.setpower(class30_0.byte_1, Class24.Type3[10], int.Parse(lblDefaultSRC2PL.Text));
+                        }
+                        else if (Class24.ThisBiosType == 4)
+                        {
+                            Class29.setpower(class30_0.byte_1, Class24.XOC[10], int.Parse(lblDefaultSRC2PL.Text));
+                        }
                         break;
                     case 15:
                         if (Class24.ThisBiosType == 1)
@@ -834,6 +954,14 @@ namespace ABE
                         else if (Class24.ThisBiosType == 2)
                         {
                             Class29.setpower(class30_0.byte_1, Class24.Type2[11], int.Parse(lblDefaultSRC3PL.Text));
+                        }
+                        else if (Class24.ThisBiosType == 3)
+                        {
+                            Class29.setpower(class30_0.byte_1, Class24.Type3[11], int.Parse(lblDefaultSRC3PL.Text));
+                        }
+                        else if (Class24.ThisBiosType == 4)
+                        {
+                            Class29.setpower(class30_0.byte_1, Class24.XOC[11], int.Parse(lblDefaultSRC3PL.Text));
                         }
                         break;
                     case 16:
@@ -845,6 +973,14 @@ namespace ABE
                         {
                             Class29.setpower(class30_0.byte_1, Class24.Type2[13], int.Parse(lblMaxSRC2PL.Text));
                         }
+                        else if (Class24.ThisBiosType == 3)
+                        {
+                            Class29.setpower(class30_0.byte_1, Class24.Type3[13], int.Parse(lblMaxSRC2PL.Text));
+                        }
+                        else if (Class24.ThisBiosType == 4)
+                        {
+                            Class29.setpower(class30_0.byte_1, Class24.XOC[13], int.Parse(lblMaxSRC2PL.Text));
+                        }
                         break;
                     case 17:
                         if (Class24.ThisBiosType == 1)
@@ -854,6 +990,14 @@ namespace ABE
                         else if (Class24.ThisBiosType == 2)
                         {
                             Class29.setpower(class30_0.byte_1, Class24.Type2[14], int.Parse(lblMaxSRC3PL.Text));
+                        }
+                        else if (Class24.ThisBiosType == 3)
+                        {
+                            Class29.setpower(class30_0.byte_1, Class24.Type3[14], int.Parse(lblMaxSRC3PL.Text));
+                        }
+                        else if (Class24.ThisBiosType == 4)
+                        {
+                            Class29.setpower(class30_0.byte_1, Class24.XOC[14], int.Parse(lblMaxSRC3PL.Text));
                         }
                         break;
                     case 18:
@@ -865,6 +1009,14 @@ namespace ABE
                         {
                             Class29.setpower(class30_0.byte_1, Class24.Type2[23], int.Parse(lblDefAUX1PL.Text));
                         }
+                        else if (Class24.ThisBiosType == 3)
+                        {
+                            Class29.setpower(class30_0.byte_1, Class24.Type3[23], int.Parse(lblDefAUX1PL.Text));
+                        }
+                        else if (Class24.ThisBiosType == 4)
+                        {
+                            Class29.setpower(class30_0.byte_1, Class24.XOC[23], int.Parse(lblDefAUX1PL.Text));
+                        }
                         break;
                     case 19:
                         if (Class24.ThisBiosType == 1)
@@ -874,6 +1026,14 @@ namespace ABE
                         else if (Class24.ThisBiosType == 2)
                         {
                             Class29.setpower(class30_0.byte_1, Class24.Type2[24], int.Parse(lblDefAUX2PL.Text));
+                        }
+                        else if (Class24.ThisBiosType == 3)
+                        {
+                            Class29.setpower(class30_0.byte_1, Class24.Type3[24], int.Parse(lblDefAUX2PL.Text));
+                        }
+                        else if (Class24.ThisBiosType == 4)
+                        {
+                            Class29.setpower(class30_0.byte_1, Class24.XOC[24], int.Parse(lblDefAUX2PL.Text));
                         }
                         break;
                     case 20:
@@ -885,6 +1045,14 @@ namespace ABE
                         {
                             Class29.setpower(class30_0.byte_1, Class24.Type2[25], int.Parse(lblDefAUX3PL.Text));
                         }
+                        else if (Class24.ThisBiosType == 3)
+                        {
+                            Class29.setpower(class30_0.byte_1, Class24.Type3[25], int.Parse(lblDefAUX3PL.Text));
+                        }
+                        else if (Class24.ThisBiosType == 4)
+                        {
+                            Class29.setpower(class30_0.byte_1, Class24.XOC[25], int.Parse(lblDefAUX3PL.Text));
+                        }
                         break;
                     case 21:
                         if (Class24.ThisBiosType == 1)
@@ -894,6 +1062,14 @@ namespace ABE
                         else if (Class24.ThisBiosType == 2)
                         {
                             Class29.setpower(class30_0.byte_1, Class24.Type2[26], int.Parse(lblDefAUX4PL.Text));
+                        }
+                        else if (Class24.ThisBiosType == 3)
+                        {
+                            Class29.setpower(class30_0.byte_1, Class24.Type3[26], int.Parse(lblDefAUX4PL.Text));
+                        }
+                        else if (Class24.ThisBiosType == 4)
+                        {
+                            Class29.setpower(class30_0.byte_1, Class24.XOC[26], int.Parse(lblDefAUX4PL.Text));
                         }
                         break;
                     case 22:
@@ -905,6 +1081,14 @@ namespace ABE
                         {
                             Class29.setpower(class30_0.byte_1, Class24.Type2[27], int.Parse(lblMaxAUX1PL.Text));
                         }
+                        else if (Class24.ThisBiosType == 3)
+                        {
+                            Class29.setpower(class30_0.byte_1, Class24.Type3[27], int.Parse(lblMaxAUX1PL.Text));
+                        }
+                        else if (Class24.ThisBiosType == 4)
+                        {
+                            Class29.setpower(class30_0.byte_1, Class24.XOC[27], int.Parse(lblMaxAUX1PL.Text));
+                        }
                         break;
                     case 23:
                         if (Class24.ThisBiosType == 1)
@@ -914,6 +1098,14 @@ namespace ABE
                         else if (Class24.ThisBiosType == 2)
                         {
                             Class29.setpower(class30_0.byte_1, Class24.Type2[28], int.Parse(lblMaxAUX2PL.Text));
+                        }
+                        else if (Class24.ThisBiosType == 3)
+                        {
+                            Class29.setpower(class30_0.byte_1, Class24.Type3[28], int.Parse(lblMaxAUX2PL.Text));
+                        }
+                        else if (Class24.ThisBiosType == 4)
+                        {
+                            Class29.setpower(class30_0.byte_1, Class24.XOC[28], int.Parse(lblMaxAUX2PL.Text));
                         }
                         break;
                     case 24:
@@ -925,6 +1117,14 @@ namespace ABE
                         {
                             Class29.setpower(class30_0.byte_1, Class24.Type2[29], int.Parse(lblMaxAUX3PL.Text));
                         }
+                        else if (Class24.ThisBiosType == 3)
+                        {
+                            Class29.setpower(class30_0.byte_1, Class24.Type3[29], int.Parse(lblMaxAUX3PL.Text));
+                        }
+                        else if (Class24.ThisBiosType == 4)
+                        {
+                            Class29.setpower(class30_0.byte_1, Class24.XOC[29], int.Parse(lblMaxAUX3PL.Text));
+                        }
                         break;
                     case 25:
                         if (Class24.ThisBiosType == 1)
@@ -934,6 +1134,14 @@ namespace ABE
                         else if (Class24.ThisBiosType == 2)
                         {
                             Class29.setpower(class30_0.byte_1, Class24.Type2[30], int.Parse(lblMaxAUX4PL.Text));
+                        }
+                        else if (Class24.ThisBiosType == 3)
+                        {
+                            Class29.setpower(class30_0.byte_1, Class24.Type3[30], int.Parse(lblMaxAUX4PL.Text));
+                        }
+                        else if (Class24.ThisBiosType == 4)
+                        {
+                            Class29.setpower(class30_0.byte_1, Class24.XOC[30], int.Parse(lblMaxAUX4PL.Text));
                         }
                         break;
                     case 26:
@@ -946,6 +1154,14 @@ namespace ABE
                             else if (Class24.ThisBiosType == 2)
                             {
                                 Class29.setpower(class30_0.byte_1, Class24.Type2[31], int.Parse(lblBoostClock.Text) * 1000);
+                            }
+                            else if (Class24.ThisBiosType == 3)
+                            {
+                                Class29.setpower(class30_0.byte_1, Class24.Type3[31], int.Parse(lblBoostClock.Text) * 1000);
+                            }
+                            else if (Class24.ThisBiosType == 4)
+                            {
+                                Class29.setpower(class30_0.byte_1, Class24.XOC[31], int.Parse(lblBoostClock.Text) * 1000);
                             }
                         }
                         break;
