@@ -79,10 +79,21 @@ namespace ABE
 
         private bool CheckMD5()
         {
-
+            Class25 @class = this.class30_0.list_0[0];
             if (CheckifXOC())
             {
                 Class24.ThisBiosType = 4;
+                return true;
+            }
+
+            if (@class.class24_0.class26_0.card == 3060)
+            {
+                Class24.ThisBiosType = 6;
+                return true;
+            }
+            else if (@class.class24_0.class26_0.card == 3070)
+            {
+                Class24.ThisBiosType = 7;
                 return true;
             }
 

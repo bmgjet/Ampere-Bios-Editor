@@ -84,6 +84,14 @@ internal class Class24 : Class1
             {
                 return this.byte_0.spower(Class24.XOC[6]);
             }
+            else if (Class24.ThisBiosType == 6)
+            {
+                return this.byte_0.spower(Class24.RTX3060[6]);
+            }
+            else if (Class24.ThisBiosType == 7)
+            {
+                return this.byte_0.spower(Class24.RTX3070[6]);
+            }
             return 0.ToString();
 
         }
@@ -109,6 +117,14 @@ internal class Class24 : Class1
             {
                 return this.byte_0.spower(Class24.XOC[7]);
             }
+            else if (Class24.ThisBiosType == 6)
+            {
+                return this.byte_0.spower(Class24.RTX3060[7]);
+            }
+            else if (Class24.ThisBiosType == 7)
+            {
+                return this.byte_0.spower(Class24.RTX3070[7]);
+            }
             return 0.ToString();
         }
     }
@@ -131,6 +147,14 @@ internal class Class24 : Class1
             else if (Class24.ThisBiosType == 4)
             {
                 return this.byte_0.spower(Class24.XOC[5]);
+            }
+            else if (Class24.ThisBiosType == 6)
+            {
+                return this.byte_0.spower(Class24.RTX3060[5]);
+            }
+            else if (Class24.ThisBiosType == 7)
+            {
+                return this.byte_0.spower(Class24.RTX3070[5]);
             }
             return 0.ToString();
         }
@@ -157,6 +181,14 @@ internal class Class24 : Class1
             {
                 return this.byte_0.spower(Class24.XOC[31]);
             }
+            else if (Class24.ThisBiosType == 6)
+            {
+                return this.byte_0.spower(Class24.RTX3060[31]);
+            }
+            else if (Class24.ThisBiosType == 7)
+            {
+                return this.byte_0.spower(Class24.RTX3070[31]);
+            }
             return 0.ToString();
         }
     }
@@ -181,7 +213,14 @@ internal class Class24 : Class1
             {
                 return this.byte_0.spower(Class24.XOC[21]);
             }
-
+            else if (Class24.ThisBiosType == 6)
+            {
+                return this.byte_0.spower(Class24.RTX3060[21]);
+            }
+            else if (Class24.ThisBiosType == 7)
+            {
+                return this.byte_0.spower(Class24.RTX3070[21]);
+            }
             return 0.ToString();
         }
     }
@@ -205,6 +244,14 @@ internal class Class24 : Class1
             else if (Class24.ThisBiosType == 4)
             {
                 return this.byte_0.spower(Class24.XOC[22]);
+            }
+            else if (Class24.ThisBiosType == 6)
+            {
+                return this.byte_0.spower(Class24.RTX3060[22]);
+            }
+            else if (Class24.ThisBiosType == 7)
+            {
+                return this.byte_0.spower(Class24.RTX3070[22]);
             }
             return 0.ToString();
         }
@@ -230,6 +277,14 @@ internal class Class24 : Class1
             {
                 return this.byte_0.spower(Class24.XOC[9]);
             }
+            else if (Class24.ThisBiosType == 6)
+            {
+                return this.byte_0.spower(Class24.RTX3060[9]);
+            }
+            else if (Class24.ThisBiosType == 7)
+            {
+                return this.byte_0.spower(Class24.RTX3070[9]);
+            }
             return 0.ToString();
         }
     }
@@ -253,6 +308,14 @@ internal class Class24 : Class1
             else if (Class24.ThisBiosType == 4)
             {
                 return this.byte_0.spower(Class24.XOC[10]);
+            }
+            else if (Class24.ThisBiosType == 6)
+            {
+                return this.byte_0.spower(Class24.RTX3060[10]);
+            }
+            else if (Class24.ThisBiosType == 7)
+            {
+                return this.byte_0.spower(Class24.RTX3070[10]);
             }
             return 0.ToString();
         }
@@ -278,6 +341,14 @@ internal class Class24 : Class1
             {
                 return this.byte_0.spower(Class24.XOC[11]);
             }
+            else if (Class24.ThisBiosType == 6)
+            {
+                return this.byte_0.spower(Class24.RTX3060[11]);
+            }
+            else if (Class24.ThisBiosType == 7)
+            {
+                return this.byte_0.spower(Class24.RTX3070[11]);
+            }
             return 0.ToString();
         }
     }
@@ -302,6 +373,14 @@ internal class Class24 : Class1
             {
                 return this.byte_0.spower(Class24.XOC[12]);
             }
+            else if (Class24.ThisBiosType == 6)
+            {
+                return this.byte_0.spower(Class24.RTX3060[12]);
+            }
+            else if (Class24.ThisBiosType == 7)
+            {
+                return this.byte_0.spower(Class24.RTX3070[12]);
+            }
             return 0.ToString();
         }
     }
@@ -325,6 +404,14 @@ internal class Class24 : Class1
             else if (Class24.ThisBiosType == 4)
             {
                 return this.byte_0.spower(Class24.XOC[13]);
+            }
+            else if (Class24.ThisBiosType == 6)
+            {
+                return this.byte_0.spower(Class24.RTX3060[13]);
+            }
+            else if (Class24.ThisBiosType == 7)
+            {
+                return this.byte_0.spower(Class24.RTX3070[13]);
             }
             return 0.ToString();
         }
@@ -351,6 +438,14 @@ internal class Class24 : Class1
             {
                 return this.byte_0.spower(Class24.XOC[14]);
             }
+            else if (Class24.ThisBiosType == 6)
+            {
+                return this.byte_0.spower(Class24.RTX3060[14]);
+            }
+            else if (Class24.ThisBiosType == 7)
+            {
+                return this.byte_0.spower(Class24.RTX3070[14]);
+            }
             return 0.ToString();
         }
     }
@@ -374,6 +469,14 @@ internal class Class24 : Class1
             else if (Class24.ThisBiosType == 4)
             {
                 return this.byte_0.spower(Class24.XOC[15]);
+            }
+            else if (Class24.ThisBiosType == 6)
+            {
+                return this.byte_0.spower(Class24.RTX3060[15]);
+            }
+            else if (Class24.ThisBiosType == 7)
+            {
+                return this.byte_0.spower(Class24.RTX3070[15]);
             }
             return 0.ToString();
         }
@@ -399,6 +502,14 @@ internal class Class24 : Class1
             {
                 return this.byte_0.spower(Class24.XOC[16]);
             }
+            else if (Class24.ThisBiosType == 6)
+            {
+                return this.byte_0.spower(Class24.RTX3060[16]);
+            }
+            else if (Class24.ThisBiosType == 7)
+            {
+                return this.byte_0.spower(Class24.RTX3070[16]);
+            }
             return 0.ToString();
         }
     }
@@ -422,6 +533,14 @@ internal class Class24 : Class1
             else if (Class24.ThisBiosType == 4)
             {
                 return this.byte_0.spower(Class24.XOC[19]);
+            }
+            else if (Class24.ThisBiosType == 6)
+            {
+                return this.byte_0.spower(Class24.RTX3060[19]);
+            }
+            else if (Class24.ThisBiosType == 7)
+            {
+                return this.byte_0.spower(Class24.RTX3070[19]);
             }
             return 0.ToString();
         }
@@ -447,6 +566,14 @@ internal class Class24 : Class1
             {
                 return this.byte_0.spower(Class24.XOC[20]);
             }
+            else if (Class24.ThisBiosType == 6)
+            {
+                return this.byte_0.spower(Class24.RTX3060[20]);
+            }
+            else if (Class24.ThisBiosType == 7)
+            {
+                return this.byte_0.spower(Class24.RTX3070[20]);
+            }
             return 0.ToString();
         }
     }
@@ -470,6 +597,14 @@ internal class Class24 : Class1
             else if (Class24.ThisBiosType == 4)
             {
                 return this.byte_0.spower(Class24.XOC[17]);
+            }
+            else if (Class24.ThisBiosType == 6)
+            {
+                return this.byte_0.spower(Class24.RTX3060[17]);
+            }
+            else if (Class24.ThisBiosType == 7)
+            {
+                return this.byte_0.spower(Class24.RTX3070[17]);
             }
             return 0.ToString();
         }
@@ -495,6 +630,14 @@ internal class Class24 : Class1
             {
                 return this.byte_0.spower(Class24.XOC[18]);
             }
+            else if (Class24.ThisBiosType == 6)
+            {
+                return this.byte_0.spower(Class24.RTX3060[18]);
+            }
+            else if (Class24.ThisBiosType == 7)
+            {
+                return this.byte_0.spower(Class24.RTX3070[18]);
+            }
             return 0.ToString();
         }
     }
@@ -518,6 +661,14 @@ internal class Class24 : Class1
             else if (Class24.ThisBiosType == 4)
             {
                 return this.byte_0.spower(Class24.XOC[8]);
+            }
+            else if (Class24.ThisBiosType == 6)
+            {
+                return this.byte_0.spower(Class24.RTX3060[8]);
+            }
+            else if (Class24.ThisBiosType == 7)
+            {
+                return this.byte_0.spower(Class24.RTX3070[8]);
             }
             return 0.ToString();
         }
@@ -543,6 +694,14 @@ internal class Class24 : Class1
             {
                 return this.byte_0.spower(Class24.XOC[23]);
             }
+            else if (Class24.ThisBiosType == 6)
+            {
+                return this.byte_0.spower(Class24.RTX3060[23]);
+            }
+            else if (Class24.ThisBiosType == 7)
+            {
+                return this.byte_0.spower(Class24.RTX3070[23]);
+            }
             return 0.ToString();
         }
     }
@@ -565,6 +724,14 @@ internal class Class24 : Class1
             else if (Class24.ThisBiosType == 4)
             {
                 return this.byte_0.spower(Class24.XOC[24]);
+            }
+            else if (Class24.ThisBiosType == 6)
+            {
+                return this.byte_0.spower(Class24.RTX3060[24]);
+            }
+            else if (Class24.ThisBiosType == 7)
+            {
+                return this.byte_0.spower(Class24.RTX3070[24]);
             }
             return 0.ToString();
         }
@@ -589,6 +756,14 @@ internal class Class24 : Class1
             {
                 return this.byte_0.spower(Class24.XOC[25]);
             }
+            else if (Class24.ThisBiosType == 6)
+            {
+                return this.byte_0.spower(Class24.RTX3060[25]);
+            }
+            else if (Class24.ThisBiosType == 7)
+            {
+                return this.byte_0.spower(Class24.RTX3070[25]);
+            }
             return 0.ToString();
         }
     }
@@ -611,6 +786,14 @@ internal class Class24 : Class1
             else if (Class24.ThisBiosType == 4)
             {
                 return this.byte_0.spower(Class24.XOC[26]);
+            }
+            else if (Class24.ThisBiosType == 6)
+            {
+                return this.byte_0.spower(Class24.RTX3060[26]);
+            }
+            else if (Class24.ThisBiosType == 7)
+            {
+                return this.byte_0.spower(Class24.RTX3070[26]);
             }
             return 0.ToString();
         }
@@ -636,6 +819,14 @@ internal class Class24 : Class1
             {
                 return this.byte_0.spower(Class24.XOC[27]);
             }
+            else if (Class24.ThisBiosType == 6)
+            {
+                return this.byte_0.spower(Class24.RTX3060[27]);
+            }
+            else if (Class24.ThisBiosType == 7)
+            {
+                return this.byte_0.spower(Class24.RTX3070[27]);
+            }
             return 0.ToString();
         }
     }
@@ -659,6 +850,14 @@ internal class Class24 : Class1
             else if (Class24.ThisBiosType == 4)
             {
                 return this.byte_0.spower(Class24.XOC[28]);
+            }
+            else if (Class24.ThisBiosType == 6)
+            {
+                return this.byte_0.spower(Class24.RTX3060[28]);
+            }
+            else if (Class24.ThisBiosType == 7)
+            {
+                return this.byte_0.spower(Class24.RTX3070[28]);
             }
             return 0.ToString();
         }
@@ -684,6 +883,14 @@ internal class Class24 : Class1
             {
                 return this.byte_0.spower(Class24.XOC[29]);
             }
+            else if (Class24.ThisBiosType == 6)
+            {
+                return this.byte_0.spower(Class24.RTX3060[29]);
+            }
+            else if (Class24.ThisBiosType == 7)
+            {
+                return this.byte_0.spower(Class24.RTX3070[29]);
+            }
             return 0.ToString();
         }
     }
@@ -707,6 +914,14 @@ internal class Class24 : Class1
             else if (Class24.ThisBiosType == 4)
             {
                 return this.byte_0.spower(Class24.XOC[30]);
+            }
+            else if (Class24.ThisBiosType == 6)
+            {
+                return this.byte_0.spower(Class24.RTX3060[30]);
+            }
+            else if (Class24.ThisBiosType == 7)
+            {
+                return this.byte_0.spower(Class24.RTX3070[30]);
             }
             return 0.ToString();
         }
@@ -746,7 +961,7 @@ internal class Class24 : Class1
             string biostype = this.byte_0.smethod_1(0, 4);
             if (biostype == "NVGI")
             {
-                if (this.byte_0.Length == 999424)
+                if (this.byte_0.Length == 999424 || this.byte_0.Length == 1048576)
                 {
                     return true;
                 }
@@ -850,9 +1065,15 @@ Type1[24] - 0x2E8,Type1[25] - 0x2E8,Type1[26] - 0x2E8,Type1[27] - 0x2E8,Type1[28
 Type1[12] + 0xCB4, Type1[13] + 0xCB4,Type1[14] + 0xCB4,Type1[15] + 0xCB4,Type1[16] + 0xCB4,Type1[17] + 0xCB4,Type1[18] + 0xCB4,Type1[19] + 0xCB4,Type1[20] + 0xCB4,Type1[21] + 0xCB4,Type1[22] + 0xCB4,Type1[23] + 0xCB4,
 Type1[24] + 0xCB4,Type1[25] + 0xCB4,Type1[26] + 0xCB4,Type1[27] + 0xCB4,Type1[28] + 0xCB4,Type1[29] + 0xCB4,Type1[30] + 0xCB4,Type1[31] + 0xCB4};
 
-    
-    
-    
+    public static int[] RTX3070 = {Type1[0],Type1[1],Type1[2], Type1[3]+0x30,Type1[4]+0x30,Type1[5]+0x30,Type1[6]+0x30,Type1[7]+0x30,Type1[8]+0x30,Type1[9] +0x30,Type1[10]+0x30,Type1[11]+0x30,
+Type1[12]+0x30, Type1[13]+0x30,Type1[14]+0x30,Type1[15]+0x30,Type1[16]+0x30,Type1[17]+0x30,Type1[18]+0x30,Type1[19]+0x30,Type1[20]+0x30,Type1[21]+0x30,Type1[22]+0x30,Type1[23]+0x30,
+Type1[24]+0x30,Type1[25]+0x30,Type1[26]+0x30,Type1[27]+0x30,Type1[28]+0x30,Type1[29] +0x30,Type1[30]+0x30,Type1[31]+0x30};
+
+    public static int[] RTX3060 = {Type1[0],Type1[1],Type1[2], Type1[3]+0x100E,Type1[4]+0x100E,Type1[5]+0x100E,Type1[6]+0x100E,Type1[7]+0x100E,Type1[8]+0x100E,Type1[9] +0x100E,Type1[10]+0x100E,Type1[11]+0x100E,
+Type1[12]+0x100E, Type1[13]+0x100E,Type1[14]+0x100E,Type1[15]+0x100E,Type1[16]+0x100E,Type1[17]+0x100E,Type1[18]+0x100E,Type1[19]+0x100E,Type1[20]+0x100E,Type1[21]+0x100E,Type1[22]+0x100E,Type1[23]+0x100E,
+Type1[24]+0x100E,Type1[25]+0x100E,Type1[26]+0x100E,Type1[27]+0x100E,Type1[28]+0x100E,Type1[29] +0x100E,Type1[30]+0x100E,Type1[31]+0x100E};
+
+
     //Bios Type 2 (Custom Cards)
     //public static int B3 = 0x8F3FF; //Settings Table Checksum
     //public static int B4 = Class24.Type1[4]; //Settings Table Start
@@ -885,35 +1106,35 @@ Type1[24] + 0xCB4,Type1[25] + 0xCB4,Type1[26] + 0xCB4,Type1[27] + 0xCB4,Type1[28
     //public static int B27 = 0x8F25E; //boost clock
 
     //Bios Type 3 (3080 FE)
-    public static int C3 = 0x8F3FF; //Settings Table Checksum
-    public static int C4 = Class24.Type1[4]; //Settings Table Start
-    public static int C5 = 0x8BB0A; //Min TDP
-    public static int C6 = 0x8BB0E; //Default TDP
-    public static int C7 = 0x8BB12; //Max TDP
-    public static int C8 = 0x8BB18; //Unknown
-    public static int C9 = 0x8BC1A;  //SRC
-    public static int C9_1 = 0x8BC5D; //2
-                                      //public static int C9_2 = 0; //3
-    public static int C10 = 0x8BC1E;  //max
-    public static int C10_1 = 0x8BC61; //2
-                                       //public static int C10_2 = 0; //3
-                                       //public static int C11 = 0; //Chip power
-                                       //public static int C12 = 0; //max
-                                       //public static int C13 = 0;  //Vram
-                                       //public static int C14 = 0;    //max
-                                       //public static int C15 = 0; //slot
-                                       //public static int C16 = 0; //max
-                                       //public static int C17 = 0;  //8pin
-                                       //public static int C18 = 0; //max
-                                       //public static int C19 = 0;    //Aux
-                                       //public static int C20 = 0; //2
-                                       //public static int C21 = 0; //3
-                                       //public static int C22 = 0; //4
-                                       //public static int C23 = 0;  //Aux Hi
-                                       //public static int C24 = 0; //2
-                                       //public static int C25 = 0; //3
-                                       //public static int C26 = 0; //4
-                                       //public static int C27 = 0; //boost clock
+    //public static int C3 = 0x8F3FF; //Settings Table Checksum
+    //public static int C4 = Class24.Type1[4]; //Settings Table Start
+    //public static int C5 = 0x8BB0A; //Min TDP
+    //public static int C6 = 0x8BB0E; //Default TDP
+    //public static int C7 = 0x8BB12; //Max TDP
+    //public static int C8 = 0x8BB18; //Unknown
+    //public static int C9 = 0x8BC1A;  //SRC
+    //public static int C9_1 = 0x8BC5D; //2
+    //                                  //public static int C9_2 = 0; //3
+    //public static int C10 = 0x8BC1E;  //max
+    //public static int C10_1 = 0x8BC61; //2
+    //public static int C10_2 = 0; //3
+    //public static int C11 = 0; //Chip power
+    //public static int C12 = 0; //max
+    //public static int C13 = 0;  //Vram
+    //public static int C14 = 0;    //max
+    //public static int C15 = 0; //slot
+    //public static int C16 = 0; //max
+    //public static int C17 = 0;  //8pin
+    //public static int C18 = 0; //max
+    //public static int C19 = 0;    //Aux
+    //public static int C20 = 0; //2
+    //public static int C21 = 0; //3
+    //public static int C22 = 0; //4
+    //public static int C23 = 0;  //Aux Hi
+    //public static int C24 = 0; //2
+    //public static int C25 = 0; //3
+    //public static int C26 = 0; //4
+    //public static int C27 = 0; //boost clock
 
 
     public static int[] Voltage;
@@ -967,6 +1188,10 @@ internal class Class26 : Class1
                 return 3090;
             else if (UInt16_1 == 0x2206)
                 return 3080;
+            else if (UInt16_1 == 0x2484)
+                return 3070;
+            else if (UInt16_1 == 0x2486)
+                return 3060;
             else
                 return 0;
         }
@@ -1214,6 +1439,14 @@ internal class Class25 : Class1
             {
                 return this.byte_0[Class24.XOC[3]];
             }
+            else if (Class24.ThisBiosType == 6)
+            {
+                return this.byte_0[Class24.RTX3060[3]];
+            }
+            else if (Class24.ThisBiosType == 7)
+            {
+                return this.byte_0[Class24.RTX3070[3]];
+            }
             return 0;
         }
         set
@@ -1233,6 +1466,14 @@ internal class Class25 : Class1
             else if (Class24.ThisBiosType == 4)
             {
                 this.byte_0[Class24.XOC[3]] = value;
+            }
+            else if (Class24.ThisBiosType == 6)
+            {
+                this.byte_0[Class24.RTX3060[3]] = value;
+            }
+            else if (Class24.ThisBiosType == 7)
+            {
+                this.byte_0[Class24.RTX3070[3]] = value;
             }
 
         }
@@ -1261,6 +1502,16 @@ internal class Class25 : Class1
             {
                 datastart = Class24.XOC[4];
                 dataend = Class24.XOC[3];
+            }
+            else if (Class24.ThisBiosType == 6)
+            {
+                datastart = Class24.RTX3060[4];
+                dataend = Class24.RTX3060[3];
+            }
+            else if (Class24.ThisBiosType == 7)
+            {
+                datastart = Class24.RTX3070[4];
+                dataend = Class24.RTX3070[3];
             }
             for (int i = datastart; i < dataend; i++)
             {
